@@ -1,5 +1,5 @@
 version = 27.2
-# sup
+
 
 import nextcord as discord
 from nextcord import SlashOption as option
