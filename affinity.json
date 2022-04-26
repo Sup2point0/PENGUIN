@@ -1,0 +1,878 @@
+{
+  "self": {
+    "ver": {
+      "sup": 6,
+      "sub": 27.2,
+      "up": 1650918293,
+      "in": 2,
+      "swim": true
+    },
+    "stats": {
+      "res": 937,
+      "stas": 1328,
+      "live": 2500174,
+      "pong": 1650912584,
+      "sent": 5303,
+      "react": 283,
+      "view": 17
+    },
+    "calls": {
+      "mes": 7560,
+      "rec": 2081,
+      "act": 7280,
+      "ping": 244,
+      "help": 259,
+      "util": 90,
+      "index": 104,
+      "info": 142,
+      "play": 43,
+      "vita": 54,
+      "dir": 44,
+      "ctx": 6,
+      "err": 388,
+      "acc": 6
+    },
+    "misc": {
+      "played": 0,
+      "win": 0,
+      "lose": 0,
+      "out": 0,
+      "jokes": 52,
+      "whoosh": 2,
+      "shards": [],
+      "crypts": []
+    }
+  },
+  "struct": {
+    "info": {
+      "name": null,
+      "ver": 0.5,
+      "init": null,
+      "sync": null,
+      "view": 0
+    },
+    "vitals": {
+      "points": 0,
+      "rise": 0,
+      "drop": 0,
+      "live": 0,
+      "pres": 0
+    },
+    "pref": {
+      "dis": [],
+      "col": "2070c1",
+      "fac": null,
+      "dec": null,
+      "loc": null,
+      "uni": null
+    },
+    "stats": {
+      "sent": 0,
+      "react": 0,
+      "act": 0,
+      "/help": 0,
+      "/play": 0,
+      "/vita": 0,
+      "dir": 0,
+      "ctx": 0,
+      "err": 0,
+      "acc": 0
+    },
+    "games": {
+      "play": 0,
+      "win": 0,
+      "lose": 0,
+      "out": 0,
+      "walk": []
+    },
+    "data": {
+      "used": [],
+      "played": [],
+      "ranks": [],
+      "cores": [],
+      "jokes": [],
+      "whoosh": 0,
+      "shards": [],
+      "crypts": []
+    },
+    "exp": {
+      "top": null,
+      "hold": 0,
+      "max": 0
+    },
+    "log": [],
+    "rec": {}
+  },
+  "users": {
+    "752972078579449888": {
+      "info": {
+        "name": "Sup#2.0",
+        "ver": 0.5,
+        "init": 1646775031,
+        "sync": 1648154781,
+        "view": 53
+      },
+      "vitals": {
+        "points": 3275,
+        "rise": 2944,
+        "drop": 0,
+        "live": 44508,
+        "pres": 252
+      },
+      "pref": {
+        "dis": [],
+        "col": "4090f1",
+        "fac": null,
+        "dec": "Aeva",
+        "loc": "Aventurina District",
+        "uni": "NioTech"
+      },
+      "stats": {
+        "sent": 1064,
+        "react": 6,
+        "act": 251,
+        "/help": 7,
+        "/play": 15,
+        "/vita": 10,
+        "dir": 20,
+        "ctx": 7,
+        "err": 129,
+        "acc": 8
+      },
+      "games": {
+        "play": 34,
+        "win": 21,
+        "lose": 12,
+        "out": 3,
+        "walk": []
+      },
+      "data": {
+        "used": [
+          "/vita visualyze",
+          "/vita rankings",
+          "/vita aid",
+          "/util decate",
+          "/help all",
+          "~ping",
+          "/util antect",
+          "/help tip",
+          "None",
+          "/info acro",
+          "/help info",
+          "/index filter",
+          "/info about",
+          "/play guess num",
+          "None",
+          "/vita synchronyze",
+          "/info game",
+          "/help start",
+          "/what joke",
+          "/what sup",
+          "/vita astatyze",
+          "/index games",
+          "/util cast",
+          "/info role",
+          "/play guess emoji",
+          "None",
+          "None",
+          "None",
+          "/util cal",
+          "None",
+          "/util idea",
+          "/help command"
+        ],
+        "played": [
+          "num"
+        ],
+        "ranks": [],
+        "cores": [],
+        "jokes": [
+          "Where do penguins go to dance?",
+          "What is a penguin\u2019s favourite meal?",
+          "Have you heard of the latest expedition to Antarctica?",
+          "How do penguins make pancakes?",
+          "What did the terrorists say when they invaded Antarctica?",
+          "What do you call kids in Antarctica?",
+          "What do penguins drink out of?",
+          "What do you call a bear who\u2019s been to both Antarctica and the Arctic?"
+        ],
+        "whoosh": 1,
+        "shards": [],
+        "crypts": []
+      },
+      "exp": {
+        "top": 1,
+        "hold": 0,
+        "max": 0
+      },
+      "log": [
+        [
+          "+2",
+          "used `/help command`"
+        ],
+        [
+          "+1",
+          "used `/help start`"
+        ],
+        [
+          "+1",
+          "used `/help info`"
+        ],
+        [
+          "+1",
+          "used `/help start`"
+        ],
+        [
+          "+1",
+          "used `/help start`"
+        ],
+        [
+          "+2",
+          "used `/help tip`"
+        ],
+        [
+          "+1",
+          "used `/help info`"
+        ],
+        [
+          "+20",
+          "used `/help command` for the first time"
+        ],
+        [
+          "+1",
+          "used `/help start`"
+        ],
+        [
+          "+1",
+          "used `/help start`"
+        ],
+        [
+          "+1",
+          "used `/help info`"
+        ],
+        [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ]
+      ],
+      "rec": {}
+    },
+    "305740589947682817": {
+      "info": {
+        "name": "iTechnical",
+        "ver": 0.5,
+        "init": 1646812014,
+        "sync": 1646812014,
+        "view": 0
+      },
+      "vitals": {
+        "points": 9272,
+        "rise": 9272,
+        "drop": 0,
+        "live": 39734,
+        "pres": 8100
+      },
+      "pref": {
+        "dis": [],
+        "col": "00A0A0",
+        "fac": null,
+        "dec": "Aliquanda",
+        "loc": "Vanqua, Discenda",
+        "uni": "ROAG"
+      },
+      "stats": {
+        "sent": 358,
+        "react": 1,
+        "act": 17,
+        "/help": 0,
+        "/play": 6,
+        "/vita": 0,
+        "dir": 0,
+        "ctx": 0,
+        "err": 0,
+        "acc": 0
+      },
+      "games": {
+        "play": 40,
+        "win": 34,
+        "lose": 5,
+        "out": 1,
+        "walk": []
+      },
+      "data": {
+        "used": [],
+        "played": [],
+        "ranks": [],
+        "cores": [],
+        "jokes": [],
+        "whoosh": 0,
+        "shards": [],
+        "crypts": []
+      },
+      "exp": {
+        "top": null,
+        "hold": 110076,
+        "max": 0
+      },
+      "log": [],
+      "rec": {}
+    },
+    "627917067332485120": {
+      "info": {
+        "name": "JazzyJonah",
+        "ver": 0.5,
+        "init": 1646859969,
+        "sync": 1646859969,
+        "view": 4
+      },
+      "vitals": {
+        "points": 20710,
+        "rise": 20487,
+        "drop": 0,
+        "live": 17400,
+        "pres": 6024
+      },
+      "pref": {
+        "dis": [],
+        "col": "0373fc",
+        "fac": null,
+        "dec": "Aliquanda",
+        "loc": "The South Pole",
+        "uni": "ISAB"
+      },
+      "stats": {
+        "sent": 1062,
+        "react": 5,
+        "act": 233,
+        "/help": 0,
+        "/play": 0,
+        "/vita": 0,
+        "dir": 0,
+        "ctx": 0,
+        "err": 3,
+        "acc": 0
+      },
+      "games": {
+        "play": 200,
+        "win": 170,
+        "lose": 31,
+        "out": 2,
+        "walk": []
+      },
+      "data": {
+        "used": [
+          "/vita visualyze",
+          "/play guess num",
+          "/vita rankings",
+          "/util idea",
+          "/what sup",
+          "/info about",
+          "/what joke"
+        ],
+        "played": [
+          "num",
+          "num",
+          "num"
+        ],
+        "ranks": [],
+        "cores": [],
+        "jokes": [
+          "Who are the best at exploring Antarctica?",
+          "What do you call a bear who\u2019s been to both Antarctica and the Arctic?",
+          "What do you call kids in Antarctica?",
+          "What do Antarcticans say when someone does something great?",
+          "Why is Antarctica the least corrupt nation in the world?",
+          "Why is it difficult to make friends in Antarctica?",
+          "What did the Antarctican Technician say when programming?",
+          "Why are arguments rare in Antarctica?",
+          "What do you call a frozen dad in Antarctica?",
+          "Why do people find it so lonely in Antarctica?",
+          "What did the explorer say when he spotted Antarctica?",
+          "What did the terrorists say when they invaded Antarctica?",
+          "What is a penguin\u2019s favourite meal?",
+          "Global warming seems really funny...",
+          "What do penguins drink out of?",
+          "How do penguins make pancakes?",
+          "Why is Antarctican English spelling so controversial?",
+          "Who\u2019s married to Antarctica?",
+          "What\u2019s the drunkest animal in Antarctica?",
+          "A group of flat-Earthers decided to come around to Antarctica."
+        ],
+        "whoosh": 1,
+        "shards": [],
+        "crypts": []
+      },
+      "exp": {
+        "top": null,
+        "hold": 1081644,
+        "max": 0
+      },
+      "log": [
+        [
+          "+69*3",
+          "came up with ideas for food"
+        ],
+        [
+          "+69",
+          "came up with an idea for food"
+        ],
+        [
+          "+138",
+          "came up with ideas for food"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/what joke`"
+        ]
+      ],
+      "rec": {}
+    },
+    "730049520502702140": {
+      "info": {
+        "name": "Donster4",
+        "ver": 0.5,
+        "init": 1648669711,
+        "sync": 1648669711,
+        "view": 1
+      },
+      "vitals": {
+        "points": 55,
+        "rise": 55,
+        "drop": 0,
+        "live": 0,
+        "pres": 0
+      },
+      "pref": {
+        "dis": [],
+        "col": "2070c1",
+        "fac": null,
+        "dec": null,
+        "loc": null,
+        "uni": null
+      },
+      "stats": {
+        "sent": 19,
+        "react": 10,
+        "act": 3,
+        "/help": 0,
+        "/play": 0,
+        "/vita": 0,
+        "dir": 0,
+        "ctx": 0,
+        "err": 1,
+        "acc": 0
+      },
+      "games": {
+        "play": 1,
+        "win": 0,
+        "lose": 1,
+        "out": 0,
+        "walk": []
+      },
+      "data": {
+        "used": [
+          "/vita initialyze",
+          "/help all",
+          "/util idea"
+        ],
+        "played": [],
+        "ranks": [],
+        "cores": [],
+        "jokes": [],
+        "whoosh": 0,
+        "shards": [],
+        "crypts": []
+      },
+      "exp": {
+        "top": null,
+        "hold": 0,
+        "max": 0
+      },
+      "log": [
+        [
+          "+25",
+          "used `/util idea` for the first time"
+        ],
+        [
+          "+10",
+          "used `/help all` for the first time"
+        ],
+        [
+          "+20",
+          "used `/vita initialyze` for the first time"
+        ]
+      ],
+      "rec": {}
+    },
+    "602126364056748033": {
+      "info": {
+        "name": "btdocto",
+        "ver": 0.5,
+        "init": 1649103298,
+        "sync": 1649103298,
+        "view": 2
+      },
+      "vitals": {
+        "points": 666,
+        "rise": 666,
+        "drop": 0,
+        "live": 0,
+        "pres": 0
+      },
+      "pref": {
+        "dis": [],
+        "col": "2070c1",
+        "fac": null,
+        "dec": null,
+        "loc": null,
+        "uni": null
+      },
+      "stats": {
+        "sent": 124,
+        "react": 4,
+        "act": 12,
+        "/help": 0,
+        "/play": 0,
+        "/vita": 0,
+        "dir": 0,
+        "ctx": 0,
+        "err": 7,
+        "acc": 0
+      },
+      "games": {
+        "play": 6,
+        "win": 2,
+        "lose": 2,
+        "out": 2,
+        "walk": []
+      },
+      "data": {
+        "used": [
+          "/vita initialyze",
+          "/vita aid",
+          "/play guess num",
+          "/info about",
+          "/help info",
+          "/help start",
+          "None"
+        ],
+        "played": [
+          "num"
+        ],
+        "ranks": [],
+        "cores": [],
+        "jokes": [],
+        "whoosh": 0,
+        "shards": [],
+        "crypts": []
+      },
+      "exp": {
+        "top": null,
+        "hold": 0,
+        "max": 0
+      },
+      "log": [
+        [
+          "+69",
+          "came up with an idea for food"
+        ],
+        [
+          "+69",
+          "came up with an idea for food"
+        ],
+        [
+          "+69",
+          "came up with an idea for food"
+        ],
+        [
+          "+0",
+          "used `/play guess num`"
+        ],
+        [
+          "+20",
+          "used a command for the first time"
+        ],
+        [
+          "+10",
+          "used `/help start` for the first time"
+        ],
+        [
+          "+10",
+          "used `/help info` for the first time"
+        ],
+        [
+          "+0",
+          "used `/play guess num`"
+        ],
+        [
+          "+0",
+          "used `/play guess num`"
+        ],
+        [
+          "+110",
+          "Won Guess the Number in 17 tries"
+        ],
+        [
+          "+0",
+          "used `/play guess num`"
+        ],
+        [
+          "+110",
+          "Won Guess the Number in 10 tries"
+        ],
+        [
+          "+25",
+          "used `/info about` for the first time"
+        ],
+        [
+          "+0",
+          "used `/play guess num` for the first time"
+        ],
+        [
+          "+1",
+          "used `/vita aid`"
+        ],
+        [
+          "+15",
+          "used `/vita aid` for the first time"
+        ],
+        [
+          "+20",
+          "used `/vita initialyze` for the first time"
+        ]
+      ],
+      "rec": {}
+    },
+    "728585189256855565": {
+      "info": {
+        "name": "pufferfish101007",
+        "ver": 0.5,
+        "init": 1649848067,
+        "sync": 1649848067,
+        "view": 1
+      },
+      "vitals": {
+        "points": 1136,
+        "rise": 1136,
+        "drop": 0,
+        "live": 0,
+        "pres": 0
+      },
+      "pref": {
+        "dis": [],
+        "col": "2070c1",
+        "fac": null,
+        "dec": "Verena",
+        "loc": "Helada, Discenda",
+        "uni": null
+      },
+      "stats": {
+        "sent": 56,
+        "react": 3,
+        "act": 11,
+        "/help": 0,
+        "/play": 0,
+        "/vita": 0,
+        "dir": 0,
+        "ctx": 0,
+        "err": 1,
+        "acc": 0
+      },
+      "games": {
+        "play": 4,
+        "win": 4,
+        "lose": 4,
+        "out": 1,
+        "walk": []
+      },
+      "data": {
+        "used": [
+          "/vita initialyze",
+          "/what sup",
+          "/play guess num",
+          "/vita visualyze",
+          "/vitalyze loc",
+          "/vitalyze dec",
+          "/play guess emoji",
+          "/util cal"
+        ],
+        "played": [
+          "num",
+          "num",
+          "num",
+          "num"
+        ],
+        "ranks": [],
+        "cores": [],
+        "jokes": [],
+        "whoosh": 0,
+        "shards": [],
+        "crypts": []
+      },
+      "exp": {
+        "top": null,
+        "hold": 0,
+        "max": 0
+      },
+      "log": [
+        [
+          "+30",
+          "used `/util cal` for the first time"
+        ],
+        [
+          "+0",
+          "used `/play guess num`"
+        ],
+        [
+          "+142",
+          "Won Guess the Number in 14 tries"
+        ],
+        [
+          "+0",
+          "used `/play guess emoji` for the first time"
+        ],
+        [
+          "+0",
+          "used `/play guess num`"
+        ],
+        [
+          "+238",
+          "Won Guess the Number in 13 tries"
+        ],
+        [
+          "+20",
+          "used `/vitalyze dec` for the first time"
+        ],
+        [
+          "+20",
+          "used `/vitalyze loc` for the first time"
+        ],
+        [
+          "+10",
+          "used `/vita visualyze` for the first time"
+        ],
+        [
+          "+0",
+          "used `/play guess num`"
+        ],
+        [
+          "+283",
+          "Won Guess the Number in 6 tries"
+        ],
+        [
+          "+0",
+          "used `/play guess num` for the first time"
+        ],
+        [
+          "+230",
+          "Won Guess the Number in 6 tries"
+        ],
+        [
+          "+5",
+          "used `/what sup` for the first time"
+        ],
+        [
+          "+20",
+          "used `/vita initialyze` for the first time"
+        ]
+      ],
+      "rec": {}
+    }
+  }
+}
