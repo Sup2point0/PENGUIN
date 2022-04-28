@@ -1163,12 +1163,12 @@ async def visualyze(interaction, user: discord.Member = pool(description = "pick
         def __init__(self):
           super().__init__("View Stat", timeout = 120)
 
-          self.stat = ui.Select(
-            options = [
-              option(label = "vita points", )
-            ],
-            placeholder = "select a stat..."
-          )
+          class select(ui.Select):
+            def __init__(self):
+              super().__init__(placeholder = "select a stat...", min_values = 1, max_values = 1,
+                options = [slot(label = i[0], value = i[1], default = (i[1] == "points")) for i in atavist[0]])
+
+          self.add_item(select())
 
         async def callback(self, interaction):
           await interaction.send("Success!")

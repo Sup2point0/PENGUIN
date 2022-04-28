@@ -8,18 +8,18 @@
       "swim": true
     },
     "stats": {
-      "res": 950,
-      "stas": 1342,
-      "live": 2528158,
+      "res": 952,
+      "stas": 1348,
+      "live": 2559574,
       "pong": 1650912584,
-      "sent": 5344,
+      "sent": 5347,
       "react": 284,
       "view": 17
     },
     "calls": {
-      "mes": 7586,
+      "mes": 7594,
       "rec": 2103,
-      "act": 7362,
+      "act": 7373,
       "ping": 244,
       "help": 259,
       "util": 90,
@@ -128,7 +128,7 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1084,
+        "sent": 1086,
         "react": 6,
         "act": 266,
         "/help": 7,
@@ -373,7 +373,7 @@
         "uni": "ISAB"
       },
       "stats": {
-        "sent": 1062,
+        "sent": 1065,
         "react": 5,
         "act": 233,
         "/help": 0,
@@ -436,7 +436,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1109628,
+        "hold": 1141044,
         "max": 0
       },
       "log": [
