@@ -2,24 +2,24 @@
   "self": {
     "ver": {
       "sup": 6,
-      "sub": 27.2,
-      "up": 1650918293,
+      "sub": 27.8,
+      "up": 1651010380,
       "in": 2,
       "swim": true
     },
     "stats": {
-      "res": 937,
-      "stas": 1328,
-      "live": 2500174,
+      "res": 952,
+      "stas": 1348,
+      "live": 2559574,
       "pong": 1650912584,
-      "sent": 5303,
-      "react": 283,
+      "sent": 5347,
+      "react": 284,
       "view": 17
     },
     "calls": {
-      "mes": 7560,
-      "rec": 2081,
-      "act": 7280,
+      "mes": 7594,
+      "rec": 2103,
+      "act": 7373,
       "ping": 244,
       "help": 259,
       "util": 90,
@@ -29,7 +29,7 @@
       "vita": 54,
       "dir": 44,
       "ctx": 6,
-      "err": 388,
+      "err": 393,
       "acc": 6
     },
     "misc": {
@@ -113,8 +113,8 @@
         "view": 53
       },
       "vitals": {
-        "points": 3275,
-        "rise": 2944,
+        "points": 3458,
+        "rise": 3127,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -128,21 +128,21 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1064,
+        "sent": 1086,
         "react": 6,
-        "act": 251,
+        "act": 266,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
         "dir": 20,
         "ctx": 7,
-        "err": 129,
+        "err": 132,
         "acc": 8
       },
       "games": {
-        "play": 34,
-        "win": 21,
-        "lose": 12,
+        "play": 35,
+        "win": 22,
+        "lose": 13,
         "out": 3,
         "walk": []
       },
@@ -208,6 +208,66 @@
       "log": [
         [
           "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+160",
+          "Won Guess the Number in 16 tries"
+        ],
+        [
+          "+2",
+          "used `/help command`"
+        ],
+        [
+          "+1",
+          "used `/help start`"
+        ],
+        [
+          "+1",
+          "used `/help all`"
+        ],
+        [
+          "+1",
+          "used `/help all`"
+        ],
+        [
+          "+1",
+          "used `/help start`"
+        ],
+        [
+          "+1",
+          "used `/help all`"
+        ],
+        [
+          "+2",
           "used `/help command`"
         ],
         [
@@ -225,66 +285,6 @@
         [
           "+1",
           "used `/help start`"
-        ],
-        [
-          "+2",
-          "used `/help tip`"
-        ],
-        [
-          "+1",
-          "used `/help info`"
-        ],
-        [
-          "+20",
-          "used `/help command` for the first time"
-        ],
-        [
-          "+1",
-          "used `/help start`"
-        ],
-        [
-          "+1",
-          "used `/help start`"
-        ],
-        [
-          "+1",
-          "used `/help info`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+2",
-          "used `/info about`"
-        ],
-        [
-          "+1",
-          "used `/what joke`"
-        ],
-        [
-          "+1",
-          "used `/what joke`"
-        ],
-        [
-          "+1",
-          "used `/what joke`"
-        ],
-        [
-          "+1",
-          "used `/what joke`"
         ]
       ],
       "rec": {}
@@ -373,7 +373,7 @@
         "uni": "ISAB"
       },
       "stats": {
-        "sent": 1062,
+        "sent": 1065,
         "react": 5,
         "act": 233,
         "/help": 0,
@@ -436,7 +436,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1081644,
+        "hold": 1141044,
         "max": 0
       },
       "log": [
@@ -548,7 +548,7 @@
       },
       "stats": {
         "sent": 19,
-        "react": 10,
+        "react": 11,
         "act": 3,
         "/help": 0,
         "/play": 0,

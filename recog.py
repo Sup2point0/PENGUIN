@@ -60,9 +60,9 @@ class main:
     content = """
       *Not to be confused with the __Nation of Antarctica__.*
 
-      The Continent of Antarctica, classification *Terra Antarcticus*, generally referred to as simply 'Antarctica', is a massive polar landmass located at the very south of the Earth. The natural continent consists of extremely thick and ancient ice. It is one of the coldest and most barren places on Earth, although the inhabitance of humans has changed this.
+      The Continent of Antarctica, classification *Terra Antarcticus*, generally referred to as simply ‘Antarctica’, is a massive polar landmass located at the very south of the Earth. The natural continent consists of extremely thick and ancient ice. It is one of the coldest, driest and most barren places on Earth, although the inhabitance of humans has changed this.
 
-      The natural climate is incredibly harsh, with temperatures remaining well below freezing throughout almost the entire year. Snowfall is common, while rainfall is rare. Native wildlife includes phytoplankton, krill, seals, and of course Penguins. There are no naturally growing plants in Antarctica.
+      The natural climate is incredibly harsh, with temperatures remaining well below freezing throughout almost the entire year. For the most part, the natural continent is a polar desert. Snowfall is common, while rainfall is rare. Native wildlife includes phytoplankton, krill, seals, and of course Penguins. There are no naturally growing plants in Antarctica.
     """,
     other = "Nation of Antarctica",
     tags = "main, antarctica, continent, continents, natural, nato, home, start",
@@ -123,11 +123,11 @@ class time:
     title = "Modern Antarctican Calendar",
     caption = "Calendar System",
     content = """
-      The Modern Antarctican Calendar, sometimes abbreviated as *MAC*, otherwise simply known as the 'Antarctican calendar', is the official calendar system of the Nation of Antarctica. It functions similarly to the Gregorian calendar, but with entirely unique times and names.
+      The Modern Antarctican Calendar, sometimes abbreviated as *MAC*, generally referred to as the ‘Antarctican calendar’, is the official calendar system of the Nation of Antarctica. It functions similarly to the Gregorian calendar, but with entirely unique times and names.
 
-      The Modern Antarctican Calendar begins from 1 NE, which stands for 'New Era'. Each year spans 365 days, with 366 on leap years. The year is split into 10 'decants' (months), which alternate between 37 and 36 days long, respectively. Each year begins on Arteria Prime (April 2), the Antarctican New Year. Weeks ('septans') are 7 days long, so each decant has just over 5 septans. The 'decate' is the current day of the month.
+      The Modern Antarctican Calendar begins from 1 NE, which stands for ‘New Era’. Each year spans 365 days, with 366 on leap years. The year is split into 10 ‘decants’ (months), which alternate between 37 and 36 days long, respectively. Each year begins on Arteria Prime (April 2), the Antarctican New Year. ‘Septans’ (weeks) are 7 days long, so each decant has just over 5 septans. The ‘decate’ is the current day of the decant; the ‘septate’ is the current day of the septan. To ‘antect’ is to convert a date from the Gregorian calendar to the Antarctican calendar.
 
-      Dates are written in the format `decant|decate|year`, i.e. 2|20|200, which would represent Vitida 20, 200 NE. The order of the decant and decate does not vary.
+      The manner in which dates are written in does not vary. In their full form, dates are written in the format `‹septate› ‹decate› ‹decant› ‹year› ‹era›`, i.e. ‘Kynate 2 Arteria 200 NE’. The septate and era can both be omitted with the order shifting. However, when only including the decate and decant, the order is `‹decant› ‹decate›`, i.e. ‘Arteva 16’. The compact date, with only numbers, follows the format `‹decant› ‹decate› ‹year›`, i.e. ‘02|07|200’ (which would represent 7 Vitida 200 NE). The leading zeros can be omitted, but are often left for clarity.
     """,
     other = "Decant, Septan, Old Antarctican Calendar",
   )
@@ -138,7 +138,7 @@ class time:
     content = f"""
       {util.icons.sound} /'dɛkənt/
 
-      A decant is the equivalent of a month in the Antarctican calendar. In a year, there are 10 decants that alternate between 37 and 36 days long. Each decant has its own unique name, as follows:
+      The equivalent of a month in the Antarctican calendar. In a year, there are 10 decants that alternate between 37 and 36 days long. Each decant has its own name, as follows:
 
       Arteria
       Vitida
@@ -151,9 +151,25 @@ class time:
       Aeva
       Verena
 
-      Decants whose names begin with 'a' are 37 days long, and are known as *adecants*, while decants that start with 'v' are 36 days long, and are known as *vedecants*.
+      Decants whose names begin with ‘a’ are 37 days long, and are known as *adecants*, while decants that start with ‘v’ are 36 days long, and are known as *vedecants*.
+
+      2 decants (a pair consisting of an adecant and a vedecant) form a 73-day long ‘didecant’, which is a commonly used logistical measure of time. Functionally, it is useful in terms of length, and due to all didecants being equal in length.
     """,
     other = "Antarctican Calendar, Septan",
+  )
+
+  Decate = item(
+    title = "Decate",
+    caption = "Concept of Time",
+    content = f"""
+      {util.icons.sound} //
+
+      The day of the decant in the Antarctican calendar. Usually, it is expressed as an integer ranging from 1 to 37; however, there are a few exceptions for special days:
+
+      » The first day of a decant is called ‘prime’, i.e. ‘Verena Prime’.
+      » The last day of a decant is called ‘fine’, i.e. ‘Aeva Fine’.
+    """,
+    other = "Antarctican Calendar, Septate",
   )
 
   Septan = item(
@@ -162,9 +178,20 @@ class time:
     content = f"""
       {util.icons.sound} /'sɛptən/
 
-      The equivalent of a week in the Antarctican calendar. Functionally, it remains exactly the same as a week, being 7 days long.
+      The equivalent of a week in the Antarctican calendar. For the most part, it remains exactly the same as a week, being 7 days long; however, there is no such concept as weekdays and weekends – every day is a regular day.
     """,
     other = "Antarctican Calendar, Decant",
+  )
+
+  Septate = item(
+    title = "Septate",
+    caption = "Concept of Time",
+    content = f"""
+      {util.icons.sound} //
+
+      The day of the septan in the Antarctican calendar. Each septate has its own name, unique from the Gregorian calendar:
+    """,
+    other = "Antarctican Calendar, Decate",
   )
 
 
@@ -1078,10 +1105,13 @@ class hist:
         ),
         item.field("The South Lands",
           content = """
+            *Terra Australis Incognita*
           """,
         ),
         item.field("The South Pole",
           content = """
+            *Terra Australis*
+
             Heroic Age of Antarctic Exploration
           """,
         ),
@@ -1090,6 +1120,7 @@ class hist:
             Wilkes War
             Native Uprising
             » Battle of Amundsen Peak
+            » Antarctic Peninsula Catastrophe
             The First Fall
           """,
         ),
@@ -1104,6 +1135,7 @@ class hist:
             Iron Era
             Golden Era
             Silver Era
+            Ruby Era
             Platinum Era
             Ross Rebellion
             Downfall
