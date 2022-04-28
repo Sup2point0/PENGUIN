@@ -131,7 +131,11 @@ def update(id, source):
       await arti.avert(interaction)
       return
 
-    content = self.content if self.state else copy.deepcopy(self.content).clear_fields()
+    if self.state:
+      content = self.content
+    else:
+      content = copy.deepcopy(self.content)
+      content.clear_fields()
     button.emoji = uti.menu.tick
     await interaction.edit(embed = content, view = self)
     
@@ -185,7 +189,7 @@ async def help(interaction):
 @ help.subcommand(description = "all about me!")
 @ accumulate(1, 10, "/help info")
 async def info(interaction):
-  await interaction.send(embed = discord.Embed(title = "About Me", description = uti.avast(f"""
+  await interaction.send(embed = embed(title = "About Me", description = uti.avast(f"""
     Help and Info
     {uti.line}
     Hey, I’m PENGUIN! Your playful & energetic new general utility & information network bot, though you can just call me Penguin.
@@ -351,7 +355,7 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
 
     def content():
       cast = arti.afflict()
-      return (discord.Embed(title = "Weather Forecast", description = uti.avast(f"""
+      return (embed(title = "Weather Forecast", description = uti.avast(f"""
         {decate[0]} {decate[1]}
         {uti.line}
         Quite cold today, unsurprisingly.
@@ -450,7 +454,7 @@ async def idea(interaction, title, idea,
   ], required = False, default = "uncategoryzed"),
   anonymous = pool(description = "submit an anonymous idea", choices = {"enabled": "True"}, required = False, default = "False")
 ):
-  content = discord.Embed(title = title, description = idea,
+  content = embed(title = title, description = idea,
     colour = sup if (sup := int("0x" + arti.asseverate(interaction.user.id, "col"), 16)) != 0x2070c1 else uti.pink
   ).set_footer(text = category.capitalize())
   ###
@@ -490,7 +494,7 @@ async def view(interaction):
   index = [ls(i) for i in sorted(ancest) if lx(i)]
   idx = len(index)
   ###
-  content = discord.Embed(title = "Index", description = "\n".join(index), colour = uti.grey,
+  content = embed(title = "Index", description = "\n".join(index), colour = uti.grey,
     ).set_footer(text = f"{idx} item{'s' * (idx != 1)} {'found' * (idx == 0)}")
   await interaction.send(embed = content, ephemeral = True)
 
@@ -517,7 +521,7 @@ async def filter(interaction, sort = pool("by", description = "option to filter 
 
   idx = len(index)
   ###
-  content = discord.Embed(title = sort, description = "\n".join(index), colour = uti.grey
+  content = embed(title = sort, description = "\n".join(index), colour = uti.grey
     ).set_footer(text = f"{idx} item{'s' * (idx != 1)} {'found' * (idx == 0)}")
   await interaction.send(embed = content)
 
@@ -682,7 +686,7 @@ async def num(interaction, top: int = pool("range", description = "the secret nu
     points = math.log(top - math.e, 2) * 69 - random.randint(20, 42)
     log = []
   ###
-  content = (discord.Embed(title = "Guess the Number", description = uti.avast(f"""
+  content = (embed(title = "Guess the Number", description = uti.avast(f"""
     Random number between 1 and {top}
     {round(game.points)} points available
     {game.left} guesses remaining
@@ -809,7 +813,7 @@ async def emoji(interaction, difficulty = pool(description = "determines how har
     points = 100
     log = []
   ###
-  content = (discord.Embed(title = "Guess the Emoji", description = uti.avast(f"""
+  content = (embed(title = "Guess the Emoji", description = uti.avast(f"""
     {difficulty.capitalize()} difficulty
     {round(game.points)} points available
     {game.left} guesses remaining
@@ -1002,7 +1006,7 @@ def aliate(identity):
       self = arti.asseverate("self")
       update = uti.antect(datetime.datetime.fromtimestamp(arti.acquire(self, "up")))
 
-      content = discord.Embed(
+      content = embed(
         title = "PENGUIN",
         description = uti.avast(f"""
           Version {version}
@@ -1067,7 +1071,7 @@ def aliate(identity):
       decate = uti.antect(datetime.datetime.fromtimestamp(arti.acquire(user, "init")))
       syncate = uti.antect(datetime.datetime.fromtimestamp(arti.acquire(user, "sync")))
 
-      content = discord.Embed(
+      content = embed(
         title = arti.acquire(user, "name"),
         description = uti.avast(f"""
           {penguin.get_user(identity).mention}
@@ -1163,12 +1167,9 @@ async def visualyze(interaction, user: discord.Member = pool(description = "pick
         def __init__(self):
           super().__init__("View Stat", timeout = 120)
 
-          class select(ui.Select):
-            def __init__(self):
-              super().__init__(placeholder = "select a stat...", min_values = 1, max_values = 1,
-                options = [slot(label = i[0], value = i[1], default = (i[1] == "points")) for i in atavist[0]])
-
-          self.add_item(select())
+          self.add_item(ui.TextInput(label = "Test"))
+          
+          # options = [slot(label = k, value = i, default = (k == "points")) for k, i in res.atavist[0].items()])
 
         async def callback(self, interaction):
           await interaction.send("Success!")
@@ -1248,7 +1249,7 @@ async def rankings(interaction):
     reverse = True)
   }
   ###
-  content = discord.Embed(title = "Vitaline Rankings",
+  content = embed(title = "Vitaline Rankings",
     description = "\n".join([f"{penguin.get_user(int(item)).mention} » {lead[item]}" for item in lead]),
   colour = uti.pink)
 
@@ -1280,7 +1281,7 @@ async def vitals(interaction, user: discord.Member = pool(description = "pick wh
     user = interaction.user
   user = user.id
 
-  content = discord.Embed(title = f"{arti.asseverate(user, 'name')} – Log",
+  content = embed(title = f"{arti.asseverate(user, 'name')} – Log",
     description = "\n".join(f"`{event[0]}` » {event[1]}" for event in arti.asseverate(user, "log")),
   colour = int("0x" + arti.asseverate(user, "col"), 16))
   ###
@@ -1303,7 +1304,7 @@ async def synchronyze(interaction, details = pool(description = "view a full syn
   await interaction.response.defer()
 
   if details := eval(details):
-    content = (discord.Embed(title = "Vitaline Synchronyzation", description = (
+    content = (embed(title = "Vitaline Synchronyzation", description = (
       "All perfectly normal!"
       if arti.ananalyze(arti.asseverate(interaction.user.id)) == arti.ananalyze(arti.asseverate("struct"))
       else f"""
@@ -1510,7 +1511,7 @@ async def sup(ctx):
 # self help
 @ sup.command()
 async def help(ctx):
-  await ctx.channel.send(embed = discord.Embed(
+  await ctx.channel.send(embed = embed(
   title = "Secret Commands", description = uti.avast("""
     `~swim` » change status
     `~dinnertime` » time until next status change
@@ -1609,7 +1610,7 @@ async def avyze(ctx, user: discord.Member, points, *, reason = None):
     return
     
   arti.asseverate(user, "points", points, reason)
-  await ctx.send(embed = discord.Embed(title = arti.asseverate(user, "name"), 
+  await ctx.send(embed = embed(title = arti.asseverate(user, "name"), 
     description = uti.avast(f"{init} » {arti.asseverate(user, 'points')}", line = False),
     colour = 0x4090f1).set_footer(text = reason))
 
@@ -1642,7 +1643,7 @@ async def on_message(message):
       arti.advance("dir")
       
       decate = uti.antect()
-      await penguin.get_channel(933811521308459018).send(embed = (discord.Embed(
+      await penguin.get_channel(933811521308459018).send(embed = (embed(
         title = "", description = f"> {message.content}", colour = uti.grey)
         .set_author(name = message.author.display_name, icon_url = message.author.avatar.url)
         .set_footer(text = f"{decate[0]} {decate[1]}")))
