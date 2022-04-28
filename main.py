@@ -1,10 +1,14 @@
-version = 27.2
+version = 27.8
 
 
 import nextcord as discord
-from nextcord import SlashOption as option
+from nextcord import Embed as embed
+from nextcord import SlashOption as pool
+from nextcord import SelectOption as slot
 from nextcord import ButtonStyle as style
-from nextcord.ui import View, button
+
+from nextcord import ui
+from nextcord.ui import View, Modal, button
 from nextcord.ext import commands, tasks
 
 import random, math
@@ -105,7 +109,8 @@ def expand(id):
       self.state = False
       button.label = "Expand"
       button.emoji = uti.menu.down
-      content = copy.deepcopy(self.content).clear_fields()
+      content = copy.deepcopy(self.content)
+      content.clear_fields()
     else:
       self.state = True
       button.label = "Collapse"
@@ -195,11 +200,11 @@ async def info(interaction):
 # all commands
 @ help.subcommand(description = "see what I can do")
 @ accumulate(1, 10, "/help all")
-async def all(interaction, category: int = option(description = "pick a specific category of commands", choices = {
+async def all(interaction, category: int = pool(description = "pick a specific category of commands", choices = {
   "/help ...": 0, "/util ...": 1, "/index ...": 2, "/info ...": 3, "/play ...": 4, "/vita ...": 5,
 }, required = False)):
   content = uti.embed(avail.help.fields[category] if category else avail.help).set_footer(text = f"Updated as of v{version}")
-
+  
   class visual(View):
     def __init__(self):
       super().__init__(timeout = None)
@@ -208,7 +213,7 @@ async def all(interaction, category: int = option(description = "pick a specific
 
     expand = expand("sthpal")
 
-  await interaction.send(embed = content.clear_fields(), view = visual(), ephemeral = True)
+  await interaction.send(embed = content, view = None if category else visual(), ephemeral = True)
 
 
 # where to start
@@ -231,7 +236,7 @@ async def start(interaction):
 # specific command help
 @ help.subcommand(description = "detailed & extensive help with a specific command")
 @ accumulate(call = "/help command")
-async def command(interaction, command = option(description = "pick a command, or find out about a random command", required = False)):
+async def command(interaction, command = pool(description = "pick a command, or find out about a random command", required = False)):
   if command:
     query = command.lower()
     query = query[int(query[0] not in uti.alpha):]
@@ -319,7 +324,7 @@ async def util(interation):
 # weather forecast
 @ util.subcommand(description = adept.util.cast.desc.full)
 @ accumulate(4, 40, "/util cast")
-async def cast(interaction, detail = option(description = "pick a specific detail of the forecast", choices = [
+async def cast(interaction, detail = pool(description = "pick a specific detail of the forecast", choices = [
   "temperature", "pressure", "humidity", "visibility",
 ], required = False)):
   if (cast := arti.afflict()) == 404:
@@ -403,10 +408,10 @@ async def decate(interaction):
 # convert date
 @ util.subcommand(description = adept.util.antect.desc.full)
 @ accumulate(init = 25, call = "/util antect")
-async def antect(interaction, month: int = option(description = "month", choices = {
+async def antect(interaction, month: int = pool(description = "month", choices = {
   "January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6, "July": 7, "August": 8, "September": 9, "October": 10, "November": 11, "December": 12,
 }, required = True),
-day: int = option(description = "date", min_value = 1, max_value = 31, required = True)):
+day: int = pool(description = "date", min_value = 1, max_value = 31, required = True)):
   try:
     day = datetime.date(42, month, day)
   except:
@@ -440,10 +445,10 @@ async def cal(interaction):
 @ util.subcommand(description = adept.util.idea.desc.full)
 @ accumulate(3, 25, "/util idea")
 async def idea(interaction, title, idea,
-  category = option(description = "pick a category to help organyze ideas", choices = [
+  category = pool(description = "pick a category to help organyze ideas", choices = [
     "addition", "modification", "server", "rank", "lore", "Penguin", "game"
   ], required = False, default = "uncategoryzed"),
-  anonymous = option(description = "submit an anonymous idea", choices = {"enabled": "True"}, required = False, default = "False")
+  anonymous = pool(description = "submit an anonymous idea", choices = {"enabled": "True"}, required = False, default = "False")
 ):
   content = discord.Embed(title = title, description = idea,
     colour = sup if (sup := int("0x" + arti.asseverate(interaction.user.id, "col"), 16)) != 0x2070c1 else uti.pink
@@ -493,7 +498,7 @@ async def view(interaction):
 # filter index
 @ index.subcommand(description = adept.index.filter.desc.full)
 @ accumulate(3, 25, "/index filter")
-async def filter(interaction, sort = option("by", description = "option to filter the index by", choices = ["letter", "content", "category", "tag"], required = True), target = option("with", description = "the value to filter with", required = True)):
+async def filter(interaction, sort = pool("by", description = "option to filter the index by", choices = ["letter", "content", "category", "tag"], required = True), target = pool("with", description = "the value to filter with", required = True)):
   index = sorted(ancest)
 
   if sort == "letter":
@@ -542,7 +547,7 @@ async def fact(interaction):
 # about
 @ info.subcommand(description = adept.info.about.desc.full)
 @ accumulate(init = 25, call = "/info about")
-async def about(interaction, item = option(description = "pick an item to lookup, or find out about a random item", required = False)):
+async def about(interaction, item = pool(description = "pick an item to lookup, or find out about a random item", required = False)):
   if item:
     target = " ".join([i.capitalize() for i in item.split()])
     if not target in ancest:
@@ -582,7 +587,7 @@ async def fill_about(interaction, query):
 # acronym
 @ info.subcommand(description = adept.info.acro.desc.full)
 @ accumulate(call = "/info acro")
-async def acro(interaction, acronym = option(description = "pick an acronym to lookup, or find out what a random acronym stands for", required = False)):
+async def acro(interaction, acronym = pool(description = "pick an acronym to lookup, or find out what a random acronym stands for", required = False)):
   if not acronym:
     acronym = random.choice([i for i in ancest if lx(i) and i.isupper()])
 
@@ -612,7 +617,7 @@ async def fill_acro(interaction, acronym):
 # role info
 @ info.subcommand(description = adept.info.role.desc.full)
 @ accumulate(call = "/info role")
-async def role(interaction, role: discord.Role = option(description = "pick a role, or find out about a random role")):
+async def role(interaction, role: discord.Role = pool(description = "pick a role, or find out about a random role")):
   if role.name in ascept:
     content = uti.embed(ascept[role.name], colour = home.get_role(role.id).colour)
     await interaction.send(embed = content)
@@ -623,7 +628,7 @@ async def role(interaction, role: discord.Role = option(description = "pick a ro
 # game info
 @ info.subcommand(description = adept.info.game.desc.full)
 @ accumulate(init = 25, call = "/info game")
-async def game(interaction, game = option(description = "pick a game, or find out about a random game", choices = {absorb[i].title: i for i in absorb}, required = False)):
+async def game(interaction, game = pool(description = "pick a game, or find out about a random game", choices = {absorb[i].title: i for i in absorb}, required = False)):
   if not game:
     game = random.choice(list(absorb.keys()))
   content = uti.embed(absorb[game])
@@ -653,7 +658,7 @@ async def guess(interaction):
 # guess the number
 @ guess.subcommand(description = adept.play.guess.num.desc.full)
 @ accumulate(0, 0, "/play guess num")
-async def num(interaction, top: int = option("range", description = "the secret number will be between 1 and this number – the higher, the more points available", min_value = 4, required = True)):
+async def num(interaction, top: int = pool("range", description = "the secret number will be between 1 and this number – the higher, the more points available", min_value = 4, required = True)):
   if isinstance(interaction.channel, discord.Thread):
     await arti.avert(interaction, aspire.thread)
   elif isinstance(interaction.channel, discord.DMChannel):
@@ -780,7 +785,7 @@ async def num(interaction, top: int = option("range", description = "the secret 
 # guess the reaction
 @ guess.subcommand(description = adept.play.guess.emoji.desc.full)
 @ accumulate(0, 0, "/play guess emoji")
-async def emoji(interaction, difficulty = option(description = "determines how hard the emoji may be to find – the higher, the more points available!", choices = ["easy", "normal", "medium", "hard", "extreme", "pro", "impossible"], required = True)):
+async def emoji(interaction, difficulty = pool(description = "determines how hard the emoji may be to find – the higher, the more points available!", choices = ["easy", "normal", "medium", "hard", "extreme", "pro", "impossible"], required = True)):
   if isinstance(interaction.channel, discord.Thread):
     await arti.avert(interaction, aspire.thread)
   elif isinstance(interaction.channel, discord.DMChannel):
@@ -906,19 +911,19 @@ async def emoji(interaction, difficulty = option(description = "determines how h
 
 # # react
 # @ play.subcommand(description = adept.play.react.desc.full)
-# async def react(interaction, difficulty = option(description = "difficulty", choices = ["easy", "normal", "medium", "hard", "extreme", "pro", "impossible"], required = True), reactions: int = option(description = "the number of reactions you’ll need to react with – the higher, the more points up for grabs!", min_value = 2, max_value = 20, required = True)):
+# async def react(interaction, difficulty = pool(description = "difficulty", choices = ["easy", "normal", "medium", "hard", "extreme", "pro", "impossible"], required = True), reactions: int = pool(description = "the number of reactions you’ll need to react with – the higher, the more points up for grabs!", min_value = 2, max_value = 20, required = True)):
 #   raise NotImplementedError
 
 
 # # flick
 # @ play.subcommand(description = adept.play.flick.desc.full)
-# async def flick(interaction, difficulty = option(description = "determines how obscure the twist may be – the higher, the more points up for grabs!", choices = ["1", "2", "3"], required = True)):
+# async def flick(interaction, difficulty = pool(description = "determines how obscure the twist may be – the higher, the more points up for grabs!", choices = ["1", "2", "3"], required = True)):
 #   raise NotImplementedError
 
 
 # # rush
 # @ play.subcommand(description = adept.play.rush.desc.full)
-# async def rush(interaction, layers: int = option(description = "the number of layers of spoilered emojis – the higher, the more points up for grabs!", min_value = 2, max_value = 20, required = True)):
+# async def rush(interaction, layers: int = pool(description = "the number of layers of spoilered emojis – the higher, the more points up for grabs!", min_value = 2, max_value = 20, required = True)):
 #   raise NotImplementedError
 
 
@@ -931,7 +936,7 @@ async def emoji(interaction, difficulty = option(description = "determines how h
 # quack
 @ play.subcommand(description = adept.play.quack.desc.full)
 @ accumulate(0, 0, "/play quack")
-async def quack(interaction, letters: int = option(description = "the number of letters the word will contain – if you pick too high, you’ll win fewer points!", min_value = 3, max_value = 12, required = True)):
+async def quack(interaction, letters: int = pool(description = "the number of letters the word will contain – if you pick too high, you’ll win fewer points!", min_value = 3, max_value = 12, required = True)):
   raise NotImplementedError
   
   global current
@@ -957,31 +962,31 @@ async def quack(interaction, letters: int = option(description = "the number of 
 
 # # count
 # @ play.subcommand(description = adept.play.count.desc.full)
-# async def count(interaction, quirk: bool = option(description = "a random quirk to make counting harder – granting a point multiplier!", required = False)):
+# async def count(interaction, quirk: bool = pool(description = "a random quirk to make counting harder – granting a point multiplier!", required = False)):
 #   raise NotImplementedError
 
 
 # # shardhunter
 # @ play.subcommand(description = adept.play.hunt.desc.full)
-# async def hunt(interaction, depth = option(description = "how in-depth the game will develop – the greater, the more points rewarded upon completion!", choices = ["1", "2", "3"], required = True)):
+# async def hunt(interaction, depth = pool(description = "how in-depth the game will develop – the greater, the more points rewarded upon completion!", choices = ["1", "2", "3"], required = True)):
 #   raise NotImplementedError
 
 
 # # cryptcracker
 # @ play.subcommand(description = adept.play.crypt.desc.full)
-# async def crypt(interaction, depth = option(description = "how in-depth the game will develop – the greater, the more points rewarded upon completion!", choices = ["1", "2", "3"], required = True)):
+# async def crypt(interaction, depth = pool(description = "how in-depth the game will develop – the greater, the more points rewarded upon completion!", choices = ["1", "2", "3"], required = True)):
 #   raise NotImplementedError
 
 
 # # quest
 # @ play.subcommand(description = adept.play.quest.desc.full)
-# async def quest(interaction, depth = option(description = "coming soon", choices = ["1", "2", "3"], required = True)):
+# async def quest(interaction, depth = pool(description = "coming soon", choices = ["1", "2", "3"], required = True)):
 #   raise NotImplementedError
 
 
 # # excursion
 # @ play.subcommand(description = adept.play.excursion.desc.full)
-# async def excursion(interaction, depth = option(description = "coming soon", choices = ["1", "2", "3"], required = True)):
+# async def excursion(interaction, depth = pool(description = "coming soon", choices = ["1", "2", "3"], required = True)):
 #   raise NotImplementedError
 
 
@@ -1120,7 +1125,7 @@ def aliate(identity):
 # account help
 @ vita.subcommand(description = adept.vita.aid.desc.full)
 @ accumulate(1, 15, "/vita aid")
-async def aid(interaction, aspect = option(description = "pick a specific aspect to view help for", choices = {
+async def aid(interaction, aspect = pool(description = "pick a specific aspect to view help for", choices = {
   "Vitals": "vitals", "Personalyzation": "vitalyze", "Vitals Log": "log", "Synchronyzation": "sync",
 }, required = True)):
   content = uti.embed(getattr(attent, aspect))
@@ -1130,7 +1135,7 @@ async def aid(interaction, aspect = option(description = "pick a specific aspect
 # view account  
 @ vita.subcommand(description = adept.vita.visualyze.desc.full)
 @ accumulate(1, 10, "/vita visualyze")
-async def visualyze(interaction, user: discord.Member = option(description = "pick which user’s identity to view", required = False)):
+async def visualyze(interaction, user: discord.Member = pool(description = "pick which user’s identity to view", required = False)):
   if not user:
     user = interaction.user
   user = user.id
@@ -1149,18 +1154,32 @@ async def visualyze(interaction, user: discord.Member = option(description = "pi
       self.state = False
       self.content = content()
     
-    expand = expand("stvtvz")
-    update = update("dyvzsy", content)
+    expand = expand("cxvtvz")
+    update = update("cxvzsy", content)
   
-    @ button(label = "View Stat", style = style.blurple, custom_id = "stvzst")
+    @ button(label = "View Stat", style = style.blurple, custom_id = "cxvzst")
     async def stat(self, button, interaction):
-      pass
+      class active(Modal):
+        def __init__(self):
+          super().__init__("View Stat", timeout = 120)
+
+          self.stat = ui.Select(
+            options = [
+              option(label = "vita points", )
+            ],
+            placeholder = "select a stat..."
+          )
+
+        async def callback(self, interaction):
+          await interaction.send("Success!")
+
+      await interaction.response.send_modal(active())
 
   if interaction is None:
     return visual()
 
   try:
-    await interaction.send(embed = content().clear_fields(), view = visual())
+    await interaction.send(embed = content(), view = visual())
   except:
     await arti.avert(interaction, "loading the identity!")
     raise
@@ -1175,25 +1194,23 @@ async def ctx_visualyze(interaction, member):
   else:
     user = member.id
 
-  active = lambda: aliate(user)
-  content = active()
-  content.clear_fields()
+  content = lambda: aliate(user)
 
   class visual(View):
     def __init__(self):
       super().__init__(timeout = None)
       self.state = False
-      self.content = active()
+      self.content = content()
     
-    expand = expand
-    update = update(active)
+    expand = expand("stvtvz")
+    update = update("dyvzsy", content)
   
     @ button(label = "View Stat", style = style.blurple, custom_id = "stvzst")
     async def stat(self, button, interaction):
       pass
 
   try:
-    await interaction.send(embed = content, view = visual())
+    await interaction.send(embed = content(), view = visual())
   except:
     await arti.avert(interaction, "loading the identity!")
     raise
@@ -1203,7 +1220,7 @@ async def ctx_visualyze(interaction, member):
 # view stat
 @ vita.subcommand(description = adept.vita.astatyze.desc.full)
 @ accumulate(1, 10, "/vita astatyze")
-async def astatyze(interaction, user: discord.Member = option(required = False), stat = option(description = "pick a specific stat to view", choices = res.atavist[0], required = False)):
+async def astatyze(interaction, user: discord.Member = pool(required = False), stat = pool(description = "pick a specific stat to view", choices = res.atavist[0], required = False)):
   if not user:
     user = interaction.user
   if not stat:
@@ -1241,7 +1258,7 @@ async def rankings(interaction):
 # account creation
 @ vita.subcommand(description = adept.vita.initialyze.desc.full)
 @ accumulate(call = "/vita initialyze")
-async def initialyze(interaction, defaults: bool = option(required = False)):
+async def initialyze(interaction, defaults: bool = pool(required = False)):
   user = interaction.user.id
   if arti.asseverate(user):
     await arti.avert(interaction, attest.exist)
@@ -1258,7 +1275,7 @@ async def initialyze(interaction, defaults: bool = option(required = False)):
 
 # vitals log
 @ vita.subcommand(description = adept.vita.vitals.desc.full)
-async def vitals(interaction, user: discord.Member = option(description = "pick which user’s vitals log to view", required = False)):
+async def vitals(interaction, user: discord.Member = pool(description = "pick which user’s vitals log to view", required = False)):
   if not user:
     user = interaction.user
   user = user.id
@@ -1275,14 +1292,14 @@ async def vitals(interaction, user: discord.Member = option(description = "pick 
 # claim rewards
 @ vita.subcommand(description = adept.vita.claim.desc.full)
 @ accumulate(0, 0, "/vita claim")
-async def claim(interaction, reward = option(required = False)):
+async def claim(interaction, reward = pool(required = False)):
   raise NotImplementedError
 
 
 # calibrate account
 @ vita.subcommand(description = adept.vita.synchronyze.desc.full)
 @ accumulate(1, 25, "/vita synchronyze")
-async def synchronyze(interaction, details = option(description = "view a full synchronyzation report?", choices = {"enabled": "True"}, required = False, default = "False")):
+async def synchronyze(interaction, details = pool(description = "view a full synchronyzation report?", choices = {"enabled": "True"}, required = False, default = "False")):
   await interaction.response.defer()
 
   if details := eval(details):
@@ -1315,7 +1332,7 @@ async def acc(interaction):
 # customize colour
 @ vitalyze.subcommand(description = "change identity accent colour")
 @ accumulate(call = "/vitalyze col", req = 100)
-async def col(interaction, colour = option(description = "pick a hex colour", required = True)):
+async def col(interaction, colour = pool(description = "pick a hex colour", required = True)):
   if not arti.hexyze(colour, hex):
     await arti.avert(interaction, attest.colour)
     return
@@ -1331,7 +1348,7 @@ async def col(interaction, colour = option(description = "pick a hex colour", re
 # customize decant
 @ vitalyze.subcommand(description = "change identifying decant")
 @ accumulate(call = "/vitalyze dec", req = 20)
-async def dec(interaction, decant = option(description = "pick a decant", choices = [i[0] for i in uti.decates], required = True)):
+async def dec(interaction, decant = pool(description = "pick a decant", choices = [i[0] for i in uti.decates], required = True)):
   try:
     arti.asseverate(interaction.user.id, "dec", decant, code = os.getenv("flipper"))
   except:
@@ -1343,7 +1360,7 @@ async def dec(interaction, decant = option(description = "pick a decant", choice
 # customize location
 @ vitalyze.subcommand(description = "change identifying location")
 @ accumulate(call = "/vitalyze loc", req = 40)
-async def loc(interaction, location = option(description = "pick a location within Antarctica", required = True)):
+async def loc(interaction, location = pool(description = "pick a location within Antarctica", required = True)):
   location = location.lower()
   allocale = {i.lower(): item for i, item in res.allocale[0].items()}
   if location in allocale:
@@ -1378,7 +1395,7 @@ async def fill_loc(interaction, location):
 # customize university
 @ vitalyze.subcommand(description = "change identifying university")
 @ accumulate(call = "/vitalyze uni", req = 60)
-async def uni(interaction, university = option(description = "pick a university of Antarctica", choices = res.aricept, required = True)):
+async def uni(interaction, university = pool(description = "pick a university of Antarctica", choices = res.aricept, required = True)):
   try:
     arti.asseverate(interaction.user.id, "uni", university, code = os.getenv("flipper"))
   except:
