@@ -162,6 +162,13 @@ async def on_ready():
   arti.advance("res")
   print("Penguin's woken up!")
 
+  # act = lambda view: self.add_item(view)
+  # act(await stuff(None))
+  # act(await start(None))
+  # act(await command(None))
+  # act(await cast(None))
+  # act(await cal(None))
+
 
 # ping
 @ penguin.command()
@@ -189,7 +196,7 @@ async def help(interaction):
 @ help.subcommand(description = "all about me!")
 @ accumulate(1, 10, "/help info")
 async def info(interaction):
-  await interaction.send(embed = embed(title = "About Me", description = uti.avast(f"""
+  await interaction.send(ephemeral = True, embed = embed(title = "About Me", description = uti.avast(f"""
     Help and Info
     {uti.line}
     Hey, I’m PENGUIN! Your playful & energetic new general utility & information network bot, though you can just call me Penguin.
@@ -197,14 +204,13 @@ async def info(interaction):
     I can tell you all about Antarctica, play games, and so much more!
 
     Need help getting started? You can use `/help start` to see what things to try out first, or `/help all` to find out what I can do!
-  """, line = 0), colour = uti.pink)
-  .set_footer(text = f"Updated as of v{version}"), ephemeral = True)
+  """, line = 0), colour = uti.pink).set_footer(text = f"Updated as of v{version}"))
   
 
 # all commands
-@ help.subcommand(description = "see what I can do")
+@ help.subcommand("all", description = "see what I can do")
 @ accumulate(1, 10, "/help all")
-async def all(interaction, category: int = pool(description = "pick a specific category of commands", choices = {
+async def stuff(interaction, category: int = pool(description = "pick a specific category of commands", choices = {
   "/help ...": 0, "/util ...": 1, "/index ...": 2, "/info ...": 3, "/play ...": 4, "/vita ...": 5,
 }, required = False)):
   content = uti.embed(avail.help.fields[category] if category else avail.help).set_footer(text = f"Updated as of v{version}")
@@ -215,7 +221,7 @@ async def all(interaction, category: int = pool(description = "pick a specific c
       self.state = False
       self.content = content
 
-    expand = expand("sthpal")
+    expand = expand("stxp.hpal")
 
   if interaction is None: return visual()
   await interaction.send(embed = content, view = None if category else visual(), ephemeral = True)
@@ -233,7 +239,7 @@ async def start(interaction):
       self.state = False
       self.content = content
 
-    expand = expand("sthpst")
+    expand = expand("stxp.hpst")
 
   if interaction is None: return visual()
   await interaction.send(embed = content, view = visual(), ephemeral = True)
@@ -263,7 +269,7 @@ async def command(interaction, command = pool(description = "pick a command, or 
       self.state = False
       self.content = content
 
-    expand = expand("sthpcd")
+    expand = expand("stxp.hpcd")
 
   if interaction is None: return visual()
   await interaction.send(embed = content, view = visual(), ephemeral = True)
@@ -391,14 +397,15 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
         super().__init__(timeout = None)
         self.state = False
 
-      expand = expand
-      update = update(content)
+      expand = expand("stxp.utcs")
+      update = update("dysy.utcs", content)
 
       @ button(label = "View Detail", style = style.blurple, custom_id = "stcsdt")
       async def stat(self, button, interaction):
         pass
 
-    await interaction.send(embed = content().clear_fields(), view = visual())
+    if interaction is None: return visual()
+    await interaction.send(embed = content(), view = visual())
 
   except:
     await arti.avert(interaction, "with the embed")
@@ -432,20 +439,27 @@ day: int = pool(description = "date", min_value = 1, max_value = 31, required = 
 @ util.subcommand(description = adept.util.cal.desc.full)
 @ accumulate(3, 30, "/util cal")
 async def cal(interaction):
-  events = sorted(arti.attain(res.advent), key = lambda event: event.decate)
-  events = [i for i in events if i.decate >= uti.now().tm_yday] + [i for i in events if i.decate < uti.now().tm_yday]
+  def content():
+    events = sorted(arti.attain(res.advent), key = lambda event: event.decate)
+    events = [i for i in events if i.decate >= uti.now().tm_yday] + [i for i in events if i.decate < uti.now().tm_yday]
 
-  content = uti.embed(recog.item(title = "Events Calendar",
-    content = "",
-    fields = [
+    return uti.embed(recog.item(title = "Events Calendar", content = "", fields = [
       recog.item.field(event.title, uti.avast(f"""
         {event.caption}
         {uti.line}
         {event.content}
       """, line = 0)) for event in events
     ])).set_footer(text = f"Showing {len(events)} events")
+
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+
+    expand = expand("stxp.utcl")
+    update = update("stsy.utcl", content)
   
-  await interaction.send(embed = content)
+  if interaction is None: return visual()
+  await interaction.send(embed = content(), view = visual())
 
 
 # suggestion
