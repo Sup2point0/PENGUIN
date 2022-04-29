@@ -6,15 +6,16 @@ from response import attest, aspire
 
 
 async def avert(interaction, source = None):
+  avert = lambda source: interaction.send(accentuate(source), ephemeral = True)
   if isinstance(source, str):
-    await interaction.send(f"{random.choice(attest.generic)} {source}", ephemeral = True)
+    await avert(f"{random.choice(attest.generic)} {source}")
   elif source:
-    await interaction.send(random.choice(source), ephemeral = True)
+    await avert(random.choice(source))
   else:
-    await interaction.send(accentuate("Something went wrong"), ephemeral = True)
+    await avert("Something went wrong")
 
 def accentuate(source):
-  return source + random.choice([".", "!"]) * (source.endswith("?") or source.endswith("..."))
+  return source + random.choice([".", "!"]) * (not (source.endswith("?") or source.endswith("...")))
 
 def accord(source, content, absolute = None):
   if absolute:

@@ -8,18 +8,18 @@
       "swim": true
     },
     "stats": {
-      "res": 958,
-      "stas": 1354,
-      "live": 2560714,
+      "res": 963,
+      "stas": 1359,
+      "live": 2580274,
       "pong": 1650912584,
-      "sent": 5355,
-      "react": 284,
+      "sent": 5367,
+      "react": 285,
       "view": 17
     },
     "calls": {
-      "mes": 7595,
-      "rec": 2110,
-      "act": 7389,
+      "mes": 7602,
+      "rec": 2113,
+      "act": 7411,
       "ping": 244,
       "help": 259,
       "util": 90,
@@ -113,8 +113,8 @@
         "view": 60
       },
       "vitals": {
-        "points": 3465,
-        "rise": 3134,
+        "points": 3487,
+        "rise": 3156,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -130,7 +130,7 @@
       "stats": {
         "sent": 1087,
         "react": 6,
-        "act": 273,
+        "act": 275,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
@@ -179,7 +179,8 @@
           "/util cal",
           "None",
           "/util idea",
-          "/help command"
+          "/help command",
+          "None"
         ],
         "played": [
           "num"
@@ -206,6 +207,14 @@
         "max": 0
       },
       "log": [
+        [
+          "+20",
+          "used a command for the first time"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
         [
           "+1",
           "used `/vita visualyze`"
@@ -277,14 +286,6 @@
         [
           "+1",
           "used `/help start`"
-        ],
-        [
-          "+1",
-          "used `/help all`"
-        ],
-        [
-          "+1",
-          "used `/help all`"
         ]
       ],
       "rec": {}
@@ -436,7 +437,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1142184,
+        "hold": 1161744,
         "max": 0
       },
       "log": [
@@ -609,8 +610,8 @@
         "view": 2
       },
       "vitals": {
-        "points": 666,
-        "rise": 666,
+        "points": 781,
+        "rise": 781,
         "drop": 0,
         "live": 0,
         "pres": 0
@@ -624,9 +625,9 @@
         "uni": null
       },
       "stats": {
-        "sent": 124,
+        "sent": 130,
         "react": 4,
-        "act": 12,
+        "act": 13,
         "/help": 0,
         "/play": 0,
         "/vita": 0,
@@ -636,9 +637,9 @@
         "acc": 0
       },
       "games": {
-        "play": 6,
-        "win": 2,
-        "lose": 2,
+        "play": 7,
+        "win": 3,
+        "lose": 3,
         "out": 2,
         "walk": []
       },
@@ -668,6 +669,10 @@
         "max": 0
       },
       "log": [
+        [
+          "+115",
+          "Won Guess the Number in 6 tries"
+        ],
         [
           "+69",
           "came up with an idea for food"
