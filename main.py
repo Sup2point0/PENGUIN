@@ -217,6 +217,7 @@ async def all(interaction, category: int = pool(description = "pick a specific c
 
     expand = expand("sthpal")
 
+  if interaction is None: return visual()
   await interaction.send(embed = content, view = None if category else visual(), ephemeral = True)
 
 
@@ -234,6 +235,7 @@ async def start(interaction):
 
     expand = expand("sthpst")
 
+  if interaction is None: return visual()
   await interaction.send(embed = content, view = visual(), ephemeral = True)
 
 
@@ -263,6 +265,7 @@ async def command(interaction, command = pool(description = "pick a command, or 
 
     expand = expand("sthpcd")
 
+  if interaction is None: return visual()
   await interaction.send(embed = content, view = visual(), ephemeral = True)
 
 # autofill
@@ -663,6 +666,21 @@ async def guess(interaction):
 @ guess.subcommand(description = adept.play.guess.num.desc.full)
 @ accumulate(0, 0, "/play guess num")
 async def num(interaction, top: int = pool("range", description = "the secret number will be between 1 and this number – the higher, the more points available", min_value = 4, required = True)):
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+      self.start()
+
+    @ button(label = "End", style = style.red, custom_id = "acplgn")
+    async def end(self, button, interaction):
+      self.label = "Ended"
+      self.style = style.grey
+      await interaction.edit(view = self)
+      self.stop()
+
+  if interaction is None:
+    return visual()
+
   if isinstance(interaction.channel, discord.Thread):
     await arti.avert(interaction, aspire.thread)
   elif isinstance(interaction.channel, discord.DMChannel):
@@ -1161,20 +1179,9 @@ async def visualyze(interaction, user: discord.Member = pool(description = "pick
     expand = expand("cxvtvz")
     update = update("cxvzsy", content)
   
-    @ button(label = "View Stat", style = style.blurple, custom_id = "cxvzst")
+    @ button(label = "View Stat", style = style.blurple, custom_id = "stvzst")
     async def stat(self, button, interaction):
-      class active(Modal):
-        def __init__(self):
-          super().__init__("View Stat", timeout = 120)
-
-          self.add_item(ui.TextInput(label = "Test"))
-          
-          # options = [slot(label = k, value = i, default = (k == "points")) for k, i in res.atavist[0].items()])
-
-        async def callback(self, interaction):
-          await interaction.send("Success!")
-
-      await interaction.response.send_modal(active())
+      await interaction.send("You can't do that yet!")
 
   if interaction is None:
     return visual()
@@ -1185,6 +1192,7 @@ async def visualyze(interaction, user: discord.Member = pool(description = "pick
     await arti.avert(interaction, "loading the identity!")
     raise
   arti.asseverate(user, "view", "+1")
+
 
 # view account (context)
 @ penguin.user_command("Vitaline Identity", guild_ids = [uti.home])
@@ -1206,7 +1214,7 @@ async def ctx_visualyze(interaction, member):
     expand = expand("stvtvz")
     update = update("dyvzsy", content)
   
-    @ button(label = "View Stat", style = style.blurple, custom_id = "stvzst")
+    @ button(label = "View Stat", style = style.blurple, custom_id = "cxvzst")
     async def stat(self, button, interaction):
       pass
 
