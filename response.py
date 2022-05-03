@@ -6,29 +6,29 @@ class attest:
   ]
 
   index = [
-    "Nothing found.",
-    "No items found.",
-    "No item ‘{}’ found.",
-    "Didn’t find anything.",
+    "Nothing found",
+    "No items found",
+    "No item ‘{}’ found",
+    "Didn’t find anything",
     "Didn’t find anything...",
     "Didn’t find anything?",
     "Did you make a typo?",
   ]
 
   command = [
-    "No command found.",
+    "No command found",
     "Didn’t find that command...",
-    "Don’t think that command exists...",
     "Don’t think that command exists!",
+    "Don’t think that command exists...",
     "Are you sure I can do that?",
     "Uh, I don’t think I can do that...",
     "Wait, I can do that?",
   ]
 
   restrict = [
-    "Access denied.",
-    "Unauthouryzed access.",
-    "You can’t use that command.",
+    "Access denied",
+    "Unauthouryzed access",
+    "You can’t use that command",
     "Hold up, you aren’t allowed to use that command!",
   ]
 
@@ -46,11 +46,8 @@ class attest:
 
 
   init = [
-    "Initialyzation failed.",
-  "Initialyzation failed!",
-  "Identity initialyzation failed.",
-  "Identity initialyzation failed!",
-  "Something went wrong initialyzing your identity!",
+    "Initialyzation failed",
+    "Identity initialyzation failed",
   ]
   
   exist = [
@@ -58,34 +55,29 @@ class attest:
     "Hey, you already have an identity!",
     "Hold up, you already have an identity!",
     "Your identity already exists!",
-    "You’ve already got an identity!",
+    "You’ve already got an identity",
   ]
 
   identity = [
-    "Identity not found.",
-    "Identity not found!",
-    "Didn’t find an identity!",
-    "Couldn’t find anyone.",
-    "Couldn’t find anyone!",
-    "Couldn’t find an identity!",
+    "Identity not found",
+    "Didn’t find an identity",
+    "Couldn’t find anyone",
+    "Couldn’t find an identity",
     "Couldn’t find that user’s identity. Maybe they don’t have one?",
     "That identity doesn’t exist!",
   ]
 
 
   colour = [
-    "Invalid colour.",
-    "Invalid colour!",
-    "Invalid colour provided.",
-    "Invalid colour provided!",
-    "Not a valid colour!",
-    "Just provide the raw colour code, no need to add `#` or `0x`!",
+    "Invalid colour",
+    "Invalid colour provided",
+    "Not a valid colour",
+    "Just provide the raw colour code, no need to add `#` or `0x`",
   ]
 
   date = [
-    "Invalid date.",
-    "Invalid date!",
-    "Day out of range of month.",
+    "Invalid date",
+    "Day out of range of month",
   ]
 
   locale = [
@@ -116,9 +108,8 @@ class aspire:
   ]
 
   thread = [
-    "You can't play a game within a thread.",
+    "You can't play a game within a thread",
     "I can’t initialyze a game within a thread",
-    "You can’t play a game within a thread",
   ]
 
   direct = [
@@ -137,7 +128,9 @@ class aspire:
 
   right = [
     "Correct!",
+    "Yeah!",
     "Yep!",
+    "Nice!",
     "Alright!",
     "That’s it!",
     "You got it!",
@@ -155,10 +148,9 @@ class aspire:
   ]
 
   time = [
-    "Timed out!",
-    "Game timed out!",
-    "Ran out of time.",
-    "Ran out of time!",
+    "Timed out",
+    "Game timed out",
+    "Ran out of time",
     "Game expired!",
   ]
 
@@ -170,14 +162,13 @@ class aspire:
   ]
 
   number = [[
-    "Invalid number.",
-    "Invalid number!",
-    "That’s not a number.",
-    "That’s not a number!",
+    "Invalid number",
+    "That’s not a number",
   ], [
-    "Needs to be an integer.",
-    "Guess must be an integer.",
-    "Guess has to be an integer.",
+    "Needs to be an integer",
+    "Guess must be an integer",
+    "Guess has to be an integer",
+    "We’re only playing with integers here!"
   ]]
 
   emoji = [[

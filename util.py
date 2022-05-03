@@ -50,7 +50,7 @@ class menu:
 
 
 def avast(content, *, line = 1):
-  return dedent(content).strip() + u"\n\u200b" * line
+  return dedent(content).strip() + "\n\u200b" * line
 
 def embed(source, fields = True, colour = True, struct = False):
   content = Embed(

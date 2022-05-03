@@ -1,4 +1,4 @@
-version = 27.13
+version = 27.15
 
 
 import nextcord as discord
@@ -110,7 +110,10 @@ def expand(id):
       button.label = "Expand"
       button.emoji = uti.menu.down
       content = copy.deepcopy(self.content)
-      content.clear_fields()
+      if len(self.content.description) < 4:
+        content.fields = content.fields[0]
+      else:
+        content.clear_fields()
     else:
       self.state = True
       button.label = "Collapse"
@@ -510,10 +513,16 @@ lx = lambda item: ancest[item].index
 async def view(interaction):
   index = [ls(i) for i in sorted(ancest) if lx(i)]
   idx = len(index)
-  ###
-  content = embed(title = "Index", description = "\n".join(index), colour = uti.grey,
-    ).set_footer(text = f"{idx} item{'s' * (idx != 1)} {'found' * (idx == 0)}")
-  await interaction.send(embed = content, ephemeral = True)
+
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+
+    expand = expand("stxp.idxv")
+  
+  if interaction is None: return visual()
+  await interaction.send(embed = embed(title = "Index", description = "\n".join(index), colour = uti.grey
+    ).set_footer(text = f"{idx} item{'s' * (idx != 1)} {'found' * (idx == 0)}"), view = visual())
 
 
 # filter index
@@ -536,19 +545,31 @@ async def filter(interaction, sort = pool("by", description = "option to filter 
     index = [ls(i) for i in index if lx(i) and (target.upper() in ancest[i].tags.upper() if hasattr(ancest[i], "tags") else False)]
     sort = f"Tagged – ‘{target}’"
 
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+
+    expand = expand("stxp.dxft")
+
+  if interaction is None: return visual()
+  
   idx = len(index)
-  ###
-  content = embed(title = sort, description = "\n".join(index), colour = uti.grey
-    ).set_footer(text = f"{idx} item{'s' * (idx != 1)} {'found' * (idx == 0)}")
-  await interaction.send(embed = content)
+  await interaction.send(embed = embed(title = sort, description = "\n".join(index), colour = uti.grey
+    ).set_footer(text = f"{idx} item{'s' * (idx != 1)} {'found' * (idx == 0)}"), view = visual())
 
 
 # games index
 @ index.subcommand(description = adept.index.games.desc.full)
 @ accumulate(call = "/index games")
 async def games(interaction):
-  content = uti.embed(avail.games)
-  await interaction.send(embed = content)
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+
+    expand = expand("stxp.dxpl")
+
+  if interaction is None: return visual()
+  await interaction.send(embed = uti.embed(avail.games), view = visual())
 
 
 
@@ -1164,8 +1185,14 @@ def aliate(identity):
 async def aid(interaction, aspect = pool(description = "pick a specific aspect to view help for", choices = {
   "Vitals": "vitals", "Personalyzation": "vitalyze", "Vitals Log": "log", "Synchronyzation": "sync",
 }, required = True)):
-  content = uti.embed(getattr(attent, aspect))
-  await interaction.send(embed = content, ephemeral = True)
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+
+    expand = expand("stxp.vthp")
+
+  if interaction is None: return visual()
+  await interaction.send(embed = uti.embed(getattr(attent, aspect)), view = visual(), ephemeral = True)
 
 
 # view account  

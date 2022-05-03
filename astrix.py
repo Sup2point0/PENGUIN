@@ -1,5 +1,4 @@
-import random
-import math
+import random, math
 from response import aspire
 
 
@@ -9,13 +8,13 @@ def prime(num):
   elif num % 2 == 0 or num == 1:
     return False
   else:
-    return not any(num % i == 0 for i in range(3, 1 + int(num ** 0.5), 2))
+    return all(num % i != 0 for i in range(3, 1 + int(num ** 0.5), 2))
 
 def accuryze(guess, right, *, top, guesses = None):
   lx = lambda el = False: random.choice([".", "!"] + ["..."] * el)
   right = int(right)
   dist = 20 * (right - int(guess)) / top
-  dist = round(math.copysign(abs(dist) + math.sqrt(top) / 2, dist))
+  dist = round(math.copysign(abs(dist) + math.log(top, 10), dist))
 
   sup = random.randint(1, 200)
   if sup >= 111:

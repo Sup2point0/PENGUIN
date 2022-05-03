@@ -2,24 +2,24 @@
   "self": {
     "ver": {
       "sup": 6,
-      "sub": 27.8,
-      "up": 1651010380,
+      "sub": 27.15,
+      "up": 1651417557,
       "in": 2,
       "swim": true
     },
     "stats": {
-      "res": 963,
-      "stas": 1359,
-      "live": 2580274,
+      "res": 979,
+      "stas": 1381,
+      "live": 2685946,
       "pong": 1650912584,
-      "sent": 5367,
+      "sent": 5372,
       "react": 285,
       "view": 17
     },
     "calls": {
-      "mes": 7602,
-      "rec": 2113,
-      "act": 7411,
+      "mes": 7614,
+      "rec": 2117,
+      "act": 7431,
       "ping": 244,
       "help": 259,
       "util": 90,
@@ -29,7 +29,7 @@
       "vita": 54,
       "dir": 44,
       "ctx": 6,
-      "err": 393,
+      "err": 394,
       "acc": 6
     },
     "misc": {
@@ -113,8 +113,8 @@
         "view": 60
       },
       "vitals": {
-        "points": 3487,
-        "rise": 3156,
+        "points": 3490,
+        "rise": 3159,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -128,15 +128,15 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1087,
+        "sent": 1089,
         "react": 6,
-        "act": 275,
+        "act": 278,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
         "dir": 20,
         "ctx": 7,
-        "err": 132,
+        "err": 133,
         "acc": 8
       },
       "games": {
@@ -208,6 +208,18 @@
       },
       "log": [
         [
+          "+1",
+          "used `/vita aid`"
+        ],
+        [
+          "+1",
+          "used `/what sup`"
+        ],
+        [
+          "+1",
+          "used `/help start`"
+        ],
+        [
           "+20",
           "used a command for the first time"
         ],
@@ -274,18 +286,6 @@
         [
           "+2",
           "used `/info about`"
-        ],
-        [
-          "+160",
-          "Won Guess the Number in 16 tries"
-        ],
-        [
-          "+2",
-          "used `/help command`"
-        ],
-        [
-          "+1",
-          "used `/help start`"
         ]
       ],
       "rec": {}
@@ -374,7 +374,7 @@
         "uni": "ISAB"
       },
       "stats": {
-        "sent": 1065,
+        "sent": 1066,
         "react": 5,
         "act": 233,
         "/help": 0,
@@ -437,7 +437,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1161744,
+        "hold": 1267404,
         "max": 0
       },
       "log": [
@@ -626,7 +626,7 @@
       },
       "stats": {
         "sent": 130,
-        "react": 4,
+        "react": 5,
         "act": 13,
         "/help": 0,
         "/play": 0,

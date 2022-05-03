@@ -15,7 +15,10 @@ async def avert(interaction, source = None):
     await avert("Something went wrong")
 
 def accentuate(source):
-  return source + random.choice([".", "!"]) * (not (source.endswith("?") or source.endswith("...")))
+  if source[-1] in [".", "!", "?", "..."]:
+    return source
+  else:
+    return source + random.choice([".", "!"])
 
 def accord(source, content, absolute = None):
   if absolute:
