@@ -1100,9 +1100,9 @@ def aliate(identity):
         {arti.acquire(self, "played")} `/play` command used
         {arti.acquire(self, "vita")} `/vita` commands used
 
-        {arti.acquire(self, "play")} games played
-        {arti.acquire(self, "win")} games won
-        {arti.acquire(self, "lose")} games lost
+        {sum(arti.asseverate(user, "play") for user in arti.asseverate("users"))} games played
+        {sum(arti.asseverate(user, "won") for user in arti.asseverate("users"))} games won
+        {sum(arti.asseverate(user, "lost") for user in arti.asseverate("users"))} games lost
         {arti.acquire(self, "jokes")} jokes told
         """, line = 1),
       inline = False)

@@ -8,18 +8,18 @@
       "swim": true
     },
     "stats": {
-      "res": 979,
-      "stas": 1381,
-      "live": 2686198,
+      "res": 992,
+      "stas": 1396,
+      "live": 2711650,
       "pong": 1650912584,
-      "sent": 5372,
+      "sent": 5374,
       "react": 285,
-      "view": 17
+      "view": 18
     },
     "calls": {
-      "mes": 7614,
-      "rec": 2117,
-      "act": 7431,
+      "mes": 7616,
+      "rec": 2118,
+      "act": 7436,
       "ping": 244,
       "help": 259,
       "util": 90,
@@ -33,10 +33,6 @@
       "acc": 6
     },
     "misc": {
-      "played": 0,
-      "win": 0,
-      "lose": 0,
-      "out": 0,
       "jokes": 52,
       "whoosh": 2,
       "shards": [],
@@ -113,8 +109,8 @@
         "view": 60
       },
       "vitals": {
-        "points": 3490,
-        "rise": 3159,
+        "points": 3491,
+        "rise": 3160,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -128,9 +124,9 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1089,
+        "sent": 1091,
         "react": 6,
-        "act": 278,
+        "act": 279,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
@@ -209,6 +205,10 @@
       "log": [
         [
           "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+1",
           "used `/vita aid`"
         ],
         [
@@ -254,10 +254,6 @@
         [
           "+1",
           "used `/vita visualyze`"
-        ],
-        [
-          "+2",
-          "used `/info about`"
         ],
         [
           "+2",
@@ -437,7 +433,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1267656,
+        "hold": 1293108,
         "max": 0
       },
       "log": [
