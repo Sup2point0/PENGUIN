@@ -13,7 +13,37 @@ ascept = {
       item.field("Permissions", "Basic"),
       item.field("Acquisition", "Become authorized as an Antarctican citizen.")
     ],
-    other = "A-CORE",
+    other = "V-CORE, A-CORE",
+  ),
+
+  "V-CORE": item(
+    title = "V-CORE",
+    caption = "Residence Role",
+    content = "",
+    fields = [
+      item.field("Acquisition", "A role granted to temporary visitors.")
+    ],
+    other = "Antarctican",
+  ),
+
+  "Vitaline": item(
+    title = "Vitaline",
+    caption = "Residence Role",
+    content = "",
+    fields = [
+      item.field("Acquisition", "Initialyze your Vitaline identity."),
+    ],
+    other = "A-CORE, Antarctican",
+  ),
+
+  "A-CORE": item(
+    title = "A-CORE",
+    caption = "Residence Role",
+    content = "",
+    fields = [
+      item.field("Acquisition", "Have your A-CORE installed.")
+    ],
+    other = "Vitaline, V-CORE",
   ),
 
   "High Command": item(
@@ -25,6 +55,16 @@ ascept = {
       item.field("Display", "Hoisted"),
     ],
     other = "Central Command",
+  ),
+
+  "": item(
+    title = "",
+    caption = "",
+    content = "",
+    fields = [
+      item.field("", ""),
+    ],
+    other = "",
   ),
 }
 
@@ -57,7 +97,8 @@ class adept:
       fields = [
         item.field("Format", "/util cast ‹detail›"),
         item.field("Fields", """
-          __`detail`__ [choice, optional]
+          __`detail`__
+          [choice, optional]
           If specified, only displays a specific aspect of the weather forecast.
         """),
       ],
@@ -125,16 +166,45 @@ class adept:
       ),
       content = "",
       fields = [
-        item.field("Format", "/util idea ‹title› ‹idea› ‹category›"),
+        item.field("Format", "/util idea ‹title› ‹idea› ‹category› ‹anonymous›"),
         item.field("Fields", """
           __`title`__
+          [str, required]
+          The title for the submission.
 
           __`idea`__
+          [str, required]
+          The content of the submission.
 
           __`category`__
+          [choice, optional]
+          An idea category to help organyze ideas.
+
+          __`anonymous`__
+          [bool, optional]
+          If enabled, an anonymous idea is submitted.
         """),
       ],
       other = "/info fact",
+    )
+
+    define = item(
+      title = "/util define",
+      caption = "Definition Lookup",
+      desc = desc(
+        curt = "lookup word",
+        full = "lookup the definition of a word in Antarctican English",
+      ),
+      content = "Looks up the definition of a word in Antarctican English.",
+      fields = [
+        item.field("Format", "/util define ‹word›"),
+        item.field("Fields", """
+          __`word`__
+          [choice, optional]
+          The word to lookup. If unspecifyzed, a random word is looked up.
+        """),
+      ],
+      other = "/info about",
     )
 
 
@@ -203,7 +273,7 @@ class adept:
         full = "fun fact relating to Antarctica!",
       ),
       content = "Tells you a random fun fact relating to Antarctica.",
-      fields = [],
+      fields = [item.field("Format", "`/info fact`")],
       other = "/index view, /play know",
     )
 
@@ -215,7 +285,7 @@ class adept:
         full = "view info about an item in the index",
       ),
       content = "Views info about a specific item in Penguin’s information index.",
-      fields = [],
+      fields = [item.field("Format", "`/info about ‹item›`")],
       other = "/index",
     )
 
@@ -227,7 +297,7 @@ class adept:
         full = "view what an acronym stands for",
       ),
       content = "Views what an acronym(s) relating to Antarctica stands for.",
-      fields = [],
+      fields = [item.field("Format", "`/info acro ‹item›`")],
       other = "/info about",
     )
 
@@ -239,7 +309,7 @@ class adept:
         full = "view info about a role",
       ),
       content = "Views info about a role in the Discord server.",
-      fields = [],
+      fields = [item.field("Format", "`/info role ‹role›`")],
       other = "/info about",
     )
 
@@ -251,7 +321,7 @@ class adept:
         full = "view info about a game",
       ),
       content = "Views info about a game I can play.",
-      fields = [],
+      fields = [item.field("Format", "`/info game ‹game›`")],
       other = "/info role, /play",
     )
 
