@@ -1,4 +1,4 @@
-version = 27.15
+version = 27.20
 
 
 import nextcord as discord
@@ -1097,12 +1097,12 @@ def aliate(identity):
         {arti.acquire(self, "util")} `/util` command used
         {arti.acquire(self, "index")} `/index` commands used
         {arti.acquire(self, "info")} `/info` commands used
-        {arti.acquire(self, "played")} `/play` command used
+        {arti.acquire(self, "play")} `/play` command used
         {arti.acquire(self, "vita")} `/vita` commands used
 
         {sum(arti.asseverate(user, "play") for user in arti.asseverate("users"))} games played
-        {sum(arti.asseverate(user, "won") for user in arti.asseverate("users"))} games won
-        {sum(arti.asseverate(user, "lost") for user in arti.asseverate("users"))} games lost
+        {sum(arti.asseverate(user, "win") for user in arti.asseverate("users"))} games won
+        {sum(arti.asseverate(user, "lose") for user in arti.asseverate("users"))} games lost
         {arti.acquire(self, "jokes")} jokes told
         """, line = 1),
       inline = False)

@@ -8,18 +8,18 @@
       "swim": true
     },
     "stats": {
-      "res": 992,
-      "stas": 1396,
-      "live": 2711650,
+      "res": 993,
+      "stas": 1397,
+      "live": 2711722,
       "pong": 1650912584,
-      "sent": 5374,
+      "sent": 5376,
       "react": 285,
-      "view": 18
+      "view": 19
     },
     "calls": {
       "mes": 7616,
-      "rec": 2118,
-      "act": 7436,
+      "rec": 2120,
+      "act": 7439,
       "ping": 244,
       "help": 259,
       "util": 90,
@@ -29,7 +29,7 @@
       "vita": 54,
       "dir": 44,
       "ctx": 6,
-      "err": 394,
+      "err": 395,
       "acc": 6
     },
     "misc": {
@@ -109,8 +109,8 @@
         "view": 60
       },
       "vitals": {
-        "points": 3491,
-        "rise": 3160,
+        "points": 3492,
+        "rise": 3161,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -126,13 +126,13 @@
       "stats": {
         "sent": 1091,
         "react": 6,
-        "act": 279,
+        "act": 280,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
         "dir": 20,
         "ctx": 7,
-        "err": 133,
+        "err": 134,
         "acc": 8
       },
       "games": {
@@ -209,6 +209,10 @@
         ],
         [
           "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+1",
           "used `/vita aid`"
         ],
         [
@@ -254,10 +258,6 @@
         [
           "+1",
           "used `/vita visualyze`"
-        ],
-        [
-          "+2",
-          "used `/info about`"
         ],
         [
           "+2",
@@ -433,7 +433,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1293108,
+        "hold": 1293180,
         "max": 0
       },
       "log": [
