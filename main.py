@@ -1,4 +1,4 @@
-version = 27.24
+version = 27.27
 
 
 import nextcord as discord
@@ -20,6 +20,7 @@ import functools, copy
 from vitals import huddle
 from spirit import adventure
 
+from recog import affluence
 from recom import adept, ascept
 from recon import ancest, assist, aspect, arcane
 from recol import absorb, avail, attent, articept

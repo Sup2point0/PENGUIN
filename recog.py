@@ -1534,6 +1534,11 @@ class egg:
   )
 
 
+class affluence:
+
+  pass
+
+
 some = item(
   title = "",
   caption = "",
