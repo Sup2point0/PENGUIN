@@ -1,4 +1,4 @@
-version = 27.20
+version = 27.24
 
 
 import nextcord as discord
@@ -182,6 +182,7 @@ async def ping(ctx):
     if random.randint(1, 12) == 12:
       sup = random.randint(2, 20)
       arti.asseverate(ctx.author, "points", f"+{sup}", "pinged a lucky ping")
+      sup = True
   
   await ctx.channel.send(random.choice(accede.affirm[int(sup)]))
   arti.advance("ping")
@@ -349,7 +350,7 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
 
   if detail:
     if detail == "temperature":
-      await interaction.send(f"It's currently {round(arti.acquire(cast, 'temp') + random.uniform(-0.2, 0.2), 1)}°C!")
+      await interaction.send(f"It's currently {round(cast('temp') + random.uniform(-0.2, 0.2), 1)}°C!")
     elif detail == "pressure":
       await interaction.send(f"")
     elif detail == "humidity":
@@ -367,29 +368,29 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
 
     def content():
       cast = arti.afflict()
+      cast = lambda detail: arti.acquire(cast, detail)
       return (embed(title = "Weather Forecast", description = uti.avast(f"""
         {decate[0]} {decate[1]}
         {uti.line}
         Quite cold today, unsurprisingly.
       """), colour = uti.pink)
       .add_field(name = "Temperature", value = uti.avast(f"""
-        Current: {round(arti.acquire(cast, "temp") + random.uniform(-0.2, 0.2), 1)}°C
-        Feels Like: {round(arti.acquire(cast, "feels_like") + random.uniform(-0.2, 0.2), 1)}°C
+        Current: {round(cast("temp") + random.uniform(-0.2, 0.2), 1)}°C
+        Feels Like: {round(cast("feels_like") + random.uniform(-0.2, 0.2), 1)}°C
       """), inline = False)
       .add_field(name = "Atmosphere", value = uti.avast(f"""
-        Pressure: {arti.acquire(cast, "pressure") + random.randint(-2, 2)} hPa
-        Humidity: {arti.acquire(cast, "humidity")}%
-        Visibility: {round(arti.acquire(cast, "visibility") / 1000 + random.uniform(-0.1, 0.1), 1)} km
+        Pressure: {cast("pressure") + random.randint(-2, 2)} hPa
+        Humidity: {cast("humidity")}%
+        Visibility: {round(cast("visibility") / 1000 + random.uniform(-0.1, 0.1), 1)} km
       """), inline = False)
       .add_field(name = "Wind", value = uti.avast(f"""
-        Speed: {round(arti.acquire(cast, "speed") * 2.23694 + random.uniform(-0.2, 0.2), 1)} mph
-        Direction: {arti.acquire(cast, "deg")}°
+        Speed: {round(cast("speed") * 2.23694 + random.uniform(-0.2, 0.2), 1)} mph
+        Direction: {cast("deg")}°
       """), inline = False)
       .add_field(name = "Day", value = uti.avast(f"""
-        Sunrise: ?
-        Sunset: ?
-
-        {uti.line}
+        Sunrise: <t:{cast("sunrise")}:T>
+        Sunset: <t:{cast("sunset")}:T>
+        \n{uti.line}
       """, line = 0), inline = False)
       .set_thumbnail(url = "https://cdn.discordapp.com/attachments/925419481205968916/939910472067579914/Suncloud.png")
       .set_footer(text = "Data from OpenWeatherMap.org")
