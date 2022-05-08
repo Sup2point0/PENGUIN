@@ -2,24 +2,24 @@
   "self": {
     "ver": {
       "sup": 6,
-      "sub": 27.24,
-      "up": 1651883547,
+      "sub": 27.27,
+      "up": 1651941190,
       "in": 2,
       "swim": true
     },
     "stats": {
-      "res": 996,
-      "stas": 1405,
-      "live": 2756410,
+      "res": 999,
+      "stas": 1412,
+      "live": 2788930,
       "pong": 1650912584,
-      "sent": 5386,
+      "sent": 5387,
       "react": 285,
       "view": 19
     },
     "calls": {
-      "mes": 7635,
+      "mes": 7642,
       "rec": 2123,
-      "act": 7469,
+      "act": 7477,
       "ping": 244,
       "help": 259,
       "util": 90,
@@ -124,7 +124,7 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1102,
+        "sent": 1103,
         "react": 6,
         "act": 281,
         "/help": 7,
@@ -433,7 +433,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1337868,
+        "hold": 1370388,
         "max": 0
       },
       "log": [
