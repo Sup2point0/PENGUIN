@@ -505,8 +505,9 @@ async def idea(interaction, title, idea,
 async def index(interaction):
   pass
 
-ls = lambda item: ancest[item].alias if hasattr(ancest[item], "alias") else item
-lx = lambda item: ancest[item].index
+lt = lambda item: ancest[item].value
+ls = lambda item: lt(item).alias if hasattr(lt(item), "alias") else item
+lx = lambda item: lt(item).index
 
 
 # view index
@@ -538,13 +539,13 @@ async def filter(interaction, sort = pool("by", description = "option to filter 
     index = [ls(i) for i in index if lx(i) and i.startswith(target)]
     sort = f"Index – {target}"
   elif sort == "content":
-    index = [ls(i) for i in index if lx(i) and (target.upper() in ancest[i].title.upper() or target.upper() in ancest[i].caption.upper())]
+    index = [ls(i) for i in index if lx(i) and (target.upper() in lt(i).title.upper() or target.upper() in lt(i).caption.upper())]
     sort = f"Search – ‘{target}’"
   elif sort == "category":
     index = [ls(i) for i in index if lx(i)]
     sort = f"Category – {target}"
   elif sort == "tag":
-    index = [ls(i) for i in index if lx(i) and (target.upper() in ancest[i].tags.upper() if hasattr(ancest[i], "tags") else False)]
+    index = [ls(i) for i in index if lx(i) and (target.upper() in lt(i).tags.upper() if hasattr(lt(i), "tags") else False)]
     sort = f"Tagged – ‘{target}’"
 
   class visual(View):
@@ -602,7 +603,7 @@ async def about(interaction, item = pool(description = "pick an item to lookup, 
         return
   else:
     target = random.choice(list(ancest.keys()))
-  item = ancest[target]
+  item = ancest[target].value
 
   try:
     content = uti.embed(item)
@@ -620,7 +621,7 @@ async def fill_about(interaction, query):
   if query:
     await interaction.response.send_autocomplete([
       ls(i) for i in sorted(ancest.keys()) if lx(i)
-      and (ancest[i].alias if hasattr(ancest[i], "alias") else ancest[i].title)
+      and (ancest[i].value.alias if hasattr(ancest[i].value, "alias") else ancest[i].value.title)
       .upper().startswith(query.upper())
     ][:12])
   else:

@@ -26,8 +26,14 @@ absorb = dict(
     title = "Guess the Emoji",
     caption = "`/play guess emoji`",
     desc = "Guess the Number, but instead of a number, it’s a secret emoji.",
-    content = "",
+    content = """
+      Player: single
+      Type: guessing game
+      Difficulty: simple
+      Depth: basic
+    """,
     fields = [],
+    other = "Guess the Number"
   ),
 
   react = item(
@@ -36,6 +42,7 @@ absorb = dict(
     desc = "A challenging speedrun of reacting with a series of specific emojis (not like *React* or *REact* at all, btw)",
     content = "",
     fields = [],
+    other = "",
   ),
 
   flick = item(
@@ -44,6 +51,7 @@ absorb = dict(
     desc = "No description provided",
     content = "",
     fields = [],
+    other = "",
   ),
 
   rush = item(
@@ -52,6 +60,7 @@ absorb = dict(
     desc = "No description provided",
     content = "",
     fields = [],
+    other = "",
   ),
 
   spam = item(
@@ -60,6 +69,7 @@ absorb = dict(
     desc = "No description provided",
     content = "",
     fields = [],
+    other = "",
   ),
 
   quack = item(
@@ -68,6 +78,7 @@ absorb = dict(
     desc = "The Antarctican version of Hangman – try guess the letters of a hidden word before the drawing is complete!",
     content = "",
     fields = [],
+    other = "",
   ),
 
   know = item(
@@ -76,6 +87,7 @@ absorb = dict(
     desc = "No description provided",
     content = "",
     fields = [],
+    other = "",
   ),
 
   count = item(
@@ -84,6 +96,7 @@ absorb = dict(
     desc = "No description provided",
     content = "",
     fields = [],
+    other = "",
   ),
 
   hunt = item(
@@ -92,6 +105,7 @@ absorb = dict(
     desc = "An exciting delve into a hunt for secret shards.",
     content = "",
     fields = [],
+    other = "",
   ),
 
   crypt = item(
@@ -100,6 +114,7 @@ absorb = dict(
     desc = "Attempt to crack confuzzling crypts, with epic rewards.",
     content = "",
     fields = [],
+    other = "",
   ),
 
   quest = item(
@@ -108,6 +123,7 @@ absorb = dict(
     desc = "No description provided",
     content = "",
     fields = [],
+    other = "",
   ),
 
   excursion = item(
@@ -116,6 +132,7 @@ absorb = dict(
     desc = "No description provided",
     content = "",
     fields = [],
+    other = "",
   ),
 )
 
@@ -140,6 +157,7 @@ class avail:
         `/util antect` » {adept.util.antect.desc.curt}
         `/util cal` » {adept.util.cal.desc.curt}
         `/util idea` » {adept.util.idea.desc.curt}
+        `/util define` » {adept.util.define.desc.curt}
       """),
       item.field("Index", f"""
         `/index view` » {adept.index.view.desc.curt}
@@ -216,6 +234,7 @@ class avail:
         You can use `/index games` to see a list of all the games I can play – here are some simple ones to play first:
 
         `/play guess num` » Guess the Number
+        `/play guess emoji` » Guess the Emoji
         
         More coming soon!
       """),

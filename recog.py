@@ -1,4 +1,6 @@
 from copy import deepcopy
+from enum import Enum
+
 import util
 
 
@@ -8,28 +10,28 @@ class item:
     for feature in features:
       self.__setattr__(
         feature,
-        features[feature] if feature != "content" else util.avast(features[feature], line = False)
+        features[feature] if feature != "content" else util.avast(features[feature], line = 0)
       )
   
   class field:
     def __init__(self, title, content):
       self.title = title
-      self.content = util.avast(content, line = False)
+      self.content = util.avast(content, line = 0)
 
   def show(self, alias = None):
     temp = deepcopy(self)
-    temp.index = True
+    temp.value.index = True
     if alias:
-      temp.alias = alias
+      temp.value.alias = alias
     return temp
   
   def hide(self):
     temp = deepcopy(self)
-    temp.index = None
+    temp.value.index = None
     return temp
 
 
-class main:
+class main(Enum):
 
   Antarctica = item(
     title = "United Nation of Antarctica",
@@ -117,7 +119,7 @@ class main:
   )
 
 
-class time:
+class time(Enum):
 
   Calendar = item(
     title = "Modern Antarctican Calendar",
@@ -343,9 +345,9 @@ class time:
     )
 
 
-class geo:
+class geo(Enum):
 
-  class dist:
+  class dist(Enum):
 
     District = item(
       title = "District",
@@ -481,7 +483,7 @@ class geo:
     )
 
 
-  class city:
+  class city(Enum):
 
     # Aventurina District
     Ross = item(
@@ -622,7 +624,7 @@ class geo:
     )
 
 
-class loc:
+class loc(Enum):
 
   Carrot = item(
     title = "CARROT",
@@ -643,7 +645,7 @@ class loc:
   )
 
 
-class edu:
+class edu(Enum):
 
   System = item(
     title = "Education System of Antarctica",
@@ -794,7 +796,7 @@ class edu:
   )
 
 
-class tech:
+class tech(Enum):
 
   Geosphere = item(
     title = "The Geosphere",
@@ -898,7 +900,7 @@ class tech:
     )
 
 
-class medi:
+class medi(Enum):
 
   Niccolu = item(
     title = "Niccolu",
@@ -931,9 +933,9 @@ class medi:
   )
 
 
-class mili:
+class mili(Enum):
 
-  class div:
+  class div(Enum):
 
     Terra = item(
       title = "Terra Forza",
@@ -981,7 +983,7 @@ class mili:
     )
 
 
-  class awards:
+  class awards(Enum):
 
     ASMR = item(
       title = "Antarctican Seal of Military Recognition",
@@ -1005,9 +1007,9 @@ class mili:
     )
 
 
-class hist:
+class hist(Enum):
 
-  class fig:
+  class fig(Enum):
 
     Amundsen = item(
       title = "Roald Amundsen",
@@ -1090,7 +1092,7 @@ class hist:
     )
 
 
-  class stat:
+  class stat(Enum):
 
     Timeline = item(
       title = "Timeline of Antarctican History",
@@ -1217,7 +1219,7 @@ class hist:
     )
 
 
-  class era:
+  class era(Enum):
 
     Ancient = item(
       title = "Ancient Antarctica",
@@ -1277,7 +1279,7 @@ class hist:
     )
 
 
-class nato:
+class nato(Enum):
 
   Aurora = item(
     title = "Aurora Australis",
@@ -1328,7 +1330,7 @@ class nato:
     )
 
 
-class misc:
+class misc(Enum):
 
   ARCANE = item(
     title = "ARCANE",
@@ -1387,9 +1389,9 @@ class misc:
   )
 
 
-class disc:
+class disc(Enum):
 
-  class ade:
+  class ade(Enum):
 
     ADE = item(
       title = "ADE",
@@ -1460,7 +1462,7 @@ class disc:
     )
 
 
-class egg:
+class egg(Enum):
 
   Egg = item(
     title = "Easter Egg",
@@ -1536,7 +1538,24 @@ class egg:
 
 class affluence:
 
-  pass
+  class noun(Enum):
+
+    ...
+
+
+  class verb(Enum):
+
+    ...
+
+
+  class adjective(Enum):
+
+    ...
+
+
+  class adverb(Enum):
+
+    ...
 
 
 some = item(
