@@ -499,6 +499,24 @@ async def idea(interaction, title, idea,
   await root.add_reaction(uti.icons.down)
 
 
+# dictionary
+@ util.subcommand(description = adept.util.dict.desc.full)
+@ accumulate(init = 25, call = "/util define")
+async def define(interaction, word):
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+
+    expand = expand("stxp.utdf")
+
+  if interaction is None: return visual()
+
+  if word not in affluence:
+    await arti.avert(interaction, attest.index)
+
+  await interaction.send(embed = uti.embed(affluence[word]), view = visual())
+
+
 
 # index (root)
 @ penguin.slash_command()

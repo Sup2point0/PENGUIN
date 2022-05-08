@@ -1536,26 +1536,9 @@ class egg(Enum):
   )
 
 
-class affluence:
-
-  class noun(Enum):
-
-    ...
-
-
-  class verb(Enum):
-
-    ...
-
-
-  class adjective(Enum):
-
-    ...
-
-
-  class adverb(Enum):
-
-    ...
+affluence = {
+  "antect": item()
+}
 
 
 some = item(

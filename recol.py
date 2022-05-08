@@ -157,7 +157,7 @@ class avail:
         `/util antect` » {adept.util.antect.desc.curt}
         `/util cal` » {adept.util.cal.desc.curt}
         `/util idea` » {adept.util.idea.desc.curt}
-        `/util define` » {adept.util.define.desc.curt}
+        `/util define` » {adept.util.dict.desc.curt}
       """),
       item.field("Index", f"""
         `/index view` » {adept.index.view.desc.curt}

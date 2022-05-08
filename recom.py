@@ -188,7 +188,7 @@ class adept:
       other = "/info fact",
     )
 
-    define = item(
+    dict = item(
       title = "/util define",
       caption = "Definition Lookup",
       desc = desc(
