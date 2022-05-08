@@ -401,6 +401,7 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
       def __init__(self):
         super().__init__(timeout = None)
         self.state = False
+        self.content = content()
 
       expand = expand("stxp.utcs")
       update = update("dysy.utcs", content)
@@ -459,6 +460,8 @@ async def cal(interaction):
   class visual(View):
     def __init__(self):
       super().__init__(timeout = None)
+      self.state = False
+      self.content = content()
 
     expand = expand("stxp.utcl")
     update = update("stsy.utcl", content)
@@ -506,6 +509,8 @@ async def define(interaction, word):
   class visual(View):
     def __init__(self):
       super().__init__(timeout = None)
+      self.state = False
+      self.content = ...
 
     expand = expand("stxp.utdf")
 
@@ -538,6 +543,7 @@ async def view(interaction):
   class visual(View):
     def __init__(self):
       super().__init__(timeout = None)
+      self.state = False
 
     expand = expand("stxp.idxv")
   
@@ -569,6 +575,7 @@ async def filter(interaction, sort = pool("by", description = "option to filter 
   class visual(View):
     def __init__(self):
       super().__init__(timeout = None)
+      self.state = False
 
     expand = expand("stxp.dxft")
 
@@ -586,6 +593,7 @@ async def games(interaction):
   class visual(View):
     def __init__(self):
       super().__init__(timeout = None)
+      self.state = False
 
     expand = expand("stxp.dxpl")
 
@@ -1209,6 +1217,7 @@ async def aid(interaction, aspect = pool(description = "pick a specific aspect t
   class visual(View):
     def __init__(self):
       super().__init__(timeout = None)
+      self.state = False
 
     expand = expand("stxp.vthp")
 
