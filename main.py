@@ -1,4 +1,4 @@
-version = 27.27
+version = 27.33
 
 
 import nextcord as discord
