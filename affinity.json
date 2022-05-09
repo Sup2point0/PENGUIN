@@ -9,17 +9,17 @@
     },
     "stats": {
       "res": 1001,
-      "stas": 1414,
-      "live": 2789525,
+      "stas": 1415,
+      "live": 2791661,
       "pong": 1652120709,
-      "sent": 5410,
+      "sent": 5414,
       "react": 285,
       "view": 20
     },
     "calls": {
-      "mes": 7645,
-      "rec": 2147,
-      "act": 7522,
+      "mes": 7665,
+      "rec": 2151,
+      "act": 7550,
       "ping": 245,
       "help": 259,
       "util": 90,
@@ -109,8 +109,8 @@
         "view": 61
       },
       "vitals": {
-        "points": 3565,
-        "rise": 3234,
+        "points": 3573,
+        "rise": 3242,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -124,9 +124,9 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1106,
+        "sent": 1113,
         "react": 6,
-        "act": 300,
+        "act": 304,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
@@ -206,6 +206,22 @@
       },
       "log": [
         [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
           "+1",
           "used `/vita visualyze`"
         ],
@@ -268,22 +284,6 @@
         [
           "+1",
           "used `/help start`"
-        ],
-        [
-          "+1",
-          "used `/help all`"
-        ],
-        [
-          "+1",
-          "used `/help info`"
-        ],
-        [
-          "+4",
-          "used `/util cast`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
         ]
       ],
       "rec": {}
@@ -372,7 +372,7 @@
         "uni": "ISAB"
       },
       "stats": {
-        "sent": 1070,
+        "sent": 1083,
         "react": 5,
         "act": 233,
         "/help": 0,
@@ -435,7 +435,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1371372,
+        "hold": 1373508,
         "max": 0
       },
       "log": [
