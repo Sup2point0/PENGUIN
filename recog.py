@@ -15,7 +15,7 @@ class item:
     self = deepcopy(self)
     self.index = True
     if alias:
-      self.value.alias = alias
+      self.alias = alias
     return self
 
   def hide(self):
