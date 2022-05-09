@@ -1,4 +1,4 @@
-version = 27.33
+version = 28.2
 
 
 import nextcord as discord
@@ -635,7 +635,17 @@ async def about(interaction, item = pool(description = "pick an item to lookup, 
     content = uti.embed(item)
     if hasattr(item, "url"):
       content.set_thumbnail(url = item.url)
-    await interaction.send(embed = content)
+
+    class visual(View):
+      def __init__(self):
+        super().__init__(timeout = None)
+        self.state = False
+        self.content = content
+      
+      expand = expand("stxp.info")
+
+    if interaction is None: return visual()
+    await interaction.send(embed = content, view = visual())
   
   except:
     await arti.avert(interaction, "with the embed.")
@@ -647,7 +657,7 @@ async def fill_about(interaction, query):
   if query:
     await interaction.response.send_autocomplete([
       ls(i) for i in sorted(ancest.keys()) if lx(i)
-      and (ancest[i].value.alias if hasattr(ancest[i].value, "alias") else ancest[i].value.title)
+      and (lt(i).alias if hasattr(lt(i), "alias") else lt(i).title)
       .upper().startswith(query.upper())
     ][:12])
   else:
@@ -663,7 +673,7 @@ async def acro(interaction, acronym = pool(description = "pick an acronym to loo
     acronym = random.choice([i for i in ancest if lx(i) and i.isupper()])
 
   if acronym.upper() in ancest:
-    acro = ancest[acronym.upper()]
+    acro = lt(acronym.upper())
     acro = acro.acro if hasattr(acro, "acro") else acro.title
   else:
     await arti.avert(interaction, attest.index)
@@ -691,9 +701,17 @@ async def fill_acro(interaction, acronym):
 async def role(interaction, role: discord.Role = pool(description = "pick a role, or find out about a random role")):
   if role.name in ascept:
     content = uti.embed(ascept[role.name], colour = home.get_role(role.id).colour)
-    await interaction.send(embed = content)
-  else:
-    await arti.avert(interaction, attest.index)
+
+    class visual(View):
+      def __init__(self):
+        super().__init__(timeout = None)
+        self.state = False
+        self.content = content
+        
+    if interaction is None: return visual()
+    wait interaction.send(embed = content, view = visual())
+  
+  else: await arti.avert(interaction, attest.index)
 
 
 # game info
