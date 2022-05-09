@@ -78,8 +78,7 @@ def accumulate(act = 2, init = 20, call = None, *, ctx = None, req = 0):
         except:
           if not interaction.response.is_done():
             await arti.avert(interaction)
-        finally:
-          raise
+        finally: raise
       
       arti.advance("act")
       arti.advance(user, "act")
@@ -111,10 +110,12 @@ def expand(id):
       button.label = "Expand"
       button.emoji = uti.menu.down
       content = copy.deepcopy(self.content)
+      
       if len(self.content.description) < 4:
         content.fields = content.fields[0]
       else:
         content.clear_fields()
+    
     else:
       self.state = True
       button.label = "Collapse"
@@ -306,8 +307,7 @@ async def tip(interaction):
 async def dinnertime(ctx):
   global last, next
   now = time.time()
-  await ctx.channel.send(
-    f"I'll play for {int((next - (now - last)) / 60)} more minutes! (and {(next - int(now - last)) % 60} seconds)")
+  await ctx.channel.send(f"I'll play for {int((next - (now - last)) / 60)} more minutes! (and {(next - int(now - last)) % 60} seconds)")
   
 def reset():
   global last, next
@@ -350,14 +350,17 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
     return
 
   if detail:
+    async def respond(content):
+      await interaction.send(arti.accentuate(content))
+
     if detail == "temperature":
-      await interaction.send(f"It's currently {round(cast('temp') + random.uniform(-0.2, 0.2), 1)}°C!")
+      await respond(f"It’s currently {round(arti.acquire(cast, 'temp') + random.uniform(-0.2, 0.2), 1)}°C"))
     elif detail == "pressure":
-      await interaction.send(f"")
+      await respond(f"Pressure’s at {arti.acquire(cast, 'pressure')}")
     elif detail == "humidity":
-      await interaction.send(f"")
-    elif detail == "visibliity":
-      await interaction.send(f"")
+      await respond(f"Humidity’s at {arti.acquire(cast, 'humidity')}%")
+    elif detail == "visibility":
+      await respond(f"You can see about {arti.acquire(cast, 'visibility')}")
     elif detail == "debug json":
       await interaction.send(f"""```json
         {json.dumps(cast, indent = 2).strip()}
@@ -406,7 +409,7 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
       expand = expand("stxp.utcs")
       update = update("dysy.utcs", content)
 
-      @ button(label = "View Detail", style = style.blurple, custom_id = "stcsdt")
+      @ button(label = "View Detail", style = style.blurple, custom_id = "dyst.utcs")
       async def stat(self, button, interaction):
         pass
 
@@ -428,10 +431,7 @@ async def decate(interaction):
 # convert date
 @ util.subcommand(description = adept.util.antect.desc.full)
 @ accumulate(init = 25, call = "/util antect")
-async def antect(interaction, month: int = pool(description = "month", choices = {
-  "January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6, "July": 7, "August": 8, "September": 9, "October": 10, "November": 11, "December": 12,
-}, required = True),
-day: int = pool(description = "date", min_value = 1, max_value = 31, required = True)):
+async def antect(interaction, month: int = pool(description = "month", choices = {"January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6, "July": 7, "August": 8, "September": 9, "October": 10, "November": 11, "December": 12}, required = True), day: int = pool(description = "date", min_value = 1, max_value = 31, required = True)):
   try:
     day = datetime.date(42, month, day)
   except:
@@ -482,7 +482,7 @@ async def idea(interaction, title, idea,
   content = embed(title = title, description = idea,
     colour = sup if (sup := int("0x" + arti.asseverate(interaction.user.id, "col"), 16)) != 0x2070c1 else uti.pink
   ).set_footer(text = category.capitalize())
-  ###
+  
   if not eval(anonymous):
     content.set_author(name = f"Idea from {interaction.user.display_name}", icon_url = interaction.user.avatar.url)
 
@@ -505,21 +505,24 @@ async def idea(interaction, title, idea,
 # dictionary
 @ util.subcommand(description = adept.util.dict.desc.full)
 @ accumulate(init = 25, call = "/util define")
-async def define(interaction, word):
+async def define(interaction, word = pool(description = "pick a word to loopup, or find out about a random word", required = False)):
+  if not word:
+    word = random.choice(list(affluence.keys()))
+  if word not in affluence:
+    await arti.avert(interaction, attest.index)
+
+  content = uti.embed(affluence[word])
+
   class visual(View):
     def __init__(self):
       super().__init__(timeout = None)
       self.state = False
-      self.content = ...
+      self.content = content
 
     expand = expand("stxp.utdf")
 
   if interaction is None: return visual()
-
-  if word not in affluence:
-    await arti.avert(interaction, attest.index)
-
-  await interaction.send(embed = uti.embed(affluence[word]), view = visual())
+  await interaction.send(embed = content, view = visual())
 
 
 
@@ -691,14 +694,16 @@ async def fill_acro(interaction, acronym):
       fill += [i for i in ancest if lx(i) and acro in i and i not in fill]
     await interaction.response.send_autocomplete(fill[:12])
   else:
-    await interaction.response.send_autocomplete(random.sample([
-      ls(i) for i in ancest.keys() if lx(i) and i.isupper()], 12))
+    await interaction.response.send_autocomplete(random.sample([ls(i) for i in ancest.keys() if lx(i) and i.isupper()], 12))
 
 
 # role info
 @ info.subcommand(description = adept.info.role.desc.full)
 @ accumulate(call = "/info role")
-async def role(interaction, role: discord.Role = pool(description = "pick a role, or find out about a random role")):
+async def role(interaction, role: discord.Role = pool(description = "pick a role, or find out about a random role", required = False)):
+  if not role:
+    role = random.choice(list(ascept.keys))
+
   if role.name in ascept:
     content = uti.embed(ascept[role.name], colour = home.get_role(role.id).colour)
 
@@ -707,9 +712,11 @@ async def role(interaction, role: discord.Role = pool(description = "pick a role
         super().__init__(timeout = None)
         self.state = False
         self.content = content
+
+      expand = expand("stxp.role")
         
     if interaction is None: return visual()
-    wait interaction.send(embed = content, view = visual())
+    await interaction.send(embed = content, view = visual())
   
   else: await arti.avert(interaction, attest.index)
 
@@ -721,7 +728,17 @@ async def game(interaction, game = pool(description = "pick a game, or find out 
   if not game:
     game = random.choice(list(absorb.keys()))
   content = uti.embed(absorb[game])
-  await interaction.send(embed = content)
+
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+      self.state = False
+      self.content = content
+
+    expand = expand("stxp.inpl")
+
+  if interaction is None: return visual()
+  await interaction.send(embed = content, view = visual())
 
 
 
@@ -753,7 +770,7 @@ async def num(interaction, top: int = pool("range", description = "the secret nu
       super().__init__(timeout = None)
       self.start()
 
-    @ button(label = "End", style = style.red, custom_id = "acplgn")
+    @ button(label = "End", style = style.red, custom_id = "styz.plgn")
     async def end(self, button, interaction):
       self.label = "Ended"
       self.style = style.grey
@@ -762,7 +779,6 @@ async def num(interaction, top: int = pool("range", description = "the secret nu
 
   if interaction is None:
     return visual()
-
   if isinstance(interaction.channel, discord.Thread):
     await arti.avert(interaction, aspire.thread)
   elif isinstance(interaction.channel, discord.DMChannel):
@@ -1265,15 +1281,14 @@ async def visualyze(interaction, user: discord.Member = pool(description = "pick
       self.state = False
       self.content = content()
     
-    expand = expand("cxvtvz")
-    update = update("cxvzsy", content)
+    expand = expand("stxp.vtvz")
+    update = update("dysy.vtvz", content)
   
-    @ button(label = "View Stat", style = style.blurple, custom_id = "stvzst")
+    @ button(label = "View Stat", style = style.blurple, custom_id = "dyst.vtvz")
     async def stat(self, button, interaction):
       await interaction.send("You can't do that yet!")
 
-  if interaction is None:
-    return visual()
+  if interaction is None: return visual()
 
   try:
     await interaction.send(embed = content(), view = visual())
@@ -1300,10 +1315,10 @@ async def ctx_visualyze(interaction, member):
       self.state = False
       self.content = content()
     
-    expand = expand("stvtvz")
-    update = update("dyvzsy", content)
+    expand = expand("stxp.cxvz")
+    update = update("dysy.cxvz", content)
   
-    @ button(label = "View Stat", style = style.blurple, custom_id = "cxvzst")
+    @ button(label = "View Stat", style = style.blurple, custom_id = "dyst.cxvz")
     async def stat(self, button, interaction):
       pass
 
