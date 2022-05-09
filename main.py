@@ -632,7 +632,7 @@ async def about(interaction, item = pool(description = "pick an item to lookup, 
         return
   else:
     target = random.choice(list(ancest.keys()))
-  item = ancest[target].value
+  item = lt(target)
 
   try:
     content = uti.embed(item)
