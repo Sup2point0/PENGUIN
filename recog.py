@@ -1,5 +1,4 @@
 from copy import deepcopy
-from enum import Enum
 
 import util
 
@@ -13,15 +12,7 @@ class item:
         features[feature] if feature != "content" else util.avast(features[feature], line = 0)
       )
   
-  class field:
-    def __init__(self, title, content):
-      self.title = title
-      self.content = util.avast(content, line = 0)
-
-
-class pool(Enum):
   def show(self, alias = None):
-    return self
     self = deepcopy(self)
     self.value.index = True
     if alias:
@@ -29,13 +20,17 @@ class pool(Enum):
     return self
 
   def hide(self):
-    return self
     self = deepcopy(self)
     self.value.index = False
     return self
+  
+  class field:
+    def __init__(self, title, content):
+      self.title = title
+      self.content = util.avast(content, line = 0)
 
 
-class main(pool):
+class main:
 
   Antarctica = item(
     title = "United Nation of Antarctica",
@@ -123,7 +118,7 @@ class main(pool):
   )
 
 
-class time(pool):
+class time:
 
   Calendar = item(
     title = "Modern Antarctican Calendar",
@@ -349,9 +344,9 @@ class time(pool):
     )
 
 
-class geo(pool):
+class geo:
 
-  class dist(pool):
+  class dist:
 
     District = item(
       title = "District",
@@ -487,7 +482,7 @@ class geo(pool):
     )
 
 
-  class city(pool):
+  class city:
 
     # Aventurina District
     Ross = item(
@@ -628,7 +623,7 @@ class geo(pool):
     )
 
 
-class loc(pool):
+class loc:
 
   Carrot = item(
     title = "CARROT",
@@ -649,7 +644,7 @@ class loc(pool):
   )
 
 
-class edu(pool):
+class edu:
 
   System = item(
     title = "Education System of Antarctica",
@@ -800,7 +795,7 @@ class edu(pool):
   )
 
 
-class tech(pool):
+class tech:
 
   Geosphere = item(
     title = "The Geosphere",
@@ -904,7 +899,7 @@ class tech(pool):
     )
 
 
-class medi(pool):
+class medi:
 
   Niccolu = item(
     title = "Niccolu",
@@ -937,9 +932,9 @@ class medi(pool):
   )
 
 
-class mili(pool):
+class mili:
 
-  class div(pool):
+  class div:
 
     Terra = item(
       title = "Terra Forza",
@@ -987,7 +982,7 @@ class mili(pool):
     )
 
 
-  class awards(pool):
+  class awards:
 
     ASMR = item(
       title = "Antarctican Seal of Military Recognition",
@@ -1011,9 +1006,9 @@ class mili(pool):
     )
 
 
-class hist(pool):
+class hist:
 
-  class fig(pool):
+  class fig:
 
     Amundsen = item(
       title = "Roald Amundsen",
@@ -1096,7 +1091,7 @@ class hist(pool):
     )
 
 
-  class stat(pool):
+  class stat:
 
     Timeline = item(
       title = "Timeline of Antarctican History",
@@ -1223,7 +1218,7 @@ class hist(pool):
     )
 
 
-  class era(pool):
+  class era:
 
     Ancient = item(
       title = "Ancient Antarctica",
@@ -1283,7 +1278,7 @@ class hist(pool):
     )
 
 
-class nato(pool):
+class nato:
 
   Aurora = item(
     title = "Aurora Australis",
@@ -1334,7 +1329,7 @@ class nato(pool):
     )
 
 
-class misc(pool):
+class misc:
 
   ARCANE = item(
     title = "ARCANE",
@@ -1393,9 +1388,9 @@ class misc(pool):
   )
 
 
-class disc(pool):
+class disc:
 
-  class ade(pool):
+  class ade:
 
     ADE = item(
       title = "ADE",
@@ -1466,7 +1461,7 @@ class disc(pool):
     )
 
 
-class egg(pool):
+class egg:
 
   Egg = item(
     title = "Easter Egg",

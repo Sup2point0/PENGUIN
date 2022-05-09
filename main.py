@@ -1,4 +1,4 @@
-version = 28.2
+version = 28.5
 
 
 import nextcord as discord
@@ -531,7 +531,7 @@ async def define(interaction, word = pool(description = "pick a word to loopup, 
 async def index(interaction):
   pass
 
-lt = lambda item: ancest[item].value
+lt = lambda item: ancest[item]
 ls = lambda item: lt(item).alias if hasattr(lt(item), "alias") else item
 lx = lambda item: lt(item).index
 
