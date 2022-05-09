@@ -2,19 +2,21 @@ from nextcord import Embed
 from datetime import datetime
 from textwrap import dedent
 
+from weightedlist import WeightedList
+
 
 line = "‾" * 20
 pink = 0xf27281
 grey = 0x464d59
 home = 922420426175557632
 
-decates = [
-  ("Arteria", 37), ("Vitida", 36),
-  ("Arrikta", 37), ("Valia", 36),
-  ("Aliquanda", 37), ("Verita", 36),
-  ("Arteva", 37), ("Vepida", 36),
-  ("Aeva", 37), ("Verena", 36),
-]
+decates = WeightedList(
+  (37, "Arteria"), (36, "Vitida"),
+  (37, "Arrikta"), (36, "Valia"),
+  (37, "Aliquanda"), (36, "Verita"),
+  (37, "Arteva"), (36, "Vepida"),
+  (37, "Aeva"), (36, "Verena"),
+)
 
 alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
@@ -81,33 +83,13 @@ def embed(source, fields = True, colour = True, struct = False):
   return content
 
 
-def increment(item, target, prev):
-  global count
-  count += item[1]
-  if count >= target:
-    count = target - prev
-    if count == 1:
-      count = "Prime"
-    elif count == item[1]:
-      count = "Fine"
-    return (item[0], count)
-
-def select(source, target):
-  global count
-  count = 0
-  target = int(target)
-  for item in source:
-    locate = increment(item, target, count)
-    if locate: return locate
-
-
 def now():
   return datetime.now().timetuple()
 
 def antect(day = None):
-  if not day:
-    day = datetime.now()
-  return select(decates, (day.timetuple().tm_yday + 273) % 365 + 1)
+  if not day: day = datetime.now()
+  idx = day.timetuple().tm_yday + 273) % 365 + 1
+  return decates[idx].value, idx
 
 def display(unix):
   if unix / 86400 >= 1:

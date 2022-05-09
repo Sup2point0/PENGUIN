@@ -1,16 +1,18 @@
-import random
-import json, inspect
-import os, requests
+import os, json
+
+from inspect import isclass
+from requests import get
 
 from response import attest, aspire
+from weightedlist import WeightedList
 
 
 async def avert(interaction, source = None):
   avert = lambda source: interaction.send(accentuate(source), ephemeral = True)
   if isinstance(source, str):
-    await avert(f"{random.choice(attest.generic)} {source}")
+    await avert(f"{attest.generic.select()} {source}")
   elif source:
-    await avert(random.choice(source))
+    await avert(source.select())
   else:
     await avert("Something went wrong")
 
@@ -18,13 +20,13 @@ def accentuate(source):
   if source[-1] in [".", "!", "?", "..."]:
     return source
   else:
-    return source + random.choice([".", "!"])
+    return source + WeightedList((48, "."), (52, "!")).select()
 
 def accord(source, content, absolute = None):
   if absolute:
-    return sum([fish in source for fish in content]) if sum([cod in source for cod in absolute]) else 0
+    return sum(fish in source for fish in content) if sum(cod in source for cod in absolute) else 0
   else:
-    return sum([some in source for some in content])
+    return sum(some in source for some in content)
 
 
 def acquire(source, target, action = None, *, code = None):
@@ -48,7 +50,7 @@ def acquire(source, target, action = None, *, code = None):
 
 def attain(source, *, depth = True):
   for item in [i for i in dir(source) if not i.startswith("__")]:
-    if not inspect.isclass(getattr(source, item)):
+    if not isclass(getattr(source, item)):
       yield getattr(source, item) if depth else item
     else:
       yield from attain(getattr(source, item), depth = depth)
@@ -136,9 +138,8 @@ def hexyze(source):
 
 
 def afflict():
-  anchor = requests.get(
-    f"https://api.openweathermap.org/data/2.5/weather?q=Antarctica&units=metric&appid={os.getenv('flake')}"
-  ).json()
+  anchor = get(
+    f"https://api.openweathermap.org/data/2.5/weather?q=Antarctica&units=metric&appid={os.getenv('flake')}").json()
   return 404 if anchor["cod"] == "404" else anchor
 
 
