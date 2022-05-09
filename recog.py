@@ -21,6 +21,7 @@ class item:
 
 class pool(Enum):
   def show(self, alias = None):
+    return self
     self = deepcopy(self)
     self.value.index = True
     if alias:
@@ -28,6 +29,7 @@ class pool(Enum):
     return self
 
   def hide(self):
+    return self
     self = deepcopy(self)
     self.value.index = False
     return self
