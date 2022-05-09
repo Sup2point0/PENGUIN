@@ -1,4 +1,4 @@
-version = 28.12
+version = 30.5
 
 
 import nextcord as discord
@@ -321,7 +321,7 @@ async def swim(ctx, state = "play", status = None, chance = 1):
     return
 
   if state == "play":
-    await penguin.change_presence(activity = discord.Game(name = (status if status else adventure())))
+    await penguin.change_presence(activity = discord.Game(name = (status if status else adventure.select())))
   elif state == "watch":
     await penguin.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = status))
   elif state == "listen":
@@ -1461,7 +1461,7 @@ async def col(interaction, colour = pool(description = "pick a hex colour", requ
 # customize decant
 @ vitalyze.subcommand(description = "change identifying decant")
 @ accumulate(call = "/vitalyze dec", req = 20)
-async def dec(interaction, decant = pool(description = "pick a decant", choices = [i[0] for i in uti.decates], required = True)):
+async def dec(interaction, decant = pool(description = "pick a decant", choices = [i.value for i in uti.decates], required = True)):
   try:
     arti.asseverate(interaction.user.id, "dec", decant, code = os.getenv("flipper"))
   except:

@@ -3,45 +3,15 @@ Convenient creation and manipulation of weighted lists.
 '''
 
 
-from __future__ import annotations
-
 from copy import deepcopy
 from random import randint, choice, sample
 from typing import Any, Iterable, NamedTuple
 
 
 class WeightedList(list):
-  '''A list of weighted items.
-
-  Items are stored as `WeightedItem` objects, which have a `value` and `weight`. The weight of each value can be thought of as how many duplicates are stored:
-
-  ```py
-  >>> wl = WeightedList(sup = 2, nova = 5)
-  >>> wl[0].value
-  'sup'
-  >>> wl[1].value
-  'sup'
-  >>> wl[2].value
-  'nova'
-  >>> wl[8].value
-  'nova'
-  ```
-
-  This allows weighted selection and randomization to be implemented without storing excessive duplicate items (especially for very disproportionate weights), increasing readability and usability.
-
-  ```py
-  wl = WeightedList(sup = 2, nova = 5)
-  wl.select()
-
-  # equivalent to:
-  rl = ["sup", "sup", "nova", "nova", "nova", "nova", "nova"]
-  random.choice(rl)
-  ```
-  '''
+  '''A list of weighted items.'''
 
   class WeightedItem:
-    '''A minor inner class representing a weighted item, with a `value` and `weight` attribute.'''
-
     def __init__(self, value, weight = 1, /):
       self.value = value
       self.weight = round(weight)
@@ -51,20 +21,15 @@ class WeightedList(list):
 
     @ property
     def raw(self, /):
-      '''A `NamedTuple` with the raw item info.'''
       return WeightedList.Item(self.value, self.weight)
 
 
   class Item(NamedTuple):
-    '''A `NamedTuple` representing a weighted item.'''
-
     value: Any
-    weight: int = 1
+    weight = 1
 
 
   def _convert_(self, item, /):
-    '''A minor inner method to convert any suitable value to a `WeightedItem`.'''
-
     lt = lambda cls: isinstance(item, cls)
     if lt(WeightedList.WeightedItem):
       return item
@@ -75,19 +40,14 @@ class WeightedList(list):
     if lt(str) or not lt(Iterable):
       return WeightedList.WeightedItem(item)
 
-    # type checks
     try:
       weight = round(item[0])
     except:
-
-      # order checks
       try:
         weight = round(item[1])
       except:
         raise TypeError("item weights must be numerical values")
       raise TypeError("item weights must be numerical values. Perhaps you passed the value and weight in the wrong way round?")
-
-    # value checks
     if weight < 1: raise ValueError("item weights cannot be less than 1")
     if weight < 0: raise ValueError("item weights cannot be negative")
     
@@ -95,9 +55,6 @@ class WeightedList(list):
 
 
   def _index_(self, index, /, *, depth = False):
-    '''A minor inner method to find the item or unweighted index at a weighted `index`.'''
-
-    # currently does not support index slicing
     if isinstance(index, slice):
       raise NotImplementedError("support for index slicing will be added in a future version")
     
@@ -125,57 +82,15 @@ class WeightedList(list):
 
 
   def _clear_(self, /):
-    '''A minor inner method to remove items whose `weight` is less than 1.'''
-
     self.__init__(*filter(lambda i: i.weight >= 1, self))
     return self
 
 
 
   def __init__(self, /, *items, **ktems):
-    '''Create a weighted list.
+    '''Create a weighted list.'''
 
-    Arguments can be passed in through many different ways.
-
-    ### Positional Arguments
-    The standard way is passing them as weight-value pairs. Note that the weight must come first (this is so that they consistently align together):
-
-    ```py
-    wl = WeightedList(
-      (2, "sup"),
-      (7, "nova")
-    )
-    ```
-
-    Existing sequences can be converted into a `WeightedList` by unpacking their contents, as long as each item follows this format:
-
-    ```py
-    pl = [(2, "sup"), (7, "nova")]
-    wl = WeightedList(*pl)
-    ```
-
-    ### Keyword Arguments
-    For each kwarg, the key is the item, and the value is its weight. Keyword arguments are certainly the most readable, but note that they only allow `str` items with no spaces or duplicates:
-
-    ```py
-    wl = WeightedList(sup = 2, nova = 7)
-    ```
-
-    Exisintg mappings can be passed in by unpacking their contents too:
-
-    ```py
-    pl = {"sup": 2, "nova": 7}
-    wl = WeightedList(**pl)
-    ```
-
-    All can be used in tandem if desired, although discouraged for evident reasons.
-    '''
-
-    # merge different input methods into one list
-    super().__init__(
-      [self._convert_(i) for i in items]
-    + [self._convert_(i[::-1]) for i in ktems.items()]
-    )
+    super().__init__([self._convert_(i) for i in items] + [self._convert_(i[::-1]) for i in ktems.items()])
 
 
   def __repr__(self, /):
@@ -186,53 +101,37 @@ class WeightedList(list):
     return "[" + ", ".join(f"{i.value} = {i.weight}" for i in self) + "]"
 
 
-  def __getitem__(self, index, /) -> WeightedItem:
-    '''Return item at `index` (considering weights).'''
-
+  def __getitem__(self, index, /):
     return self._index_(index, depth = True)
 
 
   def __setitem__(self, index, value, /):
-    '''Set item at `index` (considering weights) to `value`.'''
-
     super().__setitem__(self._index_(index), self._convert_(value))
 
 
   def __delitem__(self, index, /):
-    '''Delete (entire) item at `index` (considering weights).'''
-
     super().__delitem__(self._index_(index))
 
 
   def __contains__(self, value, /):
-    '''Check if contents contains `value`.'''
-
     return value in (v for i in self for v in (i.value, i.weight))
 
 
   def __len__(self, /):
-    '''Return total length (considering weights).'''
-
     return sum(i.weight for i in self)
 
 
   def __add__(self, value, /):
-    '''Return list extended by each item in `value`.'''
-
     return deepcopy(self).extend(value)
 
   def __radd__(self, value, /):
     return self.__add__(value)
 
   def __iadd__(self, value, /):
-    '''Extend list by each item in `value`.'''
-
     return self.extend(value)
 
 
   def __mul__(self, value, /):
-    '''Return list repeated `value` times.'''
-
     self = deepcopy(self)
     super().__imul__(value)
     return self
@@ -241,47 +140,35 @@ class WeightedList(list):
     return self.__mul__(value)
 
   def __imul__(self, value, /):
-    '''Repeat list `value` times.'''
-
     super().__imul__(value)
     return self
 
 
   def __truediv__(self, value, /):
-    '''Return list with all weights `/` `value`.'''
-
     for i in (self := deepcopy(self)):
       i.weight = round(i.weight / value)
     return self._clear_()
 
 
   def __floordiv__(self, value, /):
-    '''Return list with all weights `//` `value`.'''
-
     for i in (self := deepcopy(self)):
       i.weight = int(i.weight // value)
     return self._clear_()
 
 
   def __mod__(self, value, /):
-    '''Return list with all weights `%` `value`.'''
-
     for i in (self := deepcopy(self)):
       i.weight = round(i.weight % value)
     return self._clear_()
 
 
   def __pow__(self, value, /):
-    '''Return list with all weights `**` `value`.'''
-
     for i in (self := deepcopy(self)):
       i.weight = round(i.weight ** value)
     return self._clear_()
 
 
   def __eq__(self, value, /):
-    '''Check if all items and weights in list are equal and in equal order to those in another.'''
-
     if not isinstance(value, WeightedList) or len(self) != len(value):
       return False
     return [(i.value, i.weight) for i in self] == [(i.value, i.weight) for i in value]
@@ -291,25 +178,16 @@ class WeightedList(list):
 
 
   def __or__(self, value, /):
-    '''Return list merged with `value`.'''
-
     return self.merge(value)
 
   def __ior__(self, value, /):
-    '''Merge contents with `value`.'''
-
     self = self.merge(value)
     return self
 
 
 
-  def append(self, weight: int, value = None, /) -> WeightedList:
-    '''Append an item with `value` and `weight`.
-    
-    If `value` is not provided, `weight` will become the item’s value, while its weight will default to 1. If `weight` is already a `WeightedItem` (for example, extracted from another `WeightedList`), it will just be directly appended.
-
-    Returns the modified list for fluent chaining.
-    '''
+  def append(self, weight, value = None, /):
+    '''Append an item with `value` and `weight`.'''
 
     if value:
       super().append(WeightedList.WeightedItem(value, weight))
@@ -318,13 +196,8 @@ class WeightedList(list):
     return self
 
 
-  def extend(self, /, *items: Iterable) -> WeightedList:
-    '''Extend list by each iterable in `items`.
-   
-    Each iterable can be any type that is suitable to be converted to a `WeightedList`, the same as those that can be unpacked during instantiation.
-
-    Returns the modified list for fluent chaining.
-    '''
+  def extend(self, /, *items):
+    '''Extend list by each iterable in `items`.'''
 
     if isinstance(items, dict):
       super().extend(self._convert_(i[::-1]) for i in items.items())
@@ -333,25 +206,15 @@ class WeightedList(list):
     return self
 
 
-  def insert(self, index, value, /) -> WeightedList:
-    '''Insert `value` before `index` (considering weights).
-
-    The value will be inserted before the *entire* item at `index`.
-
-    `value` should be a suitable value that can be converted to a weighted item, the same as those provided during instantiation (note that the weight always comes first). If it only consists of a single value, that value’s weight will default to 1.
-
-    Returns the modified list for fluent chaining.
-    '''
+  def insert(self, index, value, /):
+    '''Insert `value` before `index` (considering weights).'''
 
     super().insert(self._index_(index), self._convert_(value))
     return self
 
 
-  def remove(self, value, count = 1, /) -> WeightedList:
-    '''Remove occurrence `count` of an item with `value`.
-
-    Returns the modified list for fluent chaining.
-    '''
+  def remove(self, value, count = 1, /):
+    '''Remove occurrence `count` of an item with `value`.'''
 
     i = 0
     for item in self:
@@ -364,13 +227,8 @@ class WeightedList(list):
     return self
 
 
-  def pop(self, index = -1, /, *, drop = False) -> WeightedItem:
-    '''Pop and return item at `index` (considering weights).
-    
-    If drop is `False`, the entire item will be removed.
-
-    If drop is `True`, the weight of the item will be decreased by 1 instead. If it then reaches 0, the item will be removed.
-    '''
+  def pop(self, index = -1, /, *, drop = False):
+    '''Pop and return item at `index`.'''
 
     if drop and self[index].weight > 1:
       self[index].weight -= 1
@@ -379,95 +237,21 @@ class WeightedList(list):
       return super().pop(self._index_(index))
 
 
-  def clear(self, /) -> WeightedList:
-    '''Clear list contents.
-    
-    Returns the list for fluent chaining.
-    '''
+  def clear(self, /):
+    '''Clear list contents.'''
 
     super().clear()
     return self
   
   
-  def sort(self, /) -> WeightedList:
+  def sort(self, /):
     '''Return a copy with items sorted by weight in ascending order.'''
 
     return sorted(self, key = lambda i: i.weight)
 
 
-  def select(self, /, *count, replace = True, depth = False) -> WeightedItem | list[WeightedItem]:
-    '''Return a random item(s), considering weights.
-
-    This is a convenience method that incorporates many different forms of randomized selection.
-
-    ### Single Selection
-    When called with no arguments, a single item is selected at random and returned:
-
-    ```py
-    >>> wl = WeightedList(sup = 2, nova = 7)
-    >>> wl.select()
-    'nova'
-    >>> wl.select()
-    'sup'
-    >>> wl.select()
-    'nova'
-    # 'nova' has a higher weight, so has a higher chance of being selected
-    ```
-
-    ### Multiple Selection
-    Multiple items can be selected at once with `count`. In this case, a list of values is returned, as opposed to just a single value:
-
-    ```py
-    >>> wl.select(2)
-    ['nova', 'nova']
-    ```
-
-    If 2 arguments are passed for `count`, a random integer is chosen between those 2 numbers (inclusive). This then becomes the number of items selected:
-
-    ```py
-    # selects anywhere between 1 to 10 items
-    >>> wl.select(1, 10)
-    # equivalent to:
-    >>> wl.select(random.randint(1, 10))
-    ```
-
-    If 3 arguments are passed, the third becomes the step of the range:
-
-    ```py
-    # selects 2, 4, ...18 or 20 items
-    >>> wl.select(2, 20, 2)
-    # equivalent to:
-    >>> wl.select(random.choice(range(2, 22, 2)))
-    ```
-
-    Note that if `1` is passed, a list will still be returned:
-
-    ```py
-    >>> wl.select()
-    'nova'
-    >>> wl.select(1)
-    ['nova']
-    ```
-
-    ### Selection Depth
-    By default, selections return the value stored within the selected item(s). If `depth` is `True`, then the `WeightedItem` itself will be returned.
-
-    ```py
-    >>> wl.select()
-    'nova'
-    >>> wl.select(depth = True)
-    WeightedItem('nova', 7)
-    ```
-
-    ### Selection Replacement
-    By default, selections are made with replacement (i.e. items can be selected more than once). If `replace` is `False`, then items will be removed from the pool upon selection (note that this does not affect the original list in any way).
-
-    ```py
-    >>> wl.select(20, replace = False)
-    ['nova', 'nova', 'sup', 'nova', 'nova', 'nova', 'nova', 'sup', 'nova']
-    # only 9 items have been selected
-    ```
-    '''
+  def select(self, /, *count, replace = True, depth = False):
+    '''Return a random item(s), considering weights.'''
 
     if count:
       if len(count) > 1:
@@ -507,27 +291,8 @@ class WeightedList(list):
     return item if depth else item.value
 
 
-  def merge(self, /, *items: Iterable) -> WeightedList:
-    '''Merge contents with each iterable in `items`, increasing an item’s weight if it already exists, else appending it.
-
-    Sequences can be `WeightedList`s, or any compatible iterable (those that can be unpacked during instantiation).
-    
-    ```py
-    >>> wl = WeightedList(sup = 2, nova = 7)
-    >>> vl = WeightedList(sup = 20, shard = 13)
-    >>> wl.merge(vl)
-    WeightedList(('sup', 22), ('nova', 7), ('shard', 13))
-    # the 2 'sup' items and their weights have been combined
-    ```
-
-    Multiple lists can be merged simultaneously if needed.
-
-    ```py
-    wl.merge(wl, vl, vl)
-    ```
-
-    Returns the modified list for fluent chaining.
-    '''
+  def merge(self, /, *items):
+    '''Merge contents with each iterable in `items`, increasing an item’s weight if it already exists, else appending it.'''
 
     for item in items:
       swap = isinstance(item, dict)
@@ -541,7 +306,7 @@ class WeightedList(list):
     return self
 
 
-  def index(self, value, /, count = 1, *, depth = False) -> int:
+  def index(self, value, /, count = 1, *, depth = False):
     '''Return index (considering weights) of occurrence `count` of `value`.'''
 
     i, idx = 0, 0
@@ -553,7 +318,7 @@ class WeightedList(list):
       i += item.weight
 
 
-  def identify(self, weight: int, /, count = 1, *, depth = False) -> int:
+  def identify(self, weight, /, count = 1, *, depth = False):
     '''Return index (considering weights) of occurrence `count` of an item with `weight`.'''
 
     i, idx = 0, 0
@@ -565,25 +330,25 @@ class WeightedList(list):
       i += item.weight
 
 
-  def count(self, value, /) -> int:
+  def count(self, value, /):
     '''Return number of occurrences of `value`.'''
 
     return sum(i.value == value for i in self)
 
 
-  def frequency(self, weight: int, /) -> int:
+  def frequency(self, weight, /):
     '''Return number of occurrences of items with `weight`.'''
 
     return sum(i.weight == weight for i in self)
 
 
-  def total(self, value, /) -> int:
+  def total(self, value, /):
     '''Return total weight of all occurrences of `value`.'''
 
     return sum(i.weight * (i.value == value) for i in self)
 
 
-  def shift(self, dist: int = 1, /) -> WeightedList:
+  def shift(self, dist = 1, /):
     '''Return a copy with all value-weight pairings shifted by `dist` (right). Values remain in place, while weights move.'''
 
     self = deepcopy(self)
@@ -592,7 +357,7 @@ class WeightedList(list):
     return self
 
 
-  def shuffle(self, /) -> WeightedList:
+  def shuffle(self, /):
     '''Return a copy with all value-weight pairings shuffled. Values remain in place, while weights move.'''
 
     self = deepcopy(self)
@@ -600,7 +365,7 @@ class WeightedList(list):
     return self
 
 
-  def increment(self, value = 1, /) -> WeightedList:
+  def increment(self, value = 1, /):
     '''Return a copy with all weights increased by `value`.
     
     Note that `value` can be negative.
@@ -611,7 +376,7 @@ class WeightedList(list):
     return self._clear_()
 
 
-  def augment(self, value: int | float, /) -> WeightedList:
+  def augment(self, value, /):
     '''Return a copy with all weights multiplied by `value`.'''
 
     for i in (self := deepcopy(self)):
@@ -619,11 +384,8 @@ class WeightedList(list):
     return self._clear_()
 
 
-  def deviate(self, factor: int | float, /) -> WeightedList:
-    '''Raise all weights to the power of `factor`. Non-integer weights will be rounded.
-
-    Returns the modified list for fluent chaining.
-    '''
+  def deviate(self, factor, /):
+    '''Raise all weights to the power of `factor`. Non-integer weights will be rounded.'''
 
     # reciprocal checking (otherwise all weights would be rounded to 0)
     if factor < 0:
@@ -634,7 +396,7 @@ class WeightedList(list):
     return self._clear_()
 
 
-  def replace(self, value, new, /) -> WeightedList:
+  def replace(self, value, new, /):
     '''Return a copy with all occurrences of `value` replaced with `new`.'''
 
     for i in (self := deepcopy(self)):
@@ -643,13 +405,8 @@ class WeightedList(list):
     return self
 
 
-  def variate(self, weight: int = None, new: int = None, /) -> WeightedList:
-    '''Return a copy with all occurrences of `weight` replaced with `new`.
-    
-    If `new` is not passed, each occurrence will be replaced with a random weight between the list’s minimum and maximum weights.
-
-    If `weight` is not passed, all weights will be replaced.
-    '''
+  def variate(self, weight = None, new = None, /):
+    '''Return a copy with all occurrences of `weight` replaced with `new`.'''
 
     # test convert to check if weight is valid
     self._convert_((new, None))
@@ -661,33 +418,14 @@ class WeightedList(list):
     return self
 
 
-  def extrapolate(self, /) -> list[Any]:
-    '''Extract contents as a raw `list` of each `value` repeated `weight` times.
-    
-    ```py
-    >>> wl = WeightedList(sup = 2, nova = 5)
-    >>> wl.extrapolate()
-    ['sup', 'sup', 'nova', 'nova', 'nova', 'nova', 'nova']
-    ```
-
-    This can also be accessed through the `raw` property.
-    '''
+  def extrapolate(self, /):
+    '''Extract contents as a raw `list` of each `value` repeated `weight` times.'''
 
     return [v for i in self for v in [i.value] * i.weight]
 
 
-  def cluster(self, /, size: int = None) -> WeightedList:
-    '''Return a copy with contents clustered such that each item’s weight does not exceed `size`. If size is not passed, all duplicate items will be merged.
-
-    Items whose weights exceed `size` are split into multiple items:
-
-    ```py
-    >>> wl = WeightedList(sip = 1, sup = 7, nova = 13)
-    >>> wl.cluster(5)
-    WeightedList(('sup', 1), ('sup', 5), ('sup', 2), ('nova', 5), ('nova', 5), ('nova', 3))
-    # the total weight of each item remains as it was before
-    ```
-    '''
+  def cluster(self, /, size = None):
+    '''Return a copy with contents clustered such that each item’s weight does not exceed `size`. If size is not passed, all duplicate items will be merged.'''
 
     if size:
       if not isinstance(size, int):
@@ -709,7 +447,7 @@ class WeightedList(list):
 
 
 
-  def min(self, /) -> WeightedItem | list[WeightedItem]:
+  def min(self, /):
     '''Return item(s) with lowest weight. If multiple tie, a list with each is returned.'''
 
     i = self[0].weight
@@ -725,7 +463,7 @@ class WeightedList(list):
     return log if len(log) > 1 else log[0]
 
 
-  def max(self, /) -> WeightedItem | list[WeightedItem]:
+  def max(self, /):
     '''Return item(s) with highest weight. If multiple tie, a list with each is returned.'''
 
     i = 0
@@ -741,49 +479,49 @@ class WeightedList(list):
     return log if len(log) > 1 else log[0]
 
 
-  def median(self, /) -> Any:
+  def median(self, /):
     '''Return median item, considering weights. If there are 2, the former is returned.'''
 
     return self[len(self) // 2 - 1]
 
 
-  def average(self, /) -> float:
+  def average(self, /):
     '''Return average (arithemetic mean) of item weights.'''
 
-    return float(len(self) / super().__len__())
+    return float(sum(i.weight for i in self) / len(self))
 
 
 
   @ property
-  def values(self, /) -> list[Any]:
+  def values(self, /):
     '''Extract a `list` of stored values.'''
 
     return [i.value for i in self]
 
 
   @ property
-  def weights(self, /) -> list[int]:
+  def weights(self, /):
     '''Extract a `list` of stored weights.'''
 
     return [i.weight for i in self]
 
 
   @ property
-  def items(self, /) -> list[NamedTuple]:
+  def items(self, /):
     '''Extract contents as a raw `list` of value-weight `NamedTuple`s.'''
 
     return [WeightedList.Item(i.value, i.weight) for i in self]
 
 
   @ property
-  def list(self, /) -> list[list[Any, int]]:
+  def list(self, /):
     '''Extract a `list` of stored value-weight pairs.'''
 
     return [[i.value, i.weight] for i in self]
 
 
   @ property
-  def dict(self, /) -> dict[Any, int]:
+  def dict(self, /):
     '''Extract a `dict` of stored value-weight pairs.'''
 
     data = {}
@@ -798,7 +536,7 @@ class WeightedList(list):
 
 
   @ property
-  def raw(self, /) -> list[Any]:
+  def raw(self, /):
     '''Extract contents as a raw `list` of each `value` repeated `weight` times.'''
 
     return [v for i in self for v in [i.value] * i.weight]

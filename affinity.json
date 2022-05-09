@@ -2,33 +2,33 @@
   "self": {
     "ver": {
       "sup": 6,
-      "sub": 28.8,
-      "up": 1652120427,
+      "sub": 30.5,
+      "up": 1652126641,
       "in": 2,
       "swim": true
     },
     "stats": {
-      "res": 1001,
-      "stas": 1415,
-      "live": 2791661,
+      "res": 1003,
+      "stas": 1419,
+      "live": 2794301,
       "pong": 1652120709,
-      "sent": 5414,
-      "react": 285,
-      "view": 20
+      "sent": 5422,
+      "react": 286,
+      "view": 21
     },
     "calls": {
-      "mes": 7665,
-      "rec": 2151,
-      "act": 7550,
+      "mes": 7685,
+      "rec": 2158,
+      "act": 7581,
       "ping": 245,
-      "help": 259,
+      "help": 260,
       "util": 90,
       "index": 104,
       "info": 142,
       "play": 43,
       "vita": 54,
       "dir": 44,
-      "ctx": 6,
+      "ctx": 7,
       "err": 401,
       "acc": 6
     },
@@ -109,8 +109,8 @@
         "view": 61
       },
       "vitals": {
-        "points": 3573,
-        "rise": 3242,
+        "points": 3590,
+        "rise": 3259,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -124,14 +124,14 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1113,
+        "sent": 1128,
         "react": 6,
-        "act": 304,
+        "act": 307,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
         "dir": 20,
-        "ctx": 7,
+        "ctx": 8,
         "err": 139,
         "acc": 8
       },
@@ -178,6 +178,7 @@
           "/help command",
           "None",
           "/index view",
+          "None",
           "None"
         ],
         "played": [
@@ -205,6 +206,18 @@
         "max": 0
       },
       "log": [
+        [
+          "+1",
+          "used `/vita rankings`"
+        ],
+        [
+          "+1",
+          "used `/what sup`"
+        ],
+        [
+          "+15",
+          "used a command for the first time"
+        ],
         [
           "+2",
           "used `/info about`"
@@ -272,18 +285,6 @@
         [
           "+20",
           "used `/index view` for the first time"
-        ],
-        [
-          "+2",
-          "used `/help tip`"
-        ],
-        [
-          "+2",
-          "used `/help command`"
-        ],
-        [
-          "+1",
-          "used `/help start`"
         ]
       ],
       "rec": {}
@@ -372,7 +373,7 @@
         "uni": "ISAB"
       },
       "stats": {
-        "sent": 1083,
+        "sent": 1086,
         "react": 5,
         "act": 233,
         "/help": 0,
@@ -435,7 +436,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1373508,
+        "hold": 1376148,
         "max": 0
       },
       "log": [

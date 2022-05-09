@@ -171,7 +171,7 @@ class aspire:
     "Needs to be an integer",
     "Guess must be an integer",
     "Guess has to be an integer",
-    "We’re only playing with integers here!"
+    "We’re only playing with integers here!",
   )]
 
   emoji = [WeightedList(
@@ -195,7 +195,7 @@ class accede:
     "Wow, no one’s pinged me in a while. Here, take some points!",
   )]
   
-  acquaint = [WeightedList(]
+  acquaint = [WeightedList(
     "I’m doing great!",
     "Yeah, I’m doing alright!",
     "Life’s good!",
@@ -203,7 +203,7 @@ class accede:
     "Hey, thanks for asking! Take some points for being nice :adePenguin:",
     "Oh, now you’re trying to exploit the system? Well, I’ll take those points right back.",
     "Still more? The audacity, unbelievable. Fine, take your points.",
-    ["Stop asking me.", "Stop pestering me."],
+    (1, ["Stop asking me.", "Stop pestering me."]),
     "Now you’re just being pesky.",
     "Let me play in peace.",
   )]
@@ -215,7 +215,7 @@ class accede:
     "I can search indexes, play complex games with lore, and operate an interconnected account system. Unfortunately, I don’t have artificial intelligence quite yet.",
   )
 
-  allay = WeightedList(
+  allay = [
     ("Why do people find it so lonely in Antarctica?",
       "Cuz it’s so ice-o-lated!"),
     ("Why is it difficult to make friends in Antarctica?",
@@ -272,7 +272,7 @@ class accede:
     ("What did the terrorists say when they invaded Antarctica?",
       "The ISIS everywhere.",
       "The ‘ice is’ everywhere! Except of course it’s not ice..."),
-  )
+  ]
 
 
 class ascent:

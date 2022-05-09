@@ -88,7 +88,7 @@ def now():
 
 def antect(day = None):
   if not day: day = datetime.now()
-  idx = day.timetuple().tm_yday + 273) % 365 + 1
+  idx = (day.timetuple().tm_yday + 273) % 365 + 1
   return decates[idx].value, idx
 
 def display(unix):
