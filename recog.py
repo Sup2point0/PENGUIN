@@ -13,14 +13,14 @@ class item:
   
   def show(self, alias = None):
     self = deepcopy(self)
-    self.value.index = True
+    self.index = True
     if alias:
       self.value.alias = alias
     return self
 
   def hide(self):
     self = deepcopy(self)
-    self.value.index = False
+    self.index = False
     return self
   
   class field:
