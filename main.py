@@ -354,7 +354,7 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
       await interaction.send(arti.accentuate(content))
 
     if detail == "temperature":
-      await respond(f"It’s currently {round(arti.acquire(cast, 'temp') + random.uniform(-0.2, 0.2), 1)}°C"))
+      await respond(f"It’s currently {round(arti.acquire(cast, 'temp') + random.uniform(-0.2, 0.2), 1)}°C")
     elif detail == "pressure":
       await respond(f"Pressure’s at {arti.acquire(cast, 'pressure')}")
     elif detail == "humidity":
