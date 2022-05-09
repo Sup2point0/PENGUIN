@@ -2,25 +2,25 @@
   "self": {
     "ver": {
       "sup": 6,
-      "sub": 27.27,
-      "up": 1651941190,
+      "sub": 28.8,
+      "up": 1652120427,
       "in": 2,
       "swim": true
     },
     "stats": {
-      "res": 999,
-      "stas": 1412,
-      "live": 2788942,
-      "pong": 1650912584,
-      "sent": 5387,
+      "res": 1001,
+      "stas": 1414,
+      "live": 2789525,
+      "pong": 1652120709,
+      "sent": 5410,
       "react": 285,
-      "view": 19
+      "view": 20
     },
     "calls": {
-      "mes": 7642,
-      "rec": 2123,
-      "act": 7477,
-      "ping": 244,
+      "mes": 7645,
+      "rec": 2147,
+      "act": 7522,
+      "ping": 245,
       "help": 259,
       "util": 90,
       "index": 104,
@@ -29,7 +29,7 @@
       "vita": 54,
       "dir": 44,
       "ctx": 6,
-      "err": 397,
+      "err": 401,
       "acc": 6
     },
     "misc": {
@@ -106,11 +106,11 @@
         "ver": 0.5,
         "init": 1646775031,
         "sync": 1648154781,
-        "view": 60
+        "view": 61
       },
       "vitals": {
-        "points": 3496,
-        "rise": 3165,
+        "points": 3565,
+        "rise": 3234,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -124,15 +124,15 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1103,
+        "sent": 1106,
         "react": 6,
-        "act": 281,
+        "act": 300,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
         "dir": 20,
         "ctx": 7,
-        "err": 135,
+        "err": 139,
         "acc": 8
       },
       "games": {
@@ -176,6 +176,8 @@
           "None",
           "/util idea",
           "/help command",
+          "None",
+          "/index view",
           "None"
         ],
         "played": [
@@ -204,10 +206,6 @@
       },
       "log": [
         [
-          "+4",
-          "used `/util cast`"
-        ],
-        [
           "+1",
           "used `/vita visualyze`"
         ],
@@ -216,16 +214,32 @@
           "used `/vita visualyze`"
         ],
         [
-          "+1",
-          "used `/vita aid`"
+          "+3",
+          "used `/util cal`"
         ],
         [
-          "+1",
-          "used `/what sup`"
+          "+2",
+          "used `/util antect`"
         ],
         [
-          "+1",
-          "used `/help start`"
+          "+2",
+          "used `/util decate`"
+        ],
+        [
+          "+2",
+          "used `/info game`"
+        ],
+        [
+          "+2",
+          "used `/info role`"
+        ],
+        [
+          "+2",
+          "used `/info acro`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
         ],
         [
           "+20",
@@ -233,55 +247,43 @@
         ],
         [
           "+2",
-          "used `/info about`"
+          "used `/index games`"
         ],
         [
-          "+1",
-          "used `/vita visualyze`"
+          "+3",
+          "used `/index filter`"
         ],
         [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
+          "+20",
+          "used `/index view` for the first time"
         ],
         [
           "+2",
-          "used `/info about`"
+          "used `/help tip`"
         ],
         [
           "+2",
-          "used `/info about`"
+          "used `/help command`"
         ],
         [
-          "+2",
-          "used `/info about`"
+          "+1",
+          "used `/help start`"
         ],
         [
-          "+2",
-          "used `/info about`"
+          "+1",
+          "used `/help all`"
         ],
         [
-          "+2",
-          "used `/info about`"
+          "+1",
+          "used `/help info`"
+        ],
+        [
+          "+4",
+          "used `/util cast`"
+        ],
+        [
+          "+1",
+          "used `/vita visualyze`"
         ]
       ],
       "rec": {}
@@ -433,7 +435,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1370400,
+        "hold": 1371372,
         "max": 0
       },
       "log": [

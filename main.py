@@ -1,4 +1,4 @@
-version = 28.5
+version = 28.10
 
 
 import nextcord as discord
@@ -230,7 +230,7 @@ async def stuff(interaction, category: int = pool(description = "pick a specific
     expand = expand("stxp.hpal")
 
   if interaction is None: return visual()
-  await interaction.send(embed = content, view = None if category else visual(), ephemeral = True)
+  await interaction.send(embed = content, view = embed.Empty if category else visual(), ephemeral = True)
 
 
 # where to start
@@ -371,8 +371,8 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
     decate = uti.antect()
 
     def content():
-      cast = arti.afflict()
-      cast = lambda detail: arti.acquire(cast, detail)
+      forecast = arti.afflict()
+      cast = lambda detail: arti.acquire(forecast, detail)
       return (embed(title = "Weather Forecast", description = uti.avast(f"""
         {decate[0]} {decate[1]}
         {uti.line}
@@ -702,7 +702,7 @@ async def fill_acro(interaction, acronym):
 @ accumulate(call = "/info role")
 async def role(interaction, role: discord.Role = pool(description = "pick a role, or find out about a random role", required = False)):
   if not role:
-    role = random.choice(list(ascept.keys))
+    role = random.choice(list(ascept.keys()))
 
   if role.name in ascept:
     content = uti.embed(ascept[role.name], colour = home.get_role(role.id).colour)
