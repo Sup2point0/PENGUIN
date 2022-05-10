@@ -46,12 +46,11 @@ class main:
       Antarctica has its own calendar, festivals, and education system.
 
       Citizens of Antarctica are known as ‘Antarcticans’.
-
-      *For more, visit [Wikipedia](wikipedia.org/wiki/Antarctica).*
     """,
     other = "Continent of Antarctica, Colonies of Antarctica, Republic of Antarctica",
     tags = "main, antarctica, country, countries, home, start",
     url = "https://cdn.discordapp.com/attachments/925419481205968916/926779087073194014/Flag_of_Antarctica.jpg",
+    more = "https://en.wikipedia.org/wiki/Antarctica"
   )
 
   Continent = item(
@@ -67,6 +66,7 @@ class main:
     other = "Nation of Antarctica",
     tags = "main, antarctica, continent, continents, natural, nato, home, start",
     url = "https://cdn.discordapp.com/attachments/925419481205968916/925419503322546216/Antarctica.png",
+    more = "https://en.wikipedia.org/wiki/Antarctica"
   )
 
   Foundation = item(
@@ -113,7 +113,7 @@ class main:
       Vitaline Core + Vitaline Shard
       Inga Cavern of the Ancients
     """,
-    other = "Each of the Marvels"
+    other = "Each of the Marvels",
   )
 
 
