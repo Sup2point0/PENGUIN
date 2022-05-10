@@ -2,24 +2,24 @@
   "self": {
     "ver": {
       "sup": 6,
-      "sub": 30.5,
-      "up": 1652126641,
+      "sub": 30.9,
+      "up": 1652132603,
       "in": 2,
       "swim": true
     },
     "stats": {
-      "res": 1003,
-      "stas": 1419,
-      "live": 2794685,
+      "res": 1004,
+      "stas": 1421,
+      "live": 2799845,
       "pong": 1652120709,
-      "sent": 5432,
+      "sent": 5438,
       "react": 286,
-      "view": 21
+      "view": 22
     },
     "calls": {
-      "mes": 7715,
-      "rec": 2163,
-      "act": 7625,
+      "mes": 7750,
+      "rec": 2166,
+      "act": 7669,
       "ping": 245,
       "help": 260,
       "util": 90,
@@ -106,11 +106,11 @@
         "ver": 0.5,
         "init": 1646775031,
         "sync": 1648154781,
-        "view": 61
+        "view": 62
       },
       "vitals": {
-        "points": 3598,
-        "rise": 3267,
+        "points": 3601,
+        "rise": 3270,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -125,8 +125,8 @@
       },
       "stats": {
         "sent": 1135,
-        "react": 6,
-        "act": 311,
+        "react": 10,
+        "act": 314,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
@@ -207,6 +207,18 @@
       },
       "log": [
         [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
           "+2",
           "used `/util antect`"
         ],
@@ -273,18 +285,6 @@
         [
           "+2",
           "used `/info game`"
-        ],
-        [
-          "+2",
-          "used `/info role`"
-        ],
-        [
-          "+2",
-          "used `/info acro`"
-        ],
-        [
-          "+2",
-          "used `/info about`"
         ]
       ],
       "rec": {}
@@ -355,7 +355,7 @@
         "ver": 0.5,
         "init": 1646859969,
         "sync": 1646859969,
-        "view": 4
+        "view": 5
       },
       "vitals": {
         "points": 20710,
@@ -436,7 +436,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1376532,
+        "hold": 1381692,
         "max": 0
       },
       "log": [
