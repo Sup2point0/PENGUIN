@@ -1,4 +1,4 @@
-version = 30.9
+version = 30.11
 
 
 import nextcord as discord
@@ -1146,7 +1146,7 @@ def aliate(identity):
         {arti.acquire(self, "mes")} messages received
         {arti.acquire(self, "dir")} direct messages received
         {arti.acquire(self, "rec")} command invocations received
-        {arti.acquire(self, "act")} commands succesfully activated
+        {arti.acquire(self, "act")} commands successfully activated
         {arti.acquire(self, "ctx")} context commands activated
         {arti.acquire(self, "err")} errors raised
         {arti.acquire(self, "acc")} restricted attempts
