@@ -3,91 +3,91 @@ from weightedlist import WeightedList as wl
 
 class attest:
   generic = wl(
-    "Something went wrong",
-    "An error occured",
-    "Encountered an error",
+    (3, "Something went wrong"),
+    (2, "An error occured"),
+    (2, "Encountered an error"),
   )
 
   index = wl(
-    "Nothing found",
-    "No items found",
-    "No item ‘{}’ found",
-    "Didn’t find anything",
-    "Didn’t find anything...",
-    "Didn’t find anything?",
-    "Did you make a typo?",
+    (3, "Nothing found"),
+    (4, "No items found"),
+    (3, "No item ‘{}’ found"),
+    (3, "Didn’t find anything"),
+    (2, "Didn’t find anything..."),
+    (2, "Didn’t find anything?"),
+    (2, "Did you make a typo?"),
   )
 
   command = wl(
-    "No command found",
-    "Didn’t find that command...",
-    "Don’t think that command exists!",
-    "Don’t think that command exists...",
-    "Are you sure I can do that?",
-    "Uh, I don’t think I can do that...",
-    "Wait, I can do that?",
+    (4, "No command found"),
+    (3, "Didn’t find that command..."),
+    (3, "Don’t think that command exists!"),
+    (3, "Don’t think that command exists..."),
+    (2, "Are you sure I can do that?"),
+    (2, "Uh, I don’t think I can do that..."),
+    (2, "Wait, I can do that?"),
   )
 
   restrict = wl(
-    "Access denied",
-    "Unauthouryzed access",
-    "You can’t use that command",
-    "Hold up, you aren’t allowed to use that command!",
+    (4, "Access denied"),
+    (2, "Unauthouryzed access"),
+    (2, "You can’t use that command"),
+    (1, "Hold up, you aren’t allowed to use that command!"),
   )
 
   future = wl(
-    "Working on it",
-    "You can’t used that command yet",
-    "You can’t used that command yet, but you will be able to soon",
+    (3, "Working on it"),
+    (2, "You can’t used that command yet"),
+    (1, "You can’t used that command yet, but you will be able to soon"),
   )
 
   require = wl(
-    "You need more vita points",
-    "You need more vita points to use that command",
-    "That command requires {} vita points to use",
+    (3, "You need more vita points"),
+    (2, "You need more vita points to use that command"),
+    (2, "That command requires {} vita points to use"),
   )
 
 
   init = wl(
-    "Initialyzation failed",
-    "Identity initialyzation failed",
+    (3, "Initialyzation failed"),
+    (2, "Identity initialyzation failed"),
   )
   
   exist = wl(
-    "You already have an identity!",
-    "Hey, you already have an identity!",
-    "Hold up, you already have an identity!",
-    "Your identity already exists!",
-    "You’ve already got an identity",
+    (4, "Your identity already exists!"),
+    (4, "You already have an identity!"),
+    (3, "You’ve already got an identity"),
+    (2, "Hey, you already have an identity!"),
+    (2, "Hold up, you already have an identity!"),
   )
 
   identity = wl(
-    "Identity not found",
-    "Didn’t find an identity",
-    "Couldn’t find anyone",
-    "Couldn’t find an identity",
-    "Couldn’t find that user’s identity. Maybe they don’t have one?",
-    "That identity doesn’t exist!",
+    (4, "Identity not found"),
+    (4, "Didn’t find an identity"),
+    (3, "Couldn’t find anyone"),
+    (3, "Couldn’t find an identity"),
+    (2, "Couldn’t find that user’s identity. Maybe they don’t have one?"),
+    (2, "That identity doesn’t exist!"),
   )
 
 
   colour = wl(
-    "Invalid colour",
-    "Invalid colour provided",
-    "Not a valid colour",
-    "Just provide the raw colour code, no need to add `#` or `0x`",
+    (4, "Invalid colour"),
+    (3, "Not a valid colour"),
+    (2, "Invalid colour provided"),
+    (1, "Just provide the raw colour code, no need to add `#` or `0x`"),
   )
 
   date = wl(
-    "Invalid date",
-    "Day out of range of month",
+    (3, "Invalid date"),
+    (2, "Day out of range of month"),
   )
 
   locale = wl(
-    "Invalid location",
-    "I can’t set your location to that",
-    "Can’t find that location",
-    "Never heard of that place",
+    (4, "Invalid location"),
+    (3, "I can’t set your location to that"),
+    (2, "Can’t find that location"),
+    (2, "Never heard of that place"),
   )
 
 
@@ -111,7 +111,7 @@ class aspire:
   )
 
   thread = wl(
-    "You can't play a game within a thread",
+    "You can’t play a game within a thread",
     "I can’t initialyze a game within a thread",
   )
 
@@ -125,7 +125,7 @@ class aspire:
   wrong = wl(
     "Incorrect",
     "Nope",
-    "Don't think so",
+    "Don’t think so",
     "That’s not it",
   )
 
