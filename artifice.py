@@ -82,6 +82,8 @@ def asseverate(target, detail = None, action = None, reason = None, *, code = No
           if detail == "points":
             if "+" in action:
               acquire(sup, "rise", action)
+              if eval(action) > acquire(sup, "max"):
+                acquire(sup, "max", action, code = os.getenv("flipper"))
             elif "-" in action:
               acquire(sup, "drop", action)
 
