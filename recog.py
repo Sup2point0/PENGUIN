@@ -276,7 +276,7 @@ class time:
         {util.icons.sound} /'vɛpɪdə/
         {util.icons.value} Warmth
 
-        The eighth decant of the Antarctican calendar. It is the warmest month of the year, being right at the peak of the Antarctican summer.
+        The eighth decant of the Antarctican calendar. It is the warmest decant of the year, being right at the peak of the Antarctican summer.
       """,
       other = "Decant, Antarctican Calendar",
     )
@@ -360,6 +360,7 @@ class geo:
         Ascerta
         ...
         Titeria
+        Tyrestra
         Divelda
         Dessica
         Dicenda
@@ -381,7 +382,7 @@ class geo:
       content = f"""
         {util.icons.sound} /ə'vɛntʃə'riːnə/
 
-        The prime district of Antarctica, comprised of 5 cities, including the capital, Ross City. It is located in Central Antarctica.
+        The prime district of Antarctica, comprised of 5 cities, including the capital, Ross City. It is located in Central Antarctica. It is named after aventurine, the national gemstone of Antarctica.
       """,
       fields = [
         item.field("Cities",
@@ -409,7 +410,7 @@ class geo:
 
         *Not to be confused with the city, Atla.*
 
-        A modern district of Antarctica, comprised of 12 cities.
+        A modern district of Antarctica, comprised of 12 cities. It is named after Atalon, a mythical place told of in Antarctican legends.
       """,
       fields = [
         item.field("Cities",
@@ -640,6 +641,14 @@ class loc:
     content = """
     """,
     other = None,
+  )
+
+  Atalon = item(
+    title = "Atalon",
+    caption = "Legendary Location",
+    content = """
+    """,
+    other = "Atalos, Atalla",
   )
 
 
@@ -1534,9 +1543,9 @@ class egg:
   )
 
 
-affluence = {
-  "antect": item()
-}
+class word:
+
+  antect = item()
 
 
 some = item(

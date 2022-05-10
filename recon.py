@@ -1,4 +1,5 @@
 from recog import *
+from weightedlist import WeightedList
 
 
 ancest = {
@@ -321,40 +322,45 @@ ancest = {
 }
 
 
-assist = [
-  "You can submit ideas using `/util idea`.",
-  "If you find any bugs or missing descriptions, be sure to report it!",
-  "Autocomplete can take a second to load, as the options have to be sent to from Penguin to Discord.",
-  "If autocomplete fail to load, that’s probably a sign that something’s broken. Alternatively, Penguin could be down.",
-  "Many autocomplete options will display randomyzed items when you haven’t typed anything yet.",
-  "Many commands with a singular optional field will lookup a random item when the field is left empty.",
-  "You can submit anonymous ideas when activating `/util idea` by enabling the `anonymous` option, should you wish to do so.",
-  "You can view my profile using `/vita visualyze` to see global stats across all identities.",
-]
+affluence = {
+  "antect": word.antect.show()
+}
 
-aspect = [
-  "69% of the world’s freshwater reserves are stored in the ancient ice of the Antarctic continent.",
-  "The flag of Antarctica depicts a triangular pole against a dark blue sky, with a shadow cast upon on the white ice.",
-  "The Foundation of Antarctica’s flag is actually the flag of Antarctica flipped!",
-  "The Foundation of Antarctica’s flag depicts an iceberg floating among a dark blue sea, against a white sky, with dark blue structures of civilization atop it.",
-  "The capital city of Antarctica is Ross City, in the Aventurina Distict.",
-  "The decants and their values correspond with the time of year that they represent – for example, Vepida, the decant of warmth, is the peak of summer and the warmest decant of the year.",
-  "People can still survive within the Geosphere without a CORE; it’s just colder and less comfortable.",
-  "The I-CORE contains a tiny amount of Antarctic Essence.",
-  "Should you decide to throw yourself at the Geosphere, which is heavily unadvised, you’ll be instantly neutralized.",
-  "The words ‘Antarctic’ and ‘Antarctican’ are very similar, but have slightly different meanings. ‘Antarctic’ means relating, to the *continent* of Antarctica, while ‘Antarctican’ means relating to the *country* of Antarctica.",
-  "The colour of the Antarctican flag is known as ‘Antarctican Blue’.",
-  "The blue tint of the surface ice in Antarctica is known as ‘Antarctic Blue’.",
-  "Aventurine is the national gemstone of Antarctica.",
-  "SHARD is the 3rd generation of its Adeline, preceded by SPARK and SHIVER.",
-  "PENGUIN is the second generation of its Adeline, preceded by EDEN.",
-  "*Vitaline* was originally called *Lifeline*.",
-  "Would you like to know about the Arctic? Well, we don’t talk about that here.",
-  "The old version of the A-CORE was called the ARC.",
-  "The old version of the V-CORE was called the AVA.",
-]
 
-arcane = [
+assist = WeightedList(
+  (1, "You can submit ideas using `/util idea`."),
+  (1, "If you find any bugs or missing descriptions, be sure to report it!"),
+  (1, "Autocomplete can take a second to load, as the options have to be sent to from Penguin to Discord."),
+  (1, "If autocomplete fail to load, that’s probably a sign that something’s broken. Alternatively, Penguin could be down."),
+  (1, "Many autocomplete options will display randomyzed items when you haven’t typed anything yet."),
+  (1, "Many commands with a singular optional field will lookup a random item when the field is left empty."),
+  (1, "You can submit anonymous ideas when activating `/util idea` by enabling the `anonymous` option, should you wish to do so."),
+  (1, "You can view my profile using `/vita visualyze` to see global stats across all identities."),
+)
+
+aspect = WeightedList(
+  (1, "69% of the world’s freshwater reserves are stored in the ancient ice of the Antarctic continent."),
+  (1, "The flag of Antarctica depicts a triangular pole against a dark blue sky, with a shadow cast upon on the white ice."),
+  (1, "The Foundation of Antarctica’s flag is actually the flag of Antarctica flipped!"),
+  (1, "The Foundation of Antarctica’s flag depicts an iceberg floating among a dark blue sea, against a white sky, with dark blue structures of civilization atop it."),
+  (1, "The capital city of Antarctica is Ross City, in the Aventurina Distict."),
+  (1, "The decants and their values correspond with the time of year that they represent – for example, Vepida, the decant of warmth, is the peak of summer and the warmest decant of the year."),
+  (1, "People can still survive within the Geosphere without a CORE; it’s just colder and less comfortable."),
+  (1, "The I-CORE contains a tiny amount of Antarctic Essence."),
+  (1, "Should you decide to throw yourself at the Geosphere, which is heavily unadvised, you’ll be instantly neutralized."),
+  (1, "The words ‘Antarctic’ and ‘Antarctican’ are very similar, but have slightly different meanings. ‘Antarctic’ means relating to the *continent* of Antarctica, while ‘Antarctican’ means relating to the *country* of Antarctica."),
+  (1, "The colour of the Antarctican flag is known as ‘Antarctican Blue’."),
+  (1, "The blue tint of the surface ice in Antarctica is known as ‘Antarctic Blue’."),
+  (1, "Aventurine is the national gemstone of Antarctica."),
+  (1, "SHARD is the 3rd generation of its Adeline, preceded by SPARK and SHIVER."),
+  (1, "PENGUIN is the second generation of its Adeline, preceded by EDEN."),
+  (1, "*Vitaline* was originally called *Lifeline*."),
+  (1, "Would you like to know about the Arctic? Well, we don’t talk about that here."),
+  (1, "The old version of the A-CORE was called the ARC."),
+  (1, "The old version of the V-CORE was called the AVA."),
+)
+
+arcane = WeightedList(
   "publisher taking initiative originally in shooting writer",
   "lark circling sailor caught, a bleak prospect",
-]
+)

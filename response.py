@@ -1,14 +1,14 @@
-from weightedlist import WeightedList
+from weightedlist import WeightedList as wl
 
 
 class attest:
-  generic = WeightedList(
+  generic = wl(
     "Something went wrong",
     "An error occured",
     "Encountered an error",
   )
 
-  index = WeightedList(
+  index = wl(
     "Nothing found",
     "No items found",
     "No item ‘{}’ found",
@@ -18,7 +18,7 @@ class attest:
     "Did you make a typo?",
   )
 
-  command = WeightedList(
+  command = wl(
     "No command found",
     "Didn’t find that command...",
     "Don’t think that command exists!",
@@ -28,32 +28,32 @@ class attest:
     "Wait, I can do that?",
   )
 
-  restrict = WeightedList(
+  restrict = wl(
     "Access denied",
     "Unauthouryzed access",
     "You can’t use that command",
     "Hold up, you aren’t allowed to use that command!",
   )
 
-  future = WeightedList(
+  future = wl(
     "Working on it",
     "You can’t used that command yet",
     "You can’t used that command yet, but you will be able to soon",
   )
 
-  require = WeightedList(
+  require = wl(
     "You need more vita points",
     "You need more vita points to use that command",
     "That command requires {} vita points to use",
   )
 
 
-  init = WeightedList(
+  init = wl(
     "Initialyzation failed",
     "Identity initialyzation failed",
   )
   
-  exist = WeightedList(
+  exist = wl(
     "You already have an identity!",
     "Hey, you already have an identity!",
     "Hold up, you already have an identity!",
@@ -61,7 +61,7 @@ class attest:
     "You’ve already got an identity",
   )
 
-  identity = WeightedList(
+  identity = wl(
     "Identity not found",
     "Didn’t find an identity",
     "Couldn’t find anyone",
@@ -71,19 +71,19 @@ class attest:
   )
 
 
-  colour = WeightedList(
+  colour = wl(
     "Invalid colour",
     "Invalid colour provided",
     "Not a valid colour",
     "Just provide the raw colour code, no need to add `#` or `0x`",
   )
 
-  date = WeightedList(
+  date = wl(
     "Invalid date",
     "Day out of range of month",
   )
 
-  locale = WeightedList(
+  locale = wl(
     "Invalid location",
     "I can’t set your location to that",
     "Can’t find that location",
@@ -91,7 +91,7 @@ class attest:
   )
 
 
-  whoosh = WeightedList(
+  whoosh = wl(
     "Really?",
     "Come on.",
     "Are you joking?",
@@ -103,33 +103,33 @@ class attest:
 
 
 class aspire:
-  play = WeightedList(
+  play = wl(
     "Game ongoing!",
     "Game already ongoing!",
     "There’s already a game ongoing!",
     "There’s already a game going on!",
   )
 
-  thread = WeightedList(
+  thread = wl(
     "You can't play a game within a thread",
     "I can’t initialyze a game within a thread",
   )
 
-  direct = WeightedList(
+  direct = wl(
     "I can’t initialyze a game in direct messages",
     "You can’t play a game in direct messages",
     "As cool as it would be, unfortunately I can’t initialyze a game in direct messages",
     "As cool as it would be, unfortunately you can’t play a game in direct messages",
   )
 
-  wrong = WeightedList(
+  wrong = wl(
     "Incorrect",
     "Nope",
     "Don't think so",
     "That’s not it",
   )
 
-  right = WeightedList(
+  right = wl(
     "Correct!",
     "Yeah!",
     "Yep!",
@@ -144,62 +144,62 @@ class aspire:
     "There we go!",
   )
 
-  wait = WeightedList(
+  wait = wl(
     "Waiting...",
     "Waiting for a guess...",
     "Waiting for an answer...",
   )
 
-  time = WeightedList(
+  time = wl(
     "Timed out",
     "Game timed out",
     "Ran out of time",
     "Game expired!",
   )
 
-  done = WeightedList(
+  done = wl(
     "Already guessed",
     "Already guessed before",
     "You’ve guessed that number before",
     "You’ve already guessed that number before",
   )
 
-  number = [WeightedList(
+  number = [wl(
     "Invalid number",
     "That’s not a number",
-  ), WeightedList(
+  ), wl(
     "Needs to be an integer",
     "Guess must be an integer",
     "Guess has to be an integer",
     "We’re only playing with integers here!",
   )]
 
-  emoji = [WeightedList(
+  emoji = [wl(
     "Invalid emoji",
     "That’s not an emoji",
-  ), WeightedList(
+  ), wl(
     "Emoji not in pool",
     "That emoji’s not in the pool",
   )]
 
 
 class accede:
-  affirm = [WeightedList(
+  affirm = [wl(
     "I’m awake!",
     "Hey there!",
     "I’m ready to play!",
     "Hey, thanks for pinging me! I fall asleep sometimes.",
     "Is it dinnertime soon?",
-  ), WeightedList(
+  ), wl(
     "Hey, no one’s pinged me in a while. Here, take some points!",
     "Wow, no one’s pinged me in a while. Here, take some points!",
   )]
   
-  acquaint = [WeightedList(
+  acquaint = [wl(
     "I’m doing great!",
     "Yeah, I’m doing alright!",
     "Life’s good!",
-  ), WeightedList(
+  ), wl(
     "Hey, thanks for asking! Take some points for being nice :adePenguin:",
     "Oh, now you’re trying to exploit the system? Well, I’ll take those points right back.",
     "Still more? The audacity, unbelievable. Fine, take your points.",
@@ -208,7 +208,7 @@ class accede:
     "Let me play in peace.",
   )]
 
-  attrite = WeightedList(
+  attrite = wl(
     "You do realize I don’t have artificial intelligence, right?",
     "I don’t understand any of what you’re saying right now.",
     "Perhaps you could add ~ in front of your message :P",
@@ -276,7 +276,7 @@ class accede:
 
 
 class ascent:
-  action = WeightedList(
+  action = wl(
     "accelerating",
     "activating",
     "actuating",
@@ -331,7 +331,7 @@ class ascent:
     "vertistrating",
   )
 
-  arratus = WeightedList(
+  arratus = wl(
     "components", "gears", "parts",
     "central systems",
     "supercircuits", "anticircuits", "cryocircuits",
@@ -350,7 +350,7 @@ class ascent:
     "icicles", "krill remains", "fish bones",
   )
 
-  attune = WeightedList(
+  attune = wl(
     "ananalyzing",
     "balancing",
     "checking",
