@@ -406,7 +406,7 @@ class geo:
       title = "Atalla District",
       caption = "District of Antarctica",
       content = f"""
-        {util.icons.sound} /a'tʰɑlə, ə'talə/
+        {util.icons.sound} /ə'tʰɑlə, ə'talə/
 
         *Not to be confused with the city, Atla.*
 
@@ -424,7 +424,7 @@ class geo:
           """,
         ),
       ],
-      other = "District, Atla",
+      other = "District, Atla, Atalon",
     )
 
     Ascerta = item(
@@ -1338,6 +1338,15 @@ class nato:
 
 
 class misc:
+
+  Atalos = item(
+    title = "Atalos",
+    caption = "Legendary Protector",
+    content = f"""
+      {util.icons.sound} /a'tʰɑlɒs, ə'talə/
+    """,
+    other = "Atalon, Atalla",
+  )
 
   ARCANE = item(
     title = "ARCANE",
