@@ -454,6 +454,15 @@ class geo:
       other = "District",
     )
 
+    Tyrestra = item(
+      title = "Tyrestra District",
+      caption = "District of Antarctica",
+      content = f"""
+        {util.icons.sound} /tɪ'rɛstrə/
+      """,
+      other = "District",
+    )
+
     Divelda = item(
       title = "Divelda District",
       caption = "District of Antarctica",
