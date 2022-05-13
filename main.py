@@ -166,13 +166,6 @@ async def on_ready():
   arti.advance("res")
   print("Penguin's woken up!")
 
-  # act = lambda view: self.add_item(view)
-  # act(await stuff(None))
-  # act(await start(None))
-  # act(await command(None))
-  # act(await cast(None))
-  # act(await cal(None))
-
 
 # ping
 @ penguin.command()
@@ -501,29 +494,6 @@ async def idea(interaction, title, idea,
   await root.add_reaction(uti.icons.down)
 
 
-# dictionary
-@ util.subcommand(description = adept.util.dict.desc.full)
-@ accumulate(init = 25, call = "/util define")
-async def define(interaction, word = pool(description = "pick a word to loopup, or find out about a random word", required = False)):
-  if not word:
-    word = random.choice(list(affluence.keys()))
-  if word not in affluence:
-    await arti.avert(interaction, attest.index)
-
-  content = uti.embed(affluence[word])
-
-  class visual(View):
-    def __init__(self):
-      super().__init__(timeout = None)
-      self.state = False
-      self.content = content
-
-    expand = expand("stxp.utdf")
-
-  if interaction is None: return visual()
-  await interaction.send(embed = content, view = visual())
-
-
 
 # index (root)
 @ penguin.slash_command()
@@ -735,6 +705,29 @@ async def game(interaction, game = pool(description = "pick a game, or find out 
       self.content = content
 
     expand = expand("stxp.inpl")
+
+  if interaction is None: return visual()
+  await interaction.send(embed = content, view = visual())
+
+
+# dictionary
+@ info.subcommand(description = adept.info.dict.desc.full)
+@ accumulate(init = 25, call = "/util define")
+async def define(interaction, word = pool(description = "pick a word to loopup, or find out about a random word", required = False)):
+  if not word:
+    word = random.choice(list(affluence.keys()))
+  if word not in affluence:
+    await arti.avert(interaction, attest.index)
+
+  content = uti.embed(affluence[word])
+
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+      self.state = False
+      self.content = content
+
+    expand = expand("stxp.utdf")
 
   if interaction is None: return visual()
   await interaction.send(embed = content, view = visual())

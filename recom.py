@@ -188,25 +188,6 @@ class adept:
       other = "/info fact",
     )
 
-    dict = item(
-      title = "/util define",
-      caption = "Definition Lookup",
-      desc = desc(
-        curt = "lookup word",
-        full = "lookup the definition of a word in Antarctican English",
-      ),
-      content = "Looks up the definition of a word in Antarctican English.",
-      fields = [
-        item.field("Format", "/util define ‹word›"),
-        item.field("Fields", """
-          __`word`__
-          [choice, optional]
-          The word to lookup. If unspecifyzed, a random word is looked up.
-        """),
-      ],
-      other = "/info about",
-    )
-
 
   class index:
 
@@ -323,6 +304,25 @@ class adept:
       content = "Views info about a game I can play.",
       fields = [item.field("Format", "`/info game ‹game›`")],
       other = "/info role, /play",
+    )
+
+    dict = item(
+      title = "/util define",
+      caption = "Definition Lookup",
+      desc = desc(
+        curt = "lookup word",
+        full = "lookup the definition of a word in Antarctican English",
+      ),
+      content = "Looks up the definition of a word in Antarctican English.",
+      fields = [
+        item.field("Format", "/info define ‹word›"),
+        item.field("Fields", """
+          __`word`__
+          [choice, optional]
+          The word to lookup. If unspecifyzed, a random word is looked up.
+        """),
+      ],
+      other = "/info about",
     )
 
 
