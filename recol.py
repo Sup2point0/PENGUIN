@@ -261,6 +261,12 @@ class avail:
     ],
   )
 
+  lang = item(
+    title = "Antarctican English",
+    content = """""",
+    fields = [],
+  )
+
 
 class attent:
 

@@ -293,6 +293,24 @@ async def tip(interaction):
   await interaction.send(random.choice(assist))
 
 
+# lang
+@ help.subcommand(description = "help with Antarctican English")
+@ accumulate(init = 25, call = "/help lang")
+async def lang(interaction):
+  content = uti.embed(avail.lang)
+
+  class visual(View):
+    def __init__(self):
+      super().__init__(timeout = None)
+      self.state = False
+      self.content = content
+
+    expand = expand("stxp.hpln")
+
+  if interaction is None: return visual()
+  await interaction.send(embed = content, view = visual(), ephemeral = True)
+
+
 
 # status timings
 @ penguin.command()
@@ -712,7 +730,7 @@ async def game(interaction, game = pool(description = "pick a game, or find out 
 
 # dictionary
 @ info.subcommand(description = adept.info.dict.desc.full)
-@ accumulate(init = 25, call = "/util define")
+@ accumulate(init = 25, call = "/info define")
 async def define(interaction, word = pool(description = "pick a word to loopup, or find out about a random word", required = False)):
   if not word:
     word = random.choice(list(affluence.keys()))
