@@ -157,7 +157,6 @@ class avail:
         `/util antect` » {adept.util.antect.desc.curt}
         `/util cal` » {adept.util.cal.desc.curt}
         `/util idea` » {adept.util.idea.desc.curt}
-        `/util define` » {adept.util.dict.desc.curt}
       """),
       item.field("Index", f"""
         `/index view` » {adept.index.view.desc.curt}
@@ -170,6 +169,7 @@ class avail:
         `/info acro` » {adept.info.acro.desc.curt}
         `/info role` » {adept.info.role.desc.curt}
         `/info game` » {adept.info.game.desc.curt}
+        `/info define` » {adept.info.dict.desc.curt}
       """),
       item.field("Play", f"""
         `/play guess num` » {adept.play.guess.num.desc.curt}
