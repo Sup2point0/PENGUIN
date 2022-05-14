@@ -72,7 +72,7 @@ def embed(source, fields = True, colour = True, struct = False):
     for field in source.fields:
       content.add_field(
         name = f"{menu.cryst[0]}{menu.cryst[1]}  {field.title}  {menu.cryst[2]}{menu.cryst[3]}" if struct else field.title,
-        value = avast(f"{line * 2}\n" * struct + field.content, line = True), inline = False
+        value = avast(f"{line * 2}\n" * struct + field.content, line = True), inline = field.line
       )
 
   if hasattr(source, "surplus"):
