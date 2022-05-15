@@ -8,18 +8,18 @@
       "swim": true
     },
     "stats": {
-      "res": 1015,
-      "stas": 1433,
-      "live": 2802569,
+      "res": 1017,
+      "stas": 1447,
+      "live": 2857781,
       "pong": 1652120709,
-      "sent": 5438,
-      "react": 286,
+      "sent": 5456,
+      "react": 288,
       "view": 22
     },
     "calls": {
-      "mes": 7750,
-      "rec": 2166,
-      "act": 7669,
+      "mes": 7800,
+      "rec": 2177,
+      "act": 7739,
       "ping": 245,
       "help": 260,
       "util": 90,
@@ -29,7 +29,7 @@
       "vita": 54,
       "dir": 44,
       "ctx": 7,
-      "err": 402,
+      "err": 407,
       "acc": 6
     },
     "misc": {
@@ -109,8 +109,8 @@
         "view": 62
       },
       "vitals": {
-        "points": 3601,
-        "rise": 3270,
+        "points": 3626,
+        "rise": 3295,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -124,15 +124,15 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1135,
-        "react": 10,
-        "act": 314,
+        "sent": 1150,
+        "react": 15,
+        "act": 316,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
         "dir": 20,
         "ctx": 8,
-        "err": 140,
+        "err": 141,
         "acc": 8
       },
       "games": {
@@ -179,7 +179,8 @@
           "None",
           "/index view",
           "None",
-          "None"
+          "None",
+          "/info define"
         ],
         "played": [
           "num"
@@ -203,9 +204,13 @@
       "exp": {
         "top": 1,
         "hold": 0,
-        "max": 0
+        "max": "+25"
       },
       "log": [
+        [
+          "+25",
+          "used `/info define` for the first time"
+        ],
         [
           "+1",
           "used `/vita visualyze`"
@@ -281,10 +286,6 @@
         [
           "+2",
           "used `/util decate`"
-        ],
-        [
-          "+2",
-          "used `/info game`"
         ]
       ],
       "rec": {}
@@ -314,7 +315,7 @@
       },
       "stats": {
         "sent": 358,
-        "react": 1,
+        "react": 2,
         "act": 17,
         "/help": 0,
         "/play": 6,
@@ -358,8 +359,8 @@
         "view": 5
       },
       "vitals": {
-        "points": 20710,
-        "rise": 20487,
+        "points": 22710,
+        "rise": 22487,
         "drop": 0,
         "live": 17400,
         "pres": 6024
@@ -373,8 +374,8 @@
         "uni": "ISAB"
       },
       "stats": {
-        "sent": 1086,
-        "react": 5,
+        "sent": 1094,
+        "react": 6,
         "act": 233,
         "/help": 0,
         "/play": 0,
@@ -436,10 +437,14 @@
       },
       "exp": {
         "top": null,
-        "hold": 1384416,
-        "max": 0
+        "hold": 1439628,
+        "max": "+2000"
       },
       "log": [
+        [
+          "+2000",
+          "coming up with cool food names"
+        ],
         [
           "+69*3",
           "came up with ideas for food"
@@ -451,10 +456,6 @@
         [
           "+138",
           "came up with ideas for food"
-        ],
-        [
-          "+1",
-          "used `/what joke`"
         ],
         [
           "+1",
@@ -548,7 +549,7 @@
       },
       "stats": {
         "sent": 19,
-        "react": 12,
+        "react": 13,
         "act": 3,
         "/help": 0,
         "/play": 0,
@@ -609,8 +610,8 @@
         "view": 2
       },
       "vitals": {
-        "points": 781,
-        "rise": 781,
+        "points": 2781,
+        "rise": 2781,
         "drop": 0,
         "live": 0,
         "pres": 0
@@ -665,9 +666,13 @@
       "exp": {
         "top": null,
         "hold": 0,
-        "max": 0
+        "max": "+2000"
       },
       "log": [
+        [
+          "+2000",
+          "came up with *cool* ideas for food"
+        ],
         [
           "+115",
           "Won Guess the Number in 6 tries"
