@@ -24,9 +24,10 @@ class item:
     return self
   
   class field:
-    def __init__(self, title, content):
+    def __init__(self, title, content, *, line = False):
       self.title = title
       self.content = util.avast(content, line = 0)
+      self.line = line
 
 
 class main:
