@@ -1569,15 +1569,15 @@ class word:
   antect = item(
     title = "antect",
     caption = "Antarctican Verb",
-    content = """
-      __Verb__
-      /an'tɛkt/
-
-      1. *prototransitive*
-      To convert a date from another calendar to the Antarctican calendar.
-      *All devices have an inbuilt feature to antect a given decate.*
-    """,
+    content = "",
     fields = [
+      item.field("Verb", """
+        /an'tɛkt/
+
+        1. *prototransitive*
+        To convert a date from another calendar to the Antarctican calendar.
+        *All devices have an inbuilt feature to antect a given decate.*
+      """),
       item.field("Conjugation", """
         I antect
         you antect
@@ -1593,10 +1593,10 @@ class word:
       item.field("Derivatives", """
         antectics
         antectical
-      """),
+      """, line = True),
       item.field("Synonyms", """
         convert
-      """),
+      """, line = True),
       item.field("See Also", """
         Antarctican Calendar
       """),
@@ -1610,14 +1610,14 @@ class word:
   concyze = item(
     title = "concyze",
     caption = "Antarctican Verb",
-    content = """
-      __Verb__
-      /kənˈsʌɪz/
-      1. *prototransitive*
-      To make something concise.
-      *Can you concyze it down?*
-    """,
+    content = "",
     fields = [
+      item.field("Verb", """
+        /kənˈsʌɪz/
+        1. *prototransitive*
+        To make something concise.
+        *Can you concyze it down?*
+      """),
       item.field("Conjugation", """
         I concyze
         you concyze
@@ -1632,11 +1632,11 @@ class word:
       """),
       item.field("Derivatives", """
         concyzation
-      """),
+      """, line = True),
       item.field("Synonyms", """
         concise
         compact
-      """),
+      """, line = True),
       item.field("Antonyms", """
         complicyze
       """),
@@ -1647,49 +1647,49 @@ class word:
   )
 
   decant = item(
-    title = "",
+    title = "decant",
     caption = "Antarctican Concept",
-    content = """
-      __Noun__
-      /'dɛkənt/
-
-      1. *abstract*
-      A unit of time in the Antarctican calendar, corresponding to a month in the Gregorian calendar. Each year consists of 10 decants, alternating between 37 and 36 days long.
-    """,
+    content = "",
     fields = [
+      item.field("Noun", """
+        /'dɛkənt/
+
+        1. *abstract*
+        A unit of time in the Antarctican calendar, corresponding to a month in the Gregorian calendar. Each year consists of 10 decants, alternating between 37 and 36 days long.
+      """),
       item.field("Derivatives", """
         didecant
         decate
-      """),
+      """, line = True),
       item.field("Synonyms", """
         month
-      """),
+      """, line = True),
       item.field("See Also", """
         Decant
         Antarctican Calendar
       """),
       item.field("Etymologics", """
-        *New Antarctica* » Greek *deka* (‘ten’) + *Antarctica*
+        *New Antarctica* » Greek *deka* ‘ten’ + *Antarctica*
       """),
     ],
   )
 
   decate = item(
-    title = "",
+    title = "decate",
     caption = "Antarctican Concept",
-    content = """
-      __Noun__
-      /'dɛkeɪt/
-
-      1. *abstract*
-      The date.
-      *What’s the decate?*
-
-      2. *abstract*
-      The specific day of the decant.
-      *The decate is 20*.
-    """,
+    content = "",
     fields = [
+      item.field("Noun", """
+        /'dɛkeɪt/
+
+        1. *abstract*
+        The date.
+        *What’s the decate?*
+
+        2. *abstract*
+        The specific day of the decant.
+        *The decate is 20*.
+      """),
       item.field("Synonyms", """
         date
       """),
@@ -1698,50 +1698,50 @@ class word:
         Antarctican Calendar
       """),
       item.field("Etymologics", """
-        *New Antarctica* » Greek *deka* (‘ten’) + *-ate*
+        *New Antarctica* » Greek *deka* ‘ten’ + *-ate*
         Also from Antarctican *decant*
       """),
     ],
   )
 
   septan = item(
-    title = "",
+    title = "septan",
     caption = "Antarctican Concept",
-    content = """
-      __Noun__
-      /'sɛptən/
-
-      1. *abstract*
-      A unit of time in the Antarctican calendar, equivalent to a week.
-    """,
+    content = "",
     fields = [
+      item.field("Noun", """
+        /'sɛptən/
+
+        1. *abstract*
+        A unit of time in the Antarctican calendar, equivalent to a week.
+      """),
       item.field("Derivatives", """
         septate
-      """),
+      """, line = True),
       item.field("Synonyms", """
         week
-      """),
+      """, line = True),
       item.field("See Also", """
         Septan
         Antarctican Calendar
       """),
       item.field("Etymologics", """
-        *New Antarctica* » Latin *septem* (‘seven’) + *Antarctica*
+        *New Antarctica* » Latin *septem* ‘seven’ + *Antarctica*
       """),
     ],
   )
 
   septate = item(
-    title = "",
+    title = "septate",
     caption = "Antarctican Concept",
-    content = """
-      __Noun__
-      /'sɛpteɪt/
-
-      1. *abstract*
-      The day of the week in the Antarctican calendar.
-    """,
+    content = "",
     fields = [
+      item.field("Noun", """
+        /'sɛpteɪt/
+
+        1. *abstract*
+        The day of the week in the Antarctican calendar.
+      """),
       item.field("Synonyms", """
         weekday
         weekend
@@ -1751,7 +1751,7 @@ class word:
         Antarcictan Calendar
       """),
       item.field("Etymologics", """
-        *New Antarctica* » Latin *septem* (‘seven’) + *-ate*
+        *New Antarctica* » Latin *septem* ‘seven’ + *-ate*
       """),
     ],
   )
