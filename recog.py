@@ -17,11 +17,6 @@ class item:
     if alias:
       self.alias = alias
     return self
-
-  def hide(self):
-    self = deepcopy(self)
-    self.index = False
-    return self
   
   class field:
     def __init__(self, title, content, *, line = False):
@@ -51,7 +46,7 @@ class main:
     other = "Continent of Antarctica, Colonies of Antarctica, Republic of Antarctica",
     tags = "main, antarctica, country, countries, home, start",
     url = "https://cdn.discordapp.com/attachments/925419481205968916/926779087073194014/Flag_of_Antarctica.jpg",
-    more = "https://en.wikipedia.org/wiki/Antarctica"
+    more = "https://en.wikipedia.org/wiki/Antarctica",
   )
 
   Continent = item(
@@ -67,7 +62,7 @@ class main:
     other = "Nation of Antarctica",
     tags = "main, antarctica, continent, continents, natural, nato, home, start",
     url = "https://cdn.discordapp.com/attachments/925419481205968916/925419503322546216/Antarctica.png",
-    more = "https://en.wikipedia.org/wiki/Antarctica"
+    more = "https://en.wikipedia.org/wiki/Antarctica",
   )
 
   Foundation = item(
@@ -82,9 +77,9 @@ class main:
 
   Trust = item(
     title = "Antarctican Trust",
-    caption = "Governmental Organization",
+    caption = "Governmental Organyzation",
     content = """
-      The National Antarctican Trust is a special multi-purpose organization, whose activities involve funding projects, charitable ventures, healthcare and development, among many others.
+      The National Antarctican Trust is a special multi-purpose organyzation, whose activities involve funding projects, charitable ventures, healthcare and development, among many others.
     """,
     other = "Foundation of Antarctica",
   )
@@ -93,7 +88,7 @@ class main:
     title = "Sino-Antarctican Modern English",
     caption = "Language",
     content = """
-      The official language of the Nation of Antarctica. A fusion of British, American and Antarctican English, as well as some Chinese influence, emphasizing intuitivity and consistency.
+      The official language of the Nation of Antarctica. A fusion of British, American and Antarctican English, as well as some Chinese influence, emphasyzing intuitivity and consistency.
     """,
     other = "Antarctican English, Old Antarctican English",
   )
@@ -236,7 +231,7 @@ class time:
       title = "Valia",
       caption = "Decant",
       content = f"""
-        {util.icons.sound} /'veɪlɪə, 'valɪə/
+        {util.icons.sound} /'veɪlɪə, ‘valɪə/
         {util.icons.value} Worth
       """,
       other = "Decant, Antarctican Calendar",
@@ -288,7 +283,7 @@ class time:
       title = "Aeva",
       caption = "Decant",
       content = f"""
-        {util.icons.sound} /'iːvə, 'eɪvə/
+        {util.icons.sound} /'iːvə, ‘eɪvə/
         {util.icons.value} Time
       """,
       other = "Decant, Antarctican Calendar",
@@ -298,7 +293,7 @@ class time:
       title = "Verena",
       caption = "Decant",
       content = f"""
-        {util.icons.sound} /və'riːnə, 'vɛrɪnə/
+        {util.icons.sound} /və'riːnə, ‘vɛrɪnə/
         {util.icons.value} Destiny
 
         The final decant of the year in the Antarctican calendar.
@@ -333,14 +328,14 @@ class time:
       content = """
         An annual national holiday celebrated on Vepida Prime, commemorating the day Roald Amundsen reached the True South Pole, 14 December 1911.
       """,
-      other = "Antarctican Holidays, Falcon's Noon, Roald Amundsen",
+      other = "Antarctican Holidays, Falcon’s Noon, Roald Amundsen",
     )
 
     Falcon = item(
-      title = "Falcon's Noon",
+      title = "Falcon’s Noon",
       caption = "National Holiday",
       content = """
-        An annual national holiday, originally celebrated informally but now officially recognized, taking place on Verena 33. It is held in remembrance of the day Sir Robert Falcon Scott died when returning from reaching the South Pole, 29 March 1912.
+        An annual national holiday, originally celebrated informally but now officially recognyzed, taking place on Verena 33. It is held in remembrance of the day Sir Robert Falcon Scott died when returning from reaching the South Pole, 29 March 1912.
       """,
       other = "Antarctican Holidays, Invict Day, Robert Scott",
     )
@@ -374,7 +369,7 @@ class geo:
         T » Republic of Antarctica
         D » Ancient Anarchy
 
-        Districts should generally referred be to as 'the District', i.e. *the Aventurina district*. When used in conjunction with a city name, the format should be '<city>, <district>', i.e. *Alta, Atalla*.
+        Districts should generally referred be to as ‘the District’, i.e. *the Aventurina district*. When used in conjunction with a city name, the format should be ‘<city>, <district>’, i.e. *Alta, Atalla*.
       """,
       other = None,
     )
@@ -488,7 +483,7 @@ class geo:
       title = "Discenda District",
       caption = "District of Antarctica",
       content = f"""
-        {util.icons.sound} /dɪ'sɛndə, 'dʌɪsɛndə/
+        {util.icons.sound} /dɪ'sɛndə, ‘dʌɪsɛndə/
       """,
       other = "District",
     )
@@ -575,7 +570,7 @@ class geo:
       title = "Teneca",
       caption = "City of Antarctica",
       content = f"""
-        {util.icons.sound} /'tɛnəkə, 'tɛnɪkə/
+        {util.icons.sound} /'tɛnəkə, ‘tɛnɪkə/
       """,
       other = "Divelda District",
     )
@@ -727,92 +722,104 @@ class edu:
     content = f"""
       {util.icons.clock} Age 20-25
 
-      Also known as ‘further’ or ‘specialized’ education, higher education is an additional fourth stage of education in Antarctica. It is only required for highly specialized professions where further training is necessary. The duration varies depending on the particular profession, but will not exceed 5 years (as always, there are rare exceptions).
+      Also known as ‘further’ or ‘specialyzed’ education, higher education is an additional fourth stage of education in Antarctica. It is only required for highly specialyzed professions where further training is necessary. The duration varies depending on the particular profession, but will not exceed 5 years (as always, there are rare exceptions).
     """,
     other = "Education System of Antarctica",
   )
 
-  Universities = item(
-    title = "Universities of Antarctica",
-    caption = "Categorizer",
-    content = """
-    """,
-    other = "Education System of Antarctica",
-  )
 
-  Scott = item(
-    title = "Scott University",
-    caption = "University of Antarctica",
-    content = """
-    """,
-    other = "Amundsen College, Ross Academy",
-  )
+  class uni:
 
-  Amundsen = item(
-    title = "Amundsen College",
-    caption = "University of Antarctica",
-    content = """
-    """,
-    other = "Scott University, Ross Academy",
-  )
+    Universities = item(
+      title = "Universities of Antarctica",
+      caption = "Categoryzer",
+      content = """
+        Scott University
+        Amundsen College
+        Ross Academy
 
-  Ross = item(
-    title = "Ross Academy",
-    caption = "University of Antarctica",
-    content = """
-      A school located in the capital, Ross City. It offers primary through secondary education.
-    """,
-    other = "Scott University, Amundsen College",
-  )
+        NioTech
+        Royal Academy Of Geoengineering
+        Lakara
+        Evelyn Institute of Exploration
+        Ingra-Shackleton Academy of Bioengineering
+      """,
+      other = "Education System of Antarctica",
+    )
 
-  Nio = item(
-    title = "NioTech",
-    caption = "University of Antarctica",
-    content = """
-      The National Institute Of Technology, generally known as ‘NioTech’, is a university of Antarctica located in Atla, Atalla.
-    """,
-    other = "ROAG",
-  )
+    Scott = item(
+      title = "Scott University",
+      caption = "University of Antarctica",
+      content = """
+      """,
+      other = "Amundsen College, Ross Academy",
+    )
 
-  ROAG = item(
-    title = "ROAG",
-    acro = "the Royal Academy Of Geoengineering",
-    caption = "University of Antarctica",
-    content = """
-      The Royal Academy Of Geoengineering, commonly known as ‘ROAG’, is a university of Antarctica located in Teneca, Divelda.
+    Amundsen = item(
+      title = "Amundsen College",
+      caption = "University of Antarctica",
+      content = """
+      """,
+      other = "Scott University, Ross Academy",
+    )
 
-      It has been noted that the actual acronym for the university is ‘RAOG’, however for pronunciation and readability purposes ‘ROAG’ is used instead. A long-running joke among the students is that this will forever be ‘a geo’-engineering (the letters A, G and O, referencing the mixed up letters in the acronym) problem that can never be fixed.
-    """,
-    other = "NioTech",
-  )
+    Ross = item(
+      title = "Ross Academy",
+      caption = "University of Antarctica",
+      content = """
+        A school located in the capital, Ross City. It offers primary through secondary education.
+      """,
+      other = "Scott University, Amundsen College",
+    )
 
-  Lakara = item(
-    title = "Lakara",
-    acro = "the Lazarev & Klenova Academy of Research & Advancement",
-    caption = "University of Antarctica",
-    content = """
-      The Lazarev & Klenova Academy of Research & Advancement, generally known as ‘Lakara’, is a university of Antarctica located in Aleta, Ascerta.
-    """,
-    other = None,
-  )
+    Nio = item(
+      title = "NioTech",
+      caption = "University of Antarctica",
+      content = """
+        The National Institute Of Technology, generally known as ‘NioTech’, is a university of Antarctica located in Atla, Atalla.
+      """,
+      other = "ROAG",
+    )
 
-  Evelyn = item(
-    title = "Evelyn Institute of Exploration",
-    caption = "University of Antarctica",
-    content = """
-      A school specializing in exploration and survival skills.
-    """,
-    other = None,
-  )
+    ROAG = item(
+      title = "ROAG",
+      acro = "the Royal Academy Of Geoengineering",
+      caption = "University of Antarctica",
+      content = """
+        The Royal Academy Of Geoengineering, commonly known as ‘ROAG’, is a university of Antarctica located in Teneca, Divelda.
 
-  ISAB = item(
-    title = "Ingra-Shackleton Academy of Bioengineering",
-    caption = "University of Antarctica",
-    content = """
-      The Ingra-Shackleton Academy of Bioengineering (ISAB) is a university of Antarctica.
-    """,
-    other = None,
-  )
+        It has been noted that the actual acronym for the university is ‘RAOG’, however for pronunciation and readability purposes ‘ROAG’ is used instead. A long-running joke among the students is that this will forever be ‘a geo’-engineering (the letters A, G and O, referencing the mixed up letters in the acronym) problem that can never be fixed.
+      """,
+      other = "NioTech",
+    )
+
+    Lakara = item(
+      title = "Lakara",
+      acro = "the Lazarev & Klenova Academy of Research & Advancement",
+      caption = "University of Antarctica",
+      content = """
+        The Lazarev & Klenova Academy of Research & Advancement, generally known as ‘Lakara’, is a university of Antarctica located in Aleta, Ascerta.
+      """,
+      other = None,
+    )
+
+    Evelyn = item(
+      title = "Evelyn Institute of Exploration",
+      caption = "University of Antarctica",
+      content = """
+        A school specialyzing in exploration and survival skills.
+      """,
+      other = None,
+    )
+
+    ISAB = item(
+      title = "Ingra-Shackleton Academy of Bioengineering",
+      caption = "University of Antarctica",
+      content = """
+        The Ingra-Shackleton Academy of Bioengineering (ISAB) is a university of Antarctica.
+      """,
+      other = None,
+    )
 
 
 class tech:
@@ -852,14 +859,14 @@ class tech:
       content = """
         A special metabioelectric-powered device installed above the chest, that enhances a multitude of essential life processes; most notably maintaining body temperature, allowing humans to reside comfortably in the geosphere, and survive in natural conditions in rare situations.
 
-        There are many variants, each serving different purposes, that can be permanent or temporary. The most common types are the A-CORE and V-CORE. Other specialized types include the:
+        There are many variants, each serving different purposes, that can be permanent or temporary. The most common types are the A-CORE and V-CORE. Other specialyzed types include the:
 
         E-CORE
         S-CORE
         W-CORE
         I-CORE
 
-        The CORE is one of Antarctica's proudest technological innovations, and has been paramount in its rapid development for such a barren landscape. As such, it is one of the Seven Marvels of Antarctica.
+        The CORE is one of Antarctica’s proudest technological innovations, and has been paramount in its rapid development for such a barren landscape. As such, it is one of the Seven Marvels of Antarctica.
       """,
       other = "ADE"
     )
@@ -876,7 +883,7 @@ class tech:
     )
 
     V = item(
-      title = "Visitor's Core Of Residence",
+      title = "Visitor’s Core Of Residence",
       caption = "CORE Variant",
       content = """
         A temporary CORE attached to all visitors, providing some of the benefits of an A-CORE. Visitors must have theirs attached to enter Antarctica. Also has tracking capabilities to monitor visitors.
@@ -893,7 +900,7 @@ class tech:
     )
 
     S = item(
-      title = "Specialized Core Of Residence",
+      title = "Specialyzed Core Of Residence",
       caption = "CORE Variant",
       content = """
       """,
@@ -901,7 +908,7 @@ class tech:
     )
 
     W = item(
-      title = "Weaponized Core Of Residence",
+      title = "Weaponyzed Core Of Residence",
       caption = "CORE Variant",
       content = """
         A special CORE installed on some high-ranking or important Military personnel. As well as boosting physical strength and stamina, it enhances other elekine-based weapons and has both destructive and defensive capabilities itself.
@@ -934,7 +941,7 @@ class medi:
     acro = "Concerningly Low Metabolism Syndrome",
     caption = "Degenerative Disease",
     content = """
-      Concerningly Low Metabolism Syndrome (CLOMS), commonly referred to as 'Drain', is a degenerative disease where the body's vital metabolism is significantly lower than normal. It can usually be solved with simply an A-CORE, which enhances metabolism. In especially severe cases, it can lead to EDAICS.
+      Concerningly Low Metabolism Syndrome (CLOMS), commonly referred to as ‘Drain’, is a degenerative disease where the body’s vital metabolism is significantly lower than normal. It can usually be solved with simply an A-CORE, which enhances metabolism. In especially severe cases, it can lead to EDAICS.
 
       The cause for CLOMS remains unknown.
     """,
@@ -996,7 +1003,7 @@ class mili:
       title = "Antarctican Special Defence Force",
       caption = "",
       content = """
-        The Antarctic Special Defence Force (ASDF) is the special forces of Antarctican Military.
+        The Antarctic Special Defence Force (ASDF), sometimes referred to as the ‘Antarctican Specialyzed Defence Forces’, is the special forces of Antarctican Military.
       """,
       other = None,
     )
@@ -1018,7 +1025,7 @@ class mili:
       acro = "Royal Elite Seal Of Undying Dedication",
       caption = "Award",
       content = """
-        The Royal Elite Seal Of Undying Dedication (RESOUND), colloquially referred to as 'RES', is a highly prestigious and honourable Antarctican award, given to individuals who have demonstrated outstanding dedication and/or made significant contributions to Antarctica.
+        The Royal Elite Seal Of Undying Dedication (RESOUND), colloquially referred to as ‘RES’, is a highly prestigious and honourable Antarctican award, given to individuals who have demonstrated outstanding dedication and/or made significant contributions to Antarctica.
 
         The awardee does not have to be, and indeed is frequently not, alive; the award is often awarded to people who have given their lives. Examples of awardees and reasons include #.
       """,
@@ -1096,7 +1103,7 @@ class hist:
       content = """
         Alonzo Ark, full name *Alonzo Altan Ark*, is the chairman of the Foundation of Antarctica.
 
-        He has been given many nicknames, including 'Alo', 'Zo', and 'Lark'.
+        He has been given many nicknames, including ‘Alo’, ‘Zo’, and ‘Lark’.
       """,
       other = "Foundation of Antarctica, Adelina Altan Ark",
     )
@@ -1115,7 +1122,7 @@ class hist:
 
     Timeline = item(
       title = "Timeline of Antarctican History",
-      caption = "Categorizer",
+      caption = "Categoryzer",
       content = """
         This page lists all the eras and notable events in the history of Antarctica.
       """,
@@ -1165,7 +1172,7 @@ class hist:
         ),
         item.field("New Antarctica",
           content = """
-            Revitalization
+            Revitalyzation
           """,
         ),
         item.field("United Nation of Antarctica",
@@ -1178,7 +1185,7 @@ class hist:
 
     Figures = item(
       title = "Historical Figures of Antarctica",
-      caption = "Categorizer",
+      caption = "Categoryzer",
       content = """
         This page lists all notable figures in the history of Antarctica.
       """,
@@ -1223,7 +1230,7 @@ class hist:
         e.g.
         *The new Ascendant was feared by all.*
 
-        ‘Ascendant’ should be capitalized in general use.
+        ‘Ascendant’ should be capitalyzed in general use.
       """,
       fields = [
         item.field("Notable Ascendants",
@@ -1259,7 +1266,7 @@ class hist:
 
         {util.icons.clock} 21st Century ~ Cotalivita 1 SE
 
-        The Colonies of Antarctica refers to the era where the continent of Antarctica was colonized by multiple different countries. It is succeeded by Ancient Anarchy; and loosely preceded by ‘The South Pole’ era.
+        The Colonies of Antarctica refers to the era where the continent of Antarctica was colonyzed by multiple different countries. It is succeeded by Ancient Anarchy; and loosely preceded by ‘The South Pole’ era.
       """,
       other = None,
     )
@@ -1304,7 +1311,7 @@ class nato:
     title = "Aurora Australis",
     caption = "Natural Marvel",
     content = """
-      The Antarctic Lights, officially classified *Aurora Australis*, also known as 'The Southern Lights', are a series of naturally occurring light displays, in the form of supercolourful wavy lines. They are also colloquially referred to as 'The Lights', jokingly referred to as 'Aurora Australis Antarcticus', or otherwise simply known as '[the] Aurora'.
+      The Antarctic Lights, officially classified *Aurora Australis*, also known as ‘The Southern Lights’, are a series of naturally occurring light displays, in the form of supercolourful wavy lines. They are also colloquially referred to as ‘The Lights’, jokingly referred to as ‘Aurora Australis Antarcticus’, or otherwise simply known as ‘[the] Aurora’.
     """,
     other = "Continent of Antarctica",
   )
@@ -1363,25 +1370,25 @@ class misc:
   ARCANE = item(
     title = "ARCANE",
     acro = "Antarctican Royal Consortium for the Authentication/Application of New Elements",
-    caption = "Organization",
+    caption = "Organyzation",
     content = """
-      The Antarctican Royal Consortium for the Authentication/Application of New Elements (ARCANE), is an organization.
+      The Antarctican Royal Consortium for the Authentication/Application of New Elements (ARCANE), is an organyzation.
     """,
     other = "ASCENSE",
   )
 
   ASCENSE = item(
     title = "ASCENSE",
-    acro = "Antarctican Scientific Complete Enumeration of Natural and Synthesized Elements",
+    acro = "Antarctican Scientific Complete Enumeration of Natural and Synthesyzed Elements",
     caption = "Concept",
     content = """
-      The Antarctican Scientific Complete Enumeration of Natural and Synthesized Elements (ASCENSE) is the Antarctican extended version of the complete Periodic Table of the Elements.
+      The Antarctican Scientific Complete Enumeration of Natural and Synthesyzed Elements (ASCENSE) is the Antarctican extended version of the complete Periodic Table of the Elements.
     """,
     other = "ARCANE",
   )
 
   Nuclear = item(
-    title = "Nuclear Program of Antarctica",
+    title = "Nuclear Armaments of Antarctica",
     caption = "Concept",
     content = """
     """,
@@ -1393,12 +1400,12 @@ class misc:
     acro = "Regularly Enforced Treaty for the Inhibition of Nuclear Armaments",
     caption = "Diplomatic Agreement",
     content = """
-      The Regularly Enforced Treaty for the Inhibition of Nuclear Armaments (RETINA), generally referred to as ‘Retina’ (capitalized), is a diplomatic treaty by the Foundation of Antarctica, the Antarctican Trust, and various other organizations, to restrict the development, creation, and use of nuclear armaments and other destructive devices.
+      The Regularly Enforced Treaty for the Inhibition of Nuclear Armaments (RETINA), generally referred to as ‘Retina’ (capitalyzed), is a diplomatic treaty by the Foundation of Antarctica, the Antarctican Trust, and various other organyzations, to restrict the development, creation, and use of nuclear armaments and other destructive devices.
 
       The treaty comprises of 9 parts, each covering a particular aspect or field of nuclear weaponry. In summary, the treaty has 4 aims:
 
       » Inhibit the activation and use of nuclear armaments, except as a last-resort measure of self-defence
-      » Restrict the development of nuclear weaponry, except for authorized research purposes
+      » Restrict the development of nuclear weaponry, except for authouryzed research purposes
       » Limit the deadliness of all nuclear weapons created, so as to avoid a global nuclear catastrophe
       » Limit how many nuclear armaments are kept in storage by the Antarctican Military
 
@@ -1411,7 +1418,7 @@ class misc:
     title = "supcode",
     caption = "Programming Language",
     content = """
-      Supcode, officially *supcode* (uncapitalized), is a high-level general-purpose interpreted programming language. It is extremely widespread in Antarctica, used to program everything from automated devices to ADEs.
+      Supcode, officially *supcode* (uncapitalyzed), is a high-level general-purpose interpreted programming language. It is extremely widespread in Antarctica, used to program everything from automated devices to ADEs.
     """,
     other = "Sup#2.0",
   )
@@ -1427,7 +1434,7 @@ class disc:
       content = f"""
         {util.icons.sound} /eɪd/
 
-        An Artificial/Automated/Assisstive Digital(ized) Entity (ADE) is a programmed bot, that can have artificial intelligence or just simply respond to commands, and may or may not have a solid, corporeal form.
+        An Artificial/Automated/Assisstive Digital(yzed) Entity (ADE) is a programmed bot, that can have artificial intelligence or just simply respond to commands, and may or may not have a solid, corporeal form.
       """,
       other = "CORE, Adeline",
     )
@@ -1442,7 +1449,7 @@ class disc:
 
         A particular line of ADEs, wherein each generation replaces the last.
 
-        'Adeline' should be capitalized in general use.
+        ‘Adeline’ should be capitalyzed in general use.
       """,
       other = "ADE",
     )
@@ -1461,7 +1468,7 @@ class disc:
       acro = "SuperHuman Administrative and Regulative Discord Bot",
       caption = "ADE",
       content = """
-        SuperHuman Administrative and Regulative Discord Bot, officially *SHARD-bot*, generally known as 'SHARD' or 'Shard', is the main administrative ADE of the Foundation of Antarctica. It governs and administrates everything to do with the Discord server, such as role distribution and behavioural moderation.
+        SuperHuman Administrative and Regulative Discord Bot, officially *SHARD-bot*, generally known as ‘SHARD’ or ‘Shard’, is the main administrative ADE of the Foundation of Antarctica. It governs and administrates everything to do with the Discord server, such as role distribution and behavioural moderation.
 
         SHARD is the 3rd generation of its Adeline, preceded by SPARK and SHIVER.
       """,
@@ -1473,7 +1480,7 @@ class disc:
       acro = "Playful & Energetic New General Utility & Information Network Bot",
       caption = "ADE",
       content = """
-        Playful & Energetic New General Utility & Information Network Bot, officially *PENGUIN-bot*, generally known as 'PENGUIN' or simply 'Penguin', is the masbot ADE of Antarctica. It is known for being upbeat and positive. Its main advanced feature is a humongous database of Antarctica-related knowledge and information, which you are using right now. It is also the only ADE that currently has AI (augmented intelligence).
+        Playful & Energetic New General Utility & Information Network Bot, officially *PENGUIN-bot*, generally known as ‘PENGUIN’ or simply ‘Penguin’, is the masbot ADE of Antarctica. It is known for being upbeat and positive. Its main advanced feature is a humongous database of Antarctica-related knowledge and information, which you are using right now. It is also the only ADE that currently has AI (augmented intelligence).
 
         PENGUIN is the 2nd generation of its Adeline, preceded by EDEN, as well as the failed early prototype ATLAS.
       """,
