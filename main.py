@@ -1,4 +1,4 @@
-version = 30.15
+version = 30.2
 
 
 import nextcord as discord
@@ -633,6 +633,13 @@ async def about(interaction, item = pool(description = "pick an item to lookup, 
         self.content = content
       
       expand = expand("stxp.info")
+
+      if hasattr(item, "more"):
+        @ button(label = "See More", style = style.blurple, custom_id = "stxt.info")
+        async def more(self, button, interaction):
+          pass
+
+        self.add_item(ui.Button(label = "See More", url = item.more))
 
     if interaction is None: return visual()
     await interaction.send(embed = content, view = visual())
