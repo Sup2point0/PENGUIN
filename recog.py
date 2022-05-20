@@ -231,7 +231,7 @@ class time:
       title = "Valia",
       caption = "Decant",
       content = f"""
-        {util.icons.sound} /'veɪlɪə, ‘valɪə/
+        {util.icons.sound} /'veɪlɪə, 'valɪə/
         {util.icons.value} Worth
       """,
       other = "Decant, Antarctican Calendar",
@@ -283,7 +283,7 @@ class time:
       title = "Aeva",
       caption = "Decant",
       content = f"""
-        {util.icons.sound} /'iːvə, ‘eɪvə/
+        {util.icons.sound} /'iːvə, 'eɪvə/
         {util.icons.value} Time
       """,
       other = "Decant, Antarctican Calendar",
@@ -293,7 +293,7 @@ class time:
       title = "Verena",
       caption = "Decant",
       content = f"""
-        {util.icons.sound} /və'riːnə, ‘vɛrɪnə/
+        {util.icons.sound} /və'riːnə, 'vɛrɪnə/
         {util.icons.value} Destiny
 
         The final decant of the year in the Antarctican calendar.
@@ -1576,15 +1576,14 @@ class word:
   antect = item(
     title = "antect",
     caption = "Antarctican Verb",
-    content = "",
-    fields = [
-      item.field("Verb", """
-        /an'tɛkt/
+    content = f"""
+      {util.icons.sound} /an'tɛkt/
 
-        1. *prototransitive*
-        To convert a date from another calendar to the Antarctican calendar.
-        *All devices have an inbuilt feature to antect a given decate.*
-      """),
+      1. *prototransitive*
+      To convert a date from another calendar to the Antarctican calendar.
+      *All devices have an inbuilt feature to antect a given decate.*
+    """,
+    fields = [
       item.field("Conjugation", """
         I antect
         you antect
@@ -1609,7 +1608,7 @@ class word:
       """),
       item.field("Etymologics", """
         *Spontaneous emergence*
-      May have derived from ‘Antarctica’
+        May have derived from ‘Antarctica’
       """),
     ],
   )
@@ -1617,14 +1616,14 @@ class word:
   concyze = item(
     title = "concyze",
     caption = "Antarctican Verb",
-    content = "",
+    content = f"""
+      {util.icons.sound} /kənˈsʌɪz/
+
+      1. *prototransitive*
+      To make something concise.
+      *Can you concyze it down?*
+    """,
     fields = [
-      item.field("Verb", """
-        /kənˈsʌɪz/
-        1. *prototransitive*
-        To make something concise.
-        *Can you concyze it down?*
-      """),
       item.field("Conjugation", """
         I concyze
         you concyze
@@ -1656,14 +1655,13 @@ class word:
   decant = item(
     title = "decant",
     caption = "Antarctican Concept",
-    content = "",
-    fields = [
-      item.field("Noun", """
-        /'dɛkənt/
+    content = f"""
+      {util.icons.sound} /'dɛkənt/
 
-        1. *abstract*
-        A unit of time in the Antarctican calendar, corresponding to a month in the Gregorian calendar. Each year consists of 10 decants, alternating between 37 and 36 days long.
-      """),
+      1. *abstract*
+      A unit of time in the Antarctican calendar, corresponding to a month in the Gregorian calendar. Each year consists of 10 decants, alternating between 37 and 36 days long.
+    """,
+    fields = [
       item.field("Derivatives", """
         didecant
         decate
@@ -1684,19 +1682,18 @@ class word:
   decate = item(
     title = "decate",
     caption = "Antarctican Concept",
-    content = "",
+    content = f"""
+      {util.icons.sound} /'dɛkeɪt/
+
+      1. *abstract*
+      The date.
+      *What’s the decate?*
+
+      2. *abstract*
+      The specific day of the decant.
+      *The decate is 20*.
+    """,
     fields = [
-      item.field("Noun", """
-        /'dɛkeɪt/
-
-        1. *abstract*
-        The date.
-        *What’s the decate?*
-
-        2. *abstract*
-        The specific day of the decant.
-        *The decate is 20*.
-      """),
       item.field("Synonyms", """
         date
       """),
@@ -1714,14 +1711,13 @@ class word:
   septan = item(
     title = "septan",
     caption = "Antarctican Concept",
-    content = "",
-    fields = [
-      item.field("Noun", """
-        /'sɛptən/
+    content = f"""
+      {util.icons.sound} /'sɛptən/
 
-        1. *abstract*
-        A unit of time in the Antarctican calendar, equivalent to a week.
-      """),
+      1. *abstract*
+      A unit of time in the Antarctican calendar, equivalent to a week.
+    """,
+    fields = [
       item.field("Derivatives", """
         septate
       """, line = True),
@@ -1741,14 +1737,13 @@ class word:
   septate = item(
     title = "septate",
     caption = "Antarctican Concept",
-    content = "",
-    fields = [
-      item.field("Noun", """
-        /'sɛpteɪt/
+    content = f"""
+      {util.icons.sound} /'sɛpteɪt/
 
-        1. *abstract*
-        The day of the week in the Antarctican calendar.
-      """),
+      1. *abstract*
+      The day of the week in the Antarctican calendar.
+    """,
+    fields = [
       item.field("Synonyms", """
         weekday
         weekend
@@ -1759,6 +1754,256 @@ class word:
       """),
       item.field("Etymologics", """
         *New Antarctica* » Latin *septem* ‘seven’ + *-ate*
+      """),
+    ],
+  )
+
+  Arteria = item(
+    title = "Arteria",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /ɑː'tɛrɪə/
+
+      The first decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Verena
+      """, line = True),
+      item.field("Next", """
+        Vitida
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » after *Arterion*, the ancient warrior
+      """),
+    ],
+  )
+
+  Vitida = item(
+    title = "Vitida",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /vɪ'tʌɪdə, vɪ'tiːdə, vʌɪ'tʌɪdə/
+
+      The second decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Arteria
+      """, line = True),
+      item.field("Next", """
+        Arrikta
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » Latin *vita* ‘life’ + possibly English *tide*
+      """),
+    ],
+  )
+
+  Arrikta = item(
+    title = "",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /'arɪktə/
+
+      The third decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Vitida
+      """, line = True),
+      item.field("Next", """
+        Valia
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » spontaneous emergence
+      """),
+    ],
+  )
+
+  Valia = item(
+    title = "",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /'veɪlɪə, 'valɪə/
+
+      The fourth decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Arrikta
+      """, line = True),
+      item.field("Next", """
+        Aliquanda
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » English *valiant*
+      """),
+    ],
+  )
+
+  Aliquanda = item(
+    title = "",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /alɪ'kwandə/
+
+      The fifth decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Valia
+      """, line = True),
+      item.field("Next", """
+        Verita
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » Latin *aliquando* ‘sometime’
+      """),
+    ],
+  )
+
+  Verita = item(
+    title = "",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /'vɛrɪtə/
+
+      The sixth decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Aliquanda
+      """, line = True),
+      item.field("Next", """
+        Arteva
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » Latin *veritas* ‘truth’
+      """),
+    ],
+  )
+
+  Arteva = item(
+    title = "",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /ɑː'teɪvə, ɑː'tɛvə/
+
+      The seventh decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Verita
+      """, line = True),
+      item.field("Next", """
+        Vepida
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » spontaneous emergence
+      """),
+    ],
+  )
+
+  Vepida = item(
+    title = "",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /'vɛpɪdə/
+
+      The eighth decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Arteva
+      """, line = True),
+      item.field("Next", """
+        Aeva
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » Latin *vapos* ‘warmth’
+      """),
+    ],
+  )
+
+  Aeva = item(
+    title = "",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /'iːvə, 'eɪvə/
+
+      The ninth decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Vepida
+      """, line = True),
+      item.field("Next", """
+        Verena
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » Latin *aevum* ‘time’
+      """),
+    ],
+  )
+
+  Verena = item(
+    title = "",
+    caption = "Antarctican Decant",
+    content = f"""
+      {util.icons.sound} /və'riːnə, 'vɛrɪnə/
+
+      The tenth decant of the year in the Antarctican calendar.
+    """,
+    fields = [
+      item.field("Previous", """
+        Aeva
+      """, line = True),
+      item.field("Next", """
+        Arteria
+      """, line = True),
+      item.field("See Also", """
+        Antarctican Calendar
+        Decant
+      """),
+      item.field("Etymologics", """
+        *New Antarctica* » spontaneous emergence
       """),
     ],
   )
