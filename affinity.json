@@ -8,18 +8,18 @@
       "swim": true
     },
     "stats": {
-      "res": 1034,
-      "stas": 1466,
-      "live": 2910569,
+      "res": 1035,
+      "stas": 1467,
+      "live": 2910833,
       "pong": 1652120709,
-      "sent": 5456,
+      "sent": 5461,
       "react": 288,
-      "view": 22
+      "view": 24
     },
     "calls": {
-      "mes": 7807,
-      "rec": 2177,
-      "act": 7746,
+      "mes": 7811,
+      "rec": 2181,
+      "act": 7759,
       "ping": 245,
       "help": 260,
       "util": 90,
@@ -109,8 +109,8 @@
         "view": 62
       },
       "vitals": {
-        "points": 3626,
-        "rise": 3295,
+        "points": 3630,
+        "rise": 3299,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -124,9 +124,9 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1153,
+        "sent": 1157,
         "react": 17,
-        "act": 316,
+        "act": 320,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
@@ -204,9 +204,21 @@
       "exp": {
         "top": 1,
         "hold": 0,
-        "max": "+25"
+        "max": 25
       },
       "log": [
+        [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+1",
+          "used `/help all`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
         [
           "+25",
           "used `/info define` for the first time"
@@ -274,18 +286,6 @@
         [
           "+1",
           "used `/vita visualyze`"
-        ],
-        [
-          "+3",
-          "used `/util cal`"
-        ],
-        [
-          "+2",
-          "used `/util antect`"
-        ],
-        [
-          "+2",
-          "used `/util decate`"
         ]
       ],
       "rec": {}
@@ -437,7 +437,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1492416,
+        "hold": 1492680,
         "max": "+2000"
       },
       "log": [
