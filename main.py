@@ -1754,7 +1754,10 @@ async def jsonyze(ctx):
 # execute
 @ sup.command()
 async def assonyze(ctx, *, code):
-  await ctx.send(f"```py\n{eval(code)}```")
+  try:
+    await ctx.send(f"```py\n{eval(code)}```")
+  except commands.errors.CommandInvokeError:
+    await ctx.send(arti.accentuate("Return value surpassed the character limit"))
 
 
 
