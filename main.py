@@ -109,11 +109,7 @@ def expand(id):
       button.label = "Expand"
       button.emoji = uti.menu.down
       content = copy.deepcopy(self.content)
-      
-      if len(self.content.description) < 4:
-        content.fields = content.fields[0]
-      else:
-        content.clear_fields()
+      content = uti.aject(self, content)
     
     else:
       self.state = True

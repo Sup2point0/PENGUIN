@@ -82,6 +82,17 @@ def embed(source, fields = True, colour = True, struct = False):
 
   return content
 
+def aject(self, content):
+  if len(self.content.description) < 4:
+    field = content.fields[0]
+    content.fields = field
+    content.set_field_at(0, name = field.name, value = field.value + "\n" + line, inline = False)
+  else:
+    content.clear_fields()
+    content.description = self.content.description + "\n" + line
+
+  return content
+
 
 def now():
   return datetime.now().timetuple()
