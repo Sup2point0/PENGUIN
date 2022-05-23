@@ -959,6 +959,122 @@ class medi:
   )
 
 
+class corp:
+
+  Aviaze = item(
+    title = "Aviaze",
+    caption = "Aviaze Aircraft Corp.",
+    content = """
+      A global commercial aviation corporation. It is a major aircraft supplier of Antarctica.
+    """,
+    fields = [
+      item.field("Products", """
+        [20]
+
+        Aviaze Ascend
+      """)
+    ],
+    other = "Avrax",
+  )
+
+  Avrax = item(
+    title = "Avrax",
+    caption = "Avrax LVC",
+    content = f"""
+      {util.icons.sound} //
+
+      Avrax, officially *Avrax LVC*, is an independent Antarctican aircraft corporation. It is a union of the former Azrax Corp. and Aventurina Inc.
+    """,
+    fields = [
+      item.field("Products", """
+        [13]
+
+        Avrax Adventure VS
+        Avrax Arcana ACX
+        Avrax Armazetton
+        Avrax Aurora GX
+        Avrax Azyroid
+      """)
+    ],
+    other = "Aviaze",
+  )
+
+  Infrare = item(
+    title = "Infrare",
+    caption = "Infrare Weapons Inc.",
+    content = """
+      Infrare, officially *Infrare Weapons Incorporated*, is an elite weapons corporation, specialyzing in special operations weapons and armaments. It is a major weapons supplier of Antarctica.
+    """,
+    fields = [
+      item.field("Products", """
+        [40+]
+
+        Infrare Inseron
+        Infrare RED
+        Infrare REDX
+      """)
+    ],
+    other = "Injekt",
+  )
+
+  Injekt = item(
+    title = "Injekt",
+    caption = "Injekt Ltd.",
+    content = """
+      A medicinal and biomedical corporation, also specialyzing in various other fields involving injections and ejections
+    """,
+    fields = [
+      item.field("Products", """
+        [2000+]
+
+        Injekt Intel
+        Injekt RNL
+        Injekt NERVE
+
+        Injekt Deploy
+        Injekt Eject
+      """)
+    ],
+    other = "Infrare",
+  )
+
+  Regna = item(
+    title = "Regna",
+    caption = "Regna Esc.",
+    content = """
+      An elite transport corporation specialyzing in luxury ~ and aviation.
+    """,
+    fields = [
+      item.field("Products", """
+        [6]
+
+        Regna Royal
+        Regna RS
+        Regna RSX
+      """)
+    ],
+    other = "Aviaze",
+  )
+
+  Venturi = item(
+    title = "Venturi",
+    caption = "Venturi Esc.",
+    content = """
+      Venturi, officially *Venturi Esc.*, is an astronomical aviation corporation, specialyzing in galactic spacecraft.
+    """,
+    fields = [
+      item.field("Products", """
+        [27]
+
+        Venturi VK-1
+        Ventura
+        Ventura Mk II
+      """)
+    ],
+    other = "Galactron",
+  )
+
+
 class mili:
 
   class div:
@@ -1305,6 +1421,18 @@ class hist:
     )
 
 
+  class leg:
+
+    Atalos = item(
+      title = "Atalos",
+      caption = "Legendary Protector",
+      content = f"""
+        {util.icons.sound} /a'tʰɑlɒs, ə'talə/
+      """,
+      other = "Atalon, Atalla",
+    )
+
+
 class nato:
 
   Aurora = item(
@@ -1317,7 +1445,7 @@ class nato:
   )
 
   Plankton = item(
-    title = "Photoplankton",
+    title = "Cyptoplankton",
     caption = "Micro-Organism",
     content = """
       A special type of phytoplankton found in the deeper waters of Antarctica.
@@ -1357,15 +1485,6 @@ class nato:
 
 
 class misc:
-
-  Atalos = item(
-    title = "Atalos",
-    caption = "Legendary Protector",
-    content = f"""
-      {util.icons.sound} /a'tʰɑlɒs, ə'talə/
-    """,
-    other = "Atalon, Atalla",
-  )
 
   ARCANE = item(
     title = "ARCANE",
@@ -1493,7 +1612,17 @@ class disc:
       caption = "ADE",
       content = """
       """,
-      other = "ADE",
+      other = "ADE, WARDEN",
+    )
+
+    WARDEN = item(
+      title = "WARDEN",
+      acro = "Weaponry & Armaments Reconnaissance Directory Electronic Network Bot",
+      caption = "ADE",
+      content = """
+        The Weaponry & Armaments Reconnaissance Directory Electronic Network Bot (WARDEN) is a conceptual ADE of Antarctica.
+      """,
+      other = "ADE, ABSOLUTE",
     )
 
 

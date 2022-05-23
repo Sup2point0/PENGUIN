@@ -82,6 +82,17 @@ def embed(source, fields = True, colour = True, struct = False):
 
   return content
 
+def aject(self, content):
+  if len(self.content.description) < 4:
+    field = content.fields[0]
+    content.fields = field
+    content.set_field_at(0, name = field.name, value = field.value + "\n" + line, inline = False)
+  else:
+    content.clear_fields()
+    content.description = self.content.description + "\n" + line
+
+  return content
+
 
 def now():
   return datetime.now().timetuple()
@@ -89,7 +100,15 @@ def now():
 def antect(day = None):
   if not day: day = datetime.now()
   idx = (day.timetuple().tm_yday + 273) % 365 + 1
-  return decates[idx].value, idx
+  dec = decates[idx]
+  idx -= decates.index(dec.value) - 1
+
+  if idx == 1:
+    idx = "Prime"
+  elif idx == dec.weight:
+    idx = "Fine"
+
+  return dec.value, idx
 
 def display(unix):
   if unix / 86400 >= 1:

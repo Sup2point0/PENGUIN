@@ -42,9 +42,9 @@ class attest:
   )
 
   require = wl(
-    (3, "You need more vita points"),
-    (2, "You need more vita points to use that command"),
-    (2, "That command requires {} vita points to use"),
+    (3, "You need more Vita points"),
+    (2, "You need more Vita points to use that command"),
+    (2, "That command requires {} Vita points to use"),
   )
 
 
