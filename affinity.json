@@ -8,18 +8,18 @@
       "swim": true
     },
     "stats": {
-      "res": 1035,
-      "stas": 1467,
-      "live": 2910833,
+      "res": 1043,
+      "stas": 1479,
+      "live": 2952557,
       "pong": 1652120709,
-      "sent": 5461,
+      "sent": 5476,
       "react": 288,
       "view": 24
     },
     "calls": {
-      "mes": 7811,
-      "rec": 2181,
-      "act": 7759,
+      "mes": 7826,
+      "rec": 2188,
+      "act": 7794,
       "ping": 245,
       "help": 260,
       "util": 90,
@@ -29,7 +29,7 @@
       "vita": 54,
       "dir": 44,
       "ctx": 7,
-      "err": 407,
+      "err": 409,
       "acc": 6
     },
     "misc": {
@@ -109,8 +109,8 @@
         "view": 62
       },
       "vitals": {
-        "points": 3630,
-        "rise": 3299,
+        "points": 3663,
+        "rise": 3332,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -124,15 +124,15 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1157,
+        "sent": 1166,
         "react": 17,
-        "act": 320,
+        "act": 325,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
         "dir": 20,
         "ctx": 8,
-        "err": 141,
+        "err": 142,
         "acc": 8
       },
       "games": {
@@ -180,7 +180,8 @@
           "/index view",
           "None",
           "None",
-          "/info define"
+          "/info define",
+          "/help lang"
         ],
         "played": [
           "num"
@@ -207,6 +208,26 @@
         "max": 25
       },
       "log": [
+        [
+          "+25",
+          "used `/help lang` for the first time"
+        ],
+        [
+          "+2",
+          "used `/info define`"
+        ],
+        [
+          "+2",
+          "used `/info about`"
+        ],
+        [
+          "+2",
+          "used `/info define`"
+        ],
+        [
+          "+2",
+          "used `/info define`"
+        ],
         [
           "+1",
           "used `/vita visualyze`"
@@ -266,26 +287,6 @@
         [
           "+2",
           "used `/info about`"
-        ],
-        [
-          "+2",
-          "used `/info about`"
-        ],
-        [
-          "+2",
-          "used `/info about`"
-        ],
-        [
-          "+2",
-          "used `/info about`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
         ]
       ],
       "rec": {}
@@ -374,7 +375,7 @@
         "uni": "ISAB"
       },
       "stats": {
-        "sent": 1094,
+        "sent": 1095,
         "react": 6,
         "act": 233,
         "/help": 0,
@@ -437,7 +438,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1492680,
+        "hold": 1534404,
         "max": "+2000"
       },
       "log": [
