@@ -89,7 +89,15 @@ def now():
 def antect(day = None):
   if not day: day = datetime.now()
   idx = (day.timetuple().tm_yday + 273) % 365 + 1
-  return decates[idx].value, idx
+  dec = decates[idx]
+  idx -= decates.index(dec.value) - 1
+
+  if idx == 1:
+    idx = "Prime"
+  elif idx == dec.weight:
+    idx = "Fine"
+
+  return dec.value, idx
 
 def display(unix):
   if unix / 86400 >= 1:
