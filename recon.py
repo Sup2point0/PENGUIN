@@ -289,6 +289,8 @@ ancest = {
   "New Antarctica": hist.era.New.show(),
   "New": hist.era.New,
 
+  "Atalos": hist.leg.Atalos.show(),
+
   # nato
   "Aurora Australis": nato.Aurora.show(),
   "Aurora": nato.Aurora,
@@ -307,7 +309,6 @@ ancest = {
   "Vericium Ultri": nato.cryst.Essence,
 
   # misc
-  "Atalos": misc.Atalos.show(),
   "ARCANE": misc.ARCANE.show(),
   "ASCENSE": misc.ASCENSE.show(),
   "Elements": misc.ASCENSE,
@@ -326,6 +327,8 @@ ancest = {
   "PENGUIN": disc.ade.Penguin.show(),
   "PENGUIN-BOT": disc.ade.Penguin,
   "ABSOLUTE": disc.ade.Absolute,
+  "WARDEN": disc.ade.Warden,
+  "WARDEN-BOT": disc.ade.Warden,
 
   # easter eggs
   "EASTER EGG": egg.Egg,
