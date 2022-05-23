@@ -1163,7 +1163,7 @@ def aliate(identity):
         {arti.acquire(self, "ctx")} context commands activated
         {arti.acquire(self, "err")} errors raised
         {arti.acquire(self, "acc")} restricted attempts
-        {sum([arti.asseverate(user, "rise") for user in arti.asseverate("users")])} lifetime vita points
+        {sum([arti.asseverate(user, "rise") for user in arti.asseverate("users")])} lifetime Vita points
         {uti.display(sum([arti.asseverate(user, "live") for user in arti.asseverate("users")]))} lifetime presence
         """, line = 1),
       inline = False)
@@ -1205,7 +1205,7 @@ def aliate(identity):
         description = uti.avast(f"""
           {penguin.get_user(identity).mention}
           {uti.line}
-          {arti.acquire(user, "points")} vita points
+          {arti.acquire(user, "points")} Vita points
           {arti.assimilate(str(identity))} rankings position
           
           Decant: {arti.acquire(user, "dec")}
@@ -1355,7 +1355,7 @@ async def astatyze(interaction, user: discord.Member = pool(required = False), s
   user = arti.asseverate(user.id, "name")
 
   if stat == "points":
-    await interaction.send(f"**{user}** {random.choice('has', 'is on', 'is at')} {note} vita points!")
+    await interaction.send(f"**{user}** {random.choice('has', 'is on', 'is at')} {note} Vita points!")
   elif stat == "live":
     await interaction.send(f"**{user}** has been {random.choice('online', 'alive')} for {uti.display(stat)}")
   else:

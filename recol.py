@@ -15,9 +15,9 @@ absorb = dict(
       Depth: basic
     """,
     fields = [
-      item.field("Points", "TBA"),
+      item.field("Points", "Low"),
       item.field("Tries", "TBA"),
-      item.field("Fields", "TBA"),
+      item.field("Modes", "TBA"),
     ],
     other = "Guess the Emoji",
   ),
@@ -150,6 +150,7 @@ class avail:
         `/help start` » help getting started
         `/help command` » help with specific command
         `/help tip` » helpful tip
+        `/help lang` » help with Antarctican English
       """),
       item.field("Utility", f"""
         `/util cast` » {adept.util.cast.desc.curt}
@@ -228,7 +229,7 @@ class avail:
         CORE
         Marvels of Antarctica
         Education System of Antarctica
-        Overview of Antarctican History
+        Timeline of Antarctican History
       """),
       item.field("Games to Check Out", """
         You can use `/index games` to see a list of all the games I can play – here are some simple ones to play first:
@@ -386,25 +387,25 @@ class articept:
         There are no requirements to initialyze an identity; although, visitors’ identities will be deactivated upon leaving. You can use `/vita visualyze` to view your own or anyone else’s.
       """),
       item.field("Vitals", """
-        The main facet of the Vitaline system is ‘vita’ points, which you can earn from doing pretty much everything. The goal is, of course, to accumulate as many as possible. The number of points you have is called your ‘vitals’.
+        The main facet of the Vitaline system is ‘Vita’ points, which you can earn from doing pretty much everything. The goal is, of course, to accumulate as many as possible. The number of points you have is called your ‘vitals’.
 
         The higher your vitals, the higher your position in the server, and the more respect and glory you gain – unlocking new ranks, opportunities and privileges. Naturally, there’s a Vitaline leaderboard to see who has the highest vitals. Of course, no one wants to be at the bottom of that, right?
 
         Who am I kidding, it’s just for a bit of fun, with a competitive edge =)
       """),
       item.field("Accumulation", """
-        Almost any actions you make in the server will reward vita points. The main constant sources are:
+        Almost any actions you make in the server will reward Vita points. The main constant sources are:
 
         » remaining online (yup!)
         » sending messages
         » activating commands
 
-        The most rewarding method, by far, is playing games with Penguin! Some games reward more vita points than others, and the difficulty along with how well you play also affect the vita points rewarded.
+        The most rewarding method, by far, is playing games with Penguin! Some games reward more Vita points than others, and the difficulty along with how well you play also affect the Vita points rewarded.
 
         Another way is through discovering ‘secret shards’ (Easter eggs) – but that’s all that’ll be revealed. As to how you find them, that’s for you to figure out!
       """),
       item.field("Initialyzation", """
-        Once you’re ready, use `/vita initialyze` to create your Vitaline identity. <@923508907014492180> will guide you through the whole procedure, which takes less than a second. Then, you’ll be all set to start earning vita points!
+        Once you’re ready, use `/vita initialyze` to create your Vitaline identity. <@923508907014492180> will guide you through the whole procedure, which takes less than a second. Then, you’ll be all set to start earning Vita points!
       """),
     ],
   )
@@ -419,7 +420,7 @@ class articept:
       item.field("Installation Requirements", """
         » Antarctican citizenship
         » 1 decant of residence
-        » 2000 vita points
+        » 2000 Vita points
 
         You can find out more about the A-CORE and installation process through `/info about`.
       """),

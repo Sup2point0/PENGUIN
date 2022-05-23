@@ -959,6 +959,11 @@ class medi:
   )
 
 
+class corp:
+
+  ...
+
+
 class mili:
 
   class div:
@@ -1305,6 +1310,18 @@ class hist:
     )
 
 
+  class leg:
+
+    Atalos = item(
+      title = "Atalos",
+      caption = "Legendary Protector",
+      content = f"""
+        {util.icons.sound} /a'tʰɑlɒs, ə'talə/
+      """,
+      other = "Atalon, Atalla",
+    )
+
+
 class nato:
 
   Aurora = item(
@@ -1357,15 +1374,6 @@ class nato:
 
 
 class misc:
-
-  Atalos = item(
-    title = "Atalos",
-    caption = "Legendary Protector",
-    content = f"""
-      {util.icons.sound} /a'tʰɑlɒs, ə'talə/
-    """,
-    other = "Atalon, Atalla",
-  )
 
   ARCANE = item(
     title = "ARCANE",
