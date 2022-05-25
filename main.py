@@ -606,7 +606,7 @@ async def fact(interaction):
 @ accumulate(init = 25, call = "/info about")
 async def about(interaction, item = pool(description = "pick an item to lookup, or find out about a random item", required = False)):
   if item:
-    target = " ".join([i.capitalize() for i in item.split()])
+    target = " ".join(i.capitalize() for i in item.split())
     if not target in ancest:
       if target.upper() in ancest:
         target = target.upper()
@@ -641,18 +641,15 @@ async def about(interaction, item = pool(description = "pick an item to lookup, 
     await interaction.send(embed = content, view = visual())
   
   except:
-    await arti.avert(interaction, "with the embed.")
+    await arti.avert(interaction, "with the embed")
     raise
 
-# autofill
 @ about.on_autocomplete("item")
 async def fill_about(interaction, query):
   if query:
-    await interaction.response.send_autocomplete([
-      ls(i) for i in sorted(ancest.keys()) if lx(i)
-      and (lt(i).alias if hasattr(lt(i), "alias") else lt(i).title)
-      .upper().startswith(query.upper())
-    ][:12])
+    query = query.upper()
+    fill = [i for i in ancest if lx(i)
+      and (lt(i).alias if hasattr(lt(i), "alias") else lt(i).title).upper().startswith(query)]
   else:
     await interaction.response.send_autocomplete(random.sample([
       ls(i) for i in ancest.keys() if lx(i)], 12))
@@ -674,7 +671,6 @@ async def acro(interaction, acronym = pool(description = "pick an acronym to loo
 
   await interaction.send(f"{acronym.upper()}: {acro}.")
 
-# autofill
 @ acro.on_autocomplete("acronym")
 async def fill_acro(interaction, acronym):
   if acronym:
@@ -752,6 +748,13 @@ async def define(interaction, word = pool(description = "pick a word to loopup, 
 
   if interaction is None: return visual()
   await interaction.send(embed = content, view = visual())
+
+@ define.on_autocomplete("word")
+async def fill_def(interaction, word):
+  if word:
+    pass
+  else:
+    pass
 
 
 
