@@ -647,12 +647,15 @@ async def about(interaction, item = pool(description = "pick an item to lookup, 
 @ about.on_autocomplete("item")
 async def fill_about(interaction, query):
   if query:
+    lq = lambda i: lt(i).alias if hasattr(lt(i), "alias") else lt(i).title
     query = query.upper()
-    fill = [i for i in ancest if lx(i)
-      and (lt(i).alias if hasattr(lt(i), "alias") else lt(i).title).upper().startswith(query)]
+    fill = [i for i in ancest if lx(i) and lq(i).upper().startswith(query)]
+    if len(fill) < 6 and len(acro) >= 3:
+      fill += [i for i in ancest if lx(i) and query in lq(i) and lq(i) not in fill]
+    await interaction.response.send_autocomplete(fill[:12])
   else:
     await interaction.response.send_autocomplete(random.sample([
-      ls(i) for i in ancest.keys() if lx(i)], 12))
+      ls(i) for i in ancest if lx(i)], 12))
 
 
 # acronym
@@ -676,7 +679,7 @@ async def fill_acro(interaction, acronym):
   if acronym:
     acro = acronym.upper()
     fill = [i for i in ancest if lx(i) and i.isupper() and i.startswith(acro)]
-    if len(fill) < 5 and len(acro) >= 3:
+    if len(fill) < 6 and len(acro) >= 3:
       fill += [i for i in ancest if lx(i) and acro in i and i not in fill]
     await interaction.response.send_autocomplete(fill[:12])
   else:
@@ -752,9 +755,13 @@ async def define(interaction, word = pool(description = "pick a word to loopup, 
 @ define.on_autocomplete("word")
 async def fill_def(interaction, word):
   if word:
-    pass
+    word = word.lower()
+    fill = [i for i in affluence if i.lower().startswith(word)]
+    if len(fill) < 6:
+      fill += [i for i in affluence if query in i and i not in fill]
+    await interaction.response.send_autocomplete(fill[:12])
   else:
-    pass
+    await interaction.response.send_autocomplete(random.sample(list(affluence.keys()), 12))
 
 
 
