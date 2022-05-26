@@ -1,4 +1,4 @@
-version = 30.20
+version = 31.2
 
 
 import nextcord as discord
@@ -557,6 +557,7 @@ async def filter(interaction, sort = pool("by", description = "option to filter 
   elif sort == "tag":
     index = [ls(i) for i in index if lx(i) and (target.upper() in lt(i).tags.upper() if hasattr(lt(i), "tags") else False)]
     sort = f"Tagged – ‘{target}’"
+  idx = len(index)
 
   class visual(View):
     def __init__(self):
@@ -566,8 +567,6 @@ async def filter(interaction, sort = pool("by", description = "option to filter 
     expand = expand("stxp.dxft")
 
   if interaction is None: return visual()
-  
-  idx = len(index)
   await interaction.send(embed = embed(title = sort, description = "\n".join(index), colour = uti.grey
     ).set_footer(text = f"{idx} item{'s' * (idx != 1)} {'found' * (idx == 0)}"), view = visual())
 
@@ -650,7 +649,7 @@ async def fill_about(interaction, query):
     lq = lambda i: lt(i).alias if hasattr(lt(i), "alias") else lt(i).title
     query = query.upper()
     fill = [i for i in ancest if lx(i) and lq(i).upper().startswith(query)]
-    if len(fill) < 6 and len(acro) >= 3:
+    if len(fill) < 6 and len(acro) > 2:
       fill += [i for i in ancest if lx(i) and query in lq(i) and lq(i) not in fill]
     await interaction.response.send_autocomplete(fill[:12])
   else:
@@ -679,7 +678,7 @@ async def fill_acro(interaction, acronym):
   if acronym:
     acro = acronym.upper()
     fill = [i for i in ancest if lx(i) and i.isupper() and i.startswith(acro)]
-    if len(fill) < 6 and len(acro) >= 3:
+    if len(fill) < 6 and len(acro) > 2:
       fill += [i for i in ancest if lx(i) and acro in i and i not in fill]
     await interaction.response.send_autocomplete(fill[:12])
   else:
