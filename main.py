@@ -1405,6 +1405,7 @@ async def initialyze(interaction, defaults: bool = pool(required = False)):
   except:
     await arti.avert(interaction, attest.init)
     raise
+  await user.add_roles(home.get_role(946843928752173137))
   await interaction.send("Identity initialyzed!", embed = aliate(user))
 
 
