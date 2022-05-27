@@ -174,7 +174,7 @@ async def ping(ctx):
       arti.asseverate(ctx.author, "points", f"+{sup}", "pinged a lucky ping")
       sup = True
   
-  await ctx.channel.send(random.choice(accede.affirm[int(sup)]))
+  await ctx.channel.send(accede.affirm[int(sup)].select())
   arti.advance("ping")
   arti.asseverate("self", "pong", round(time.time()), code = os.getenv("flipper"))
 
@@ -286,7 +286,7 @@ async def fill_command(interaction, query):
 @ help.subcommand(description = "tells you a random helpful tip")
 @ accumulate(call = "/help tip")
 async def tip(interaction):
-  await interaction.send(random.choice(assist))
+  await interaction.send(assist.select())
 
 
 # lang
@@ -597,7 +597,7 @@ async def info(interaction):
 @ info.subcommand(description = adept.info.fact.desc.full)
 @ accumulate(act = "/info fact")
 async def fact(interaction):
-  await interaction.send(random.choice(aspect))
+  await interaction.send(aspect.select())
 
 
 # about
@@ -610,7 +610,7 @@ async def about(interaction, item = pool(description = "pick an item to lookup, 
       if target.upper() in ancest:
         target = target.upper()
       else:
-        await interaction.send(random.choice(attest.index).format(item), ephemeral = True)
+        await interaction.send(attest.index.select().format(item), ephemeral = True)
         return
   else:
     target = random.choice(list(ancest.keys()))
@@ -843,9 +843,9 @@ async def num(interaction, top: int = pool("range", description = "the secret nu
 
   for i in range(game.tries):
     if not (guess := await wait(interaction, "message", rise, 20)):
-      await rise.send(random.choice(aspire.wait))
+      await rise.send(aspire.wait.select())
       if not (guess := await wait(interaction, "message", rise, 120)):
-        await rise.send(random.choice(aspire.time))
+        await rise.send(aspire.time.select())
         game.state = False
         break
 
@@ -855,18 +855,18 @@ async def num(interaction, top: int = pool("range", description = "the secret nu
       break
 
     if "." in guess:
-      await rise.send(random.choice(aspire.number[1]))
+      await rise.send(aspire.number[1].select())
     elif not guess.isdigit():
-      await rise.send(random.choice(aspire.number[0]))
+      await rise.send(aspire.number[0].select())
     elif guess in game.log:
-      await rise.send(random.choice(aspire.done))
+      await rise.send(aspire.done.select())
 
     else:
       game.left -= 1
       game.log.append(guess)
       
       if guess == game.answer:
-        await rise.send(random.choice(aspire.right))
+        await rise.send(aspire.right.select())
 
         content.description = uti.avast(f"""
           Random number between 1 and {top}
@@ -970,9 +970,9 @@ async def emoji(interaction, difficulty = pool(description = "determines how har
 
   for i in range(game.tries):
     if not (guess := await wait(interaction, "message", rise, 20)):
-      await rise.send(random.choice(aspire.wait))
+      await rise.send(aspire.wait.select())
       if not (guess := await wait(interaction, "message", rise, 120)):
-        await rise.send(random.choice(aspire.time))
+        await rise.send(aspire.time.select())
         game.state = False
         break
 
@@ -983,18 +983,18 @@ async def emoji(interaction, difficulty = pool(description = "determines how har
     try:
       guess = await commands.PartialEmojiConverter().convert(await penguin.get_context(guess), guess.content)
     except commands.PartialEmojiConversionFailure:
-      await rise.send(random.choice(aspire.emoji[0]))
+      await rise.send(aspire.emoji[0].select())
       continue
     
     if guess.id in [i.id for i in game.log]:
-      await rise.send(random.choice(aspire.done))
+      await rise.send(aspire.done.select())
 
     else:
       game.left -= 1
       game.log.append(guess)
       
       if guess.id == game.answer:
-        await rise.send(random.choice(aspire.right))
+        await rise.send(aspire.right.select())
 
         content.description = uti.avast(f"""
           {difficulty.capitalize()} difficulty
@@ -1012,7 +1012,7 @@ async def emoji(interaction, difficulty = pool(description = "determines how har
         break
 
       else:
-        await rise.send(random.choice(aspire.wrong))
+        await rise.send(aspire.wrong.select())
         game.points *= 0.92
 
         content.description = uti.avast(f"""
@@ -1579,7 +1579,7 @@ async def wassup(interaction):
     sup = rec["sup"]
     if (time.time() - sup["last"]) < 120:
       if isinstance(sup := accede.acquaint[1][sup["log"]], list):
-        await interaction.send(random.choice(sup))
+        await interaction.send(sup.select())
       else:
         await interaction.send(sup)
       arti.asseverate(interaction.user.id, "sup",
@@ -1589,7 +1589,7 @@ async def wassup(interaction):
     await interaction.send(accede.acquaint[1][0])
     arti.asseverate(interaction.user.id, "log", f"+{{'log': 0, 'last': {round(time.time())}}}")
   else:
-    await interaction.send(random.choice(accede.acquaint[0]))
+    await interaction.send(accede.acquaint[0].select())
 
 
 # joke
@@ -1618,7 +1618,7 @@ async def joke(interaction):
     if len(joke) > 2:
       await interaction.channel.send(joke[2])
     else:
-      await interaction.channel.send(random.choice(attest.whoosh))
+      await interaction.channel.send(attest.whoosh.select())
     arti.advance("whoosh")
     arti.advance(interaction.user, "whoosh")
 
@@ -1860,9 +1860,9 @@ async def on_command_error(ctx, error):
   le = lambda check: isinstance(error, eval(f"commands.errors.{check}"))
 
   if le("CommandNotFound"):
-    await ctx.channel.send(random.choice(attest.command))
+    await ctx.channel.send(attest.command.select())
   elif le("MissingPermissions"):
-    await ctx.channel.send(random.choice(attest.restrict))
+    await ctx.channel.send(attest.restrict.select())
     arti.advance("acc")
   else:
     await ctx.channel.send("Something went wrong!")

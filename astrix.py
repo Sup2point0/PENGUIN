@@ -11,14 +11,14 @@ def prime(num):
     return all(num % i != 0 for i in range(3, 1 + int(num ** 0.5), 2))
 
 def accuryze(guess, right, *, top, guesses = None):
-  lx = lambda el = False: random.choice([".", "!"] + ["..."] * el)
+  lx = lambda el = False: (WeightedList((48, "."), (52, "!")) + WeightedList((24, "..."))).select()
   right = int(right)
   dist = 20 * (right - int(guess)) / top
   dist = round(math.copysign(abs(dist) + math.log(top, 10), dist))
 
   sup = random.randint(1, 200)
   if sup >= 111:
-    return random.choice(aspire.wrong) + lx()
+    return aspire.wrong.select() + lx()
   if sup in range(1, 10) and right % 2 == 0:
     return "The number is even" + lx()
   elif sup in range(10, 20) and right % 2 == 1:
