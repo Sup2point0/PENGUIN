@@ -1615,7 +1615,7 @@ class disc:
       other = "ADE, WARDEN",
     )
 
-    WARDEN = item(
+    Warden = item(
       title = "WARDEN",
       acro = "Weaponry & Armaments Reconnaissance Directory Electronic Network Bot",
       caption = "ADE",
