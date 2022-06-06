@@ -2,25 +2,25 @@
   "self": {
     "ver": {
       "sup": 6,
-      "sub": 30.2,
-      "up": 1652821701,
+      "sub": 31.2,
+      "up": 1653656166,
       "in": 2,
       "swim": true
     },
     "stats": {
-      "res": 1043,
-      "stas": 1480,
-      "live": 2955065,
-      "pong": 1652120709,
-      "sent": 5483,
+      "res": 1089,
+      "stas": 1602,
+      "live": 3621605,
+      "pong": 1654504880,
+      "sent": 5577,
       "react": 288,
       "view": 24
     },
     "calls": {
-      "mes": 7831,
-      "rec": 2195,
-      "act": 7813,
-      "ping": 245,
+      "mes": 8562,
+      "rec": 2219,
+      "act": 8651,
+      "ping": 247,
       "help": 260,
       "util": 90,
       "index": 104,
@@ -29,11 +29,11 @@
       "vita": 54,
       "dir": 44,
       "ctx": 7,
-      "err": 409,
+      "err": 414,
       "acc": 6
     },
     "misc": {
-      "jokes": 52,
+      "jokes": 58,
       "whoosh": 2,
       "shards": [],
       "crypts": []
@@ -106,11 +106,11 @@
         "ver": 0.5,
         "init": 1646775031,
         "sync": 1648154781,
-        "view": 62
+        "view": 64
       },
       "vitals": {
-        "points": 3677,
-        "rise": 3346,
+        "points": 3691,
+        "rise": 3360,
         "drop": 0,
         "live": 44508,
         "pres": 252
@@ -124,19 +124,19 @@
         "uni": "NioTech"
       },
       "stats": {
-        "sent": 1171,
+        "sent": 1239,
         "react": 17,
-        "act": 332,
+        "act": 344,
         "/help": 7,
         "/play": 15,
         "/vita": 10,
         "dir": 20,
         "ctx": 8,
-        "err": 142,
+        "err": 145,
         "acc": 8
       },
       "games": {
-        "play": 35,
+        "play": 37,
         "win": 22,
         "lose": 13,
         "out": 3,
@@ -196,7 +196,8 @@
           "What did the terrorists say when they invaded Antarctica?",
           "What do you call kids in Antarctica?",
           "What do penguins drink out of?",
-          "What do you call a bear who\u2019s been to both Antarctica and the Arctic?"
+          "What do you call a bear who\u2019s been to both Antarctica and the Arctic?",
+          "Why is it difficult to make friends in Antarctica?"
         ],
         "whoosh": 1,
         "shards": [],
@@ -208,6 +209,38 @@
         "max": 25
       },
       "log": [
+        [
+          "+1",
+          "used `/what joke`"
+        ],
+        [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+1",
+          "used `/vita visualyze`"
+        ],
+        [
+          "+2",
+          "used `/util antect`"
+        ],
+        [
+          "+2",
+          "used `/util antect`"
+        ],
+        [
+          "+2",
+          "used `/util decate`"
+        ],
+        [
+          "+4",
+          "used `/util cast`"
+        ],
+        [
+          "+1",
+          "used `/vita rankings`"
+        ],
         [
           "+2",
           "used `/info about`"
@@ -255,38 +288,6 @@
         [
           "+2",
           "used `/info define`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/help all`"
-        ],
-        [
-          "+2",
-          "used `/info about`"
-        ],
-        [
-          "+25",
-          "used `/info define` for the first time"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+1",
-          "used `/vita visualyze`"
-        ],
-        [
-          "+2",
-          "used `/util antect`"
         ]
       ],
       "rec": {}
@@ -375,15 +376,15 @@
         "uni": "ISAB"
       },
       "stats": {
-        "sent": 1095,
+        "sent": 1247,
         "react": 6,
-        "act": 233,
+        "act": 235,
         "/help": 0,
         "/play": 0,
         "/vita": 0,
         "dir": 0,
         "ctx": 0,
-        "err": 3,
+        "err": 5,
         "acc": 0
       },
       "games": {
@@ -430,7 +431,9 @@
           "Why is Antarctican English spelling so controversial?",
           "Who\u2019s married to Antarctica?",
           "What\u2019s the drunkest animal in Antarctica?",
-          "A group of flat-Earthers decided to come around to Antarctica."
+          "A group of flat-Earthers decided to come around to Antarctica.",
+          "Have you heard of the latest expedition to Antarctica?",
+          "Where do penguins go to dance?"
         ],
         "whoosh": 1,
         "shards": [],
@@ -438,7 +441,7 @@
       },
       "exp": {
         "top": null,
-        "hold": 1536912,
+        "hold": 2203452,
         "max": "+2000"
       },
       "log": [
@@ -550,7 +553,7 @@
       },
       "stats": {
         "sent": 19,
-        "react": 13,
+        "react": 14,
         "act": 3,
         "/help": 0,
         "/play": 0,
@@ -758,8 +761,8 @@
         "view": 1
       },
       "vitals": {
-        "points": 1136,
-        "rise": 1136,
+        "points": 1156,
+        "rise": 1156,
         "drop": 0,
         "live": 0,
         "pres": 0
@@ -773,9 +776,9 @@
         "uni": null
       },
       "stats": {
-        "sent": 56,
+        "sent": 57,
         "react": 3,
-        "act": 11,
+        "act": 12,
         "/help": 0,
         "/play": 0,
         "/vita": 0,
@@ -800,7 +803,8 @@
           "/vitalyze loc",
           "/vitalyze dec",
           "/play guess emoji",
-          "/util cal"
+          "/util cal",
+          "/what joke"
         ],
         "played": [
           "num",
@@ -810,7 +814,9 @@
         ],
         "ranks": [],
         "cores": [],
-        "jokes": [],
+        "jokes": [
+          "Who\u2019s married to Antarctica?"
+        ],
         "whoosh": 0,
         "shards": [],
         "crypts": []
@@ -818,9 +824,13 @@
       "exp": {
         "top": null,
         "hold": 0,
-        "max": 0
+        "max": "+20"
       },
       "log": [
+        [
+          "+20",
+          "used `/what joke` for the first time"
+        ],
         [
           "+30",
           "used `/util cal` for the first time"
