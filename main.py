@@ -1598,6 +1598,8 @@ async def wassup(interaction):
 @ accumulate(1, call = "/what joke")
 async def joke(interaction):
   if arti.asseverate(interaction.user.id):
+    if len(arti.asseverate(interaction.user.id, "jokes")) == len(accede.allay.values):
+      arti.asseverate(interaction.user.id, "jokes", "[]", code = os.getenv("flipper"))
     joke = random.choice([i for i in accede.allay if not i[0] in arti.asseverate(interaction.user.id, "jokes")])
   else:
     joke = random.choice(accede.allay)
