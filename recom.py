@@ -46,6 +46,16 @@ ascept = {
     other = "Vitaline, V-CORE",
   ),
 
+  "Central Command": item(
+    title = "Central Command",
+    caption = "Command Role",
+    content = "",
+    fields = [
+      item.field("Permissions", ""),
+    ],
+    other = "High Command",
+  ),
+
   "High Command": item(
     title = "High Command",
     caption = "Command Role",
