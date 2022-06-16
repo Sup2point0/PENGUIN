@@ -35,7 +35,7 @@ class main:
 
       *Not to be confused with the __Continent of Antarctica__.*
 
-      The Nation of Antarctica, officially the *United Nation of Antarctica*, otherwise simply known as ‘Antarctica‘, is a country spanning the entirety of the Antarctic continent of the same name, at the very south of the Earth. It has a moderate population of ~0.2 billion people. Due to its technological capabilities and extraordinarily harmonious society, it has risen to become a major global superpower.
+      The Nation of Antarctica, officially the *United Nation of Antarctica*, otherwise simply known as ‘Antarctica’, is a country spanning the entirety of the Antarctic continent of the same name, at the very south of the Earth. It has a moderate population of ~0.2 billion people. Due to its technological capabilities and extraordinarily harmonious society, it has risen to become a major global superpower.
 
       Antarctica is governed by the Foundation of Antarctica. Its capital city and centre of operations is Ross City, in the Aventurina district.
 
