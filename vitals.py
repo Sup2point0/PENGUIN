@@ -1,3 +1,7 @@
+'''
+Penguin’s vital life support
+'''
+
 from flask import Flask
 from threading import Thread
 

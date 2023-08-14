@@ -1,8 +1,12 @@
+'''
+Utility functions
+'''
+
 from nextcord import Embed
 from datetime import datetime
 from textwrap import dedent
 
-from weightedlist import WeightedList
+from weightedlist import WeightedList as wl
 
 
 line = "‾" * 20
@@ -10,7 +14,7 @@ pink = 0xf27281
 grey = 0x464d59
 home = 922420426175557632
 
-decates = WeightedList(
+decates = wl(
   (37, "Arteria"), (36, "Vitida"),
   (37, "Arrikta"), (36, "Valia"),
   (37, "Aliquanda"), (36, "Verita"),

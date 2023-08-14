@@ -1,5 +1,11 @@
+'''
+Game scripts
+'''
+
 import random, math
+
 from response import aspire
+from weightedlist import WeightedList as wl
 
 
 def prime(num):

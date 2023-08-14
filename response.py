@@ -1,3 +1,7 @@
+'''
+Event responses
+'''
+
 from weightedlist import WeightedList as wl
 
 

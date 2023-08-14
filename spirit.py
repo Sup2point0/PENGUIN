@@ -1,6 +1,10 @@
-from weightedlist import WeightedList
+'''
+Penguin’s favourite games
+'''
 
-adventure = WeightedList(
+from weightedlist import WeightedList as wl
+
+adventure = wl(
   (20, "Penguin Dash"),
   (60, "Penguin Dash 2"),
   (20, "Hide and Sleet"),

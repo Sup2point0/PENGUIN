@@ -1,7 +1,9 @@
 version = 31.4
 
+# TODO: Refactor and cleanup code to be far more future-friendly and showable to others
 
-import nextcord as discord
+
+import nextcord as disc
 from nextcord import Embed as embed
 from nextcord import SlashOption as pool
 from nextcord import SelectOption as slot
@@ -12,10 +14,10 @@ from nextcord.ui import View, Modal, button
 from nextcord.ext import commands, tasks
 
 import random, math
-import json, textwrap
+import json, copy
 import time, datetime
 import asyncio, os
-import functools, copy
+import functools
 
 from vitals import huddle
 from spirit import adventure
@@ -32,11 +34,11 @@ import util as uti
 import astrix
 
 
-penguin = commands.Bot(command_prefix = "~", intents = discord.Intents.all())
+penguin = commands.Bot(command_prefix = "~", intents = disc.Intents.all())
 penguin.remove_command("help")
 
-home = None
-current = []
+home = None   # Antarctica server
+current = []  # ongoing games
 
 
 
@@ -92,7 +94,7 @@ def accumulate(act = 2, init = 20, call = None, *, ctx = None, req = 0):
       if first:
         arti.asseverate(user.id, "used", f"+['{call}']")
       
-      if isinstance(interaction, discord.Interaction):
+      if isinstance(interaction, disc.Interaction):
         if (sup := init if first else act):
           arti.asseverate(user.id, "points", f"+{sup}", reason = res.ancede.act(call, init = first), ctx = ctx)
         
@@ -102,7 +104,7 @@ def accumulate(act = 2, init = 20, call = None, *, ctx = None, req = 0):
 
 # expand
 def expand(id):
-  @ discord.ui.button(label = "Expand", emoji = uti.menu.down, style = style.blurple, custom_id = id)
+  @ disc.ui.button(label = "Expand", emoji = uti.menu.down, style = style.blurple, custom_id = id)
   async def size(self, button, interaction):
     if self.state:
       self.state = False
@@ -123,7 +125,7 @@ def expand(id):
 
 # update
 def update(id, source):
-  @ discord.ui.button(label = "Update", emoji = uti.menu.sync, style = style.blurple, custom_id = id)
+  @ disc.ui.button(label = "Update", emoji = uti.menu.sync, style = style.blurple, custom_id = id)
   async def sync(self, button, interaction):
     try:
       self.content = source()
@@ -327,11 +329,11 @@ async def swim(ctx, state = "play", status = None, chance = 1):
     return
 
   if state == "play":
-    await penguin.change_presence(activity = discord.Game(name = (status if status else adventure.select())))
+    await penguin.change_presence(activity = disc.Game(name = (status if status else adventure.select())))
   elif state == "watch":
-    await penguin.change_presence(activity = discord.Activity(type = discord.ActivityType.watching, name = status))
+    await penguin.change_presence(activity = disc.Activity(type = disc.ActivityType.watching, name = status))
   elif state == "listen":
-    await penguin.change_presence(activity = discord.Activity(type = discord.ActivityType.listening, name = status))
+    await penguin.change_presence(activity = disc.Activity(type = disc.ActivityType.listening, name = status))
   
   reset()
   if ctx: await ctx.message.add_reaction(uti.icons.tick)
@@ -402,7 +404,7 @@ async def cast(interaction, detail = pool(description = "pick a specific detail 
         Sunset: <t:{cast("sunset")}:T>
         \n{uti.line}
       """, line = 0), inline = False)
-      .set_thumbnail(url = "https://cdn.discordapp.com/attachments/925419481205968916/939910472067579914/Suncloud.png")
+      .set_thumbnail(url = "https://cdn.discapp.com/attachments/925419481205968916/939910472067579914/Suncloud.png")
       .set_footer(text = "Data from OpenWeatherMap.org")
       )
 
@@ -688,7 +690,7 @@ async def fill_acro(interaction, acronym):
 # role info
 @ info.subcommand(description = adept.info.role.desc.full)
 @ accumulate(call = "/info role")
-async def role(interaction, role: discord.Role = pool(description = "pick a role, or find out about a random role", required = False)):
+async def role(interaction, role: disc.Role = pool(description = "pick a role, or find out about a random role", required = False)):
   if not role:
     role = random.choice(list(ascept.keys()))
 
@@ -801,9 +803,9 @@ async def num(interaction, top: int = pool("range", description = "the secret nu
 
   if interaction is None:
     return visual()
-  if isinstance(interaction.channel, discord.Thread):
+  if isinstance(interaction.channel, disc.Thread):
     await arti.avert(interaction, aspire.thread)
-  elif isinstance(interaction.channel, discord.DMChannel):
+  elif isinstance(interaction.channel, disc.DMChannel):
     await arti.avert(interaction, aspire.direct)
   
   global current
@@ -928,9 +930,9 @@ async def num(interaction, top: int = pool("range", description = "the secret nu
 @ guess.subcommand(description = adept.play.guess.emoji.desc.full)
 @ accumulate(0, 0, "/play guess emoji")
 async def emoji(interaction, difficulty = pool(description = "determines how hard the emoji may be to find – the higher, the more points available!", choices = ["easy", "normal", "medium", "hard", "extreme", "pro", "impossible"], required = True)):
-  if isinstance(interaction.channel, discord.Thread):
+  if isinstance(interaction.channel, disc.Thread):
     await arti.avert(interaction, aspire.thread)
-  elif isinstance(interaction.channel, discord.DMChannel):
+  elif isinstance(interaction.channel, disc.DMChannel):
     await arti.avert(interaction, aspire.direct)
   
   global current
@@ -1284,7 +1286,7 @@ async def aid(interaction, aspect = pool(description = "pick a specific aspect t
 # view account  
 @ vita.subcommand(description = adept.vita.visualyze.desc.full)
 @ accumulate(1, 10, "/vita visualyze")
-async def visualyze(interaction, user: discord.Member = pool(description = "pick which user’s identity to view", required = False)):
+async def visualyze(interaction, user: disc.Member = pool(description = "pick which user’s identity to view", required = False)):
   if not user:
     user = interaction.user
   user = user.id
@@ -1355,7 +1357,7 @@ async def ctx_visualyze(interaction, member):
 # view stat
 @ vita.subcommand(description = adept.vita.astatyze.desc.full)
 @ accumulate(1, 10, "/vita astatyze")
-async def astatyze(interaction, user: discord.Member = pool(required = False), stat = pool(description = "pick a specific stat to view", choices = res.atavist[0], required = False)):
+async def astatyze(interaction, user: disc.Member = pool(required = False), stat = pool(description = "pick a specific stat to view", choices = res.atavist[0], required = False)):
   if not user:
     user = interaction.user
   if not stat:
@@ -1411,7 +1413,7 @@ async def initialyze(interaction, defaults: bool = pool(required = False)):
 
 # vitals log
 @ vita.subcommand(description = adept.vita.vitals.desc.full)
-async def vitals(interaction, user: discord.Member = pool(description = "pick which user’s vitals log to view", required = False)):
+async def vitals(interaction, user: disc.Member = pool(description = "pick which user’s vitals log to view", required = False)):
   if not user:
     user = interaction.user
   user = user.id
@@ -1551,7 +1553,7 @@ async def vitality():
   for user in home.members:
     if not arti.asseverate("users", user.id):
       continue
-    if user.status == discord.Status.online:
+    if user.status == disc.Status.online:
       if random.randint(1, 12) == 12:
         arti.asseverate(user.id, "points", "+1")
       arti.asseverate(user.id, "live", "+12")
@@ -1667,8 +1669,8 @@ async def help(ctx):
 
 # direct message
 @ sup.command()
-async def chat(ctx, user: discord.Member, *, content = None):
-  if not isinstance(user, discord.Member):
+async def chat(ctx, user: disc.Member, *, content = None):
+  if not isinstance(user, disc.Member):
     await ctx.channel.send("Invalid user!")
     return
   
@@ -1695,14 +1697,14 @@ async def chat(ctx, user: discord.Member, *, content = None):
 
 # echo message
 @ sup.command()
-async def chirp(ctx, channel: discord.TextChannel, *, content):
+async def chirp(ctx, channel: disc.TextChannel, *, content):
   await channel.send(content)
   await ctx.message.add_reaction(uti.icons.tick)
 
 
 # echo reaction
 @ sup.command()
-async def nip(ctx, message: discord.Message, *reactions):
+async def nip(ctx, message: disc.Message, *reactions):
   for reaction in reactions:
     await message.add_reaction(reaction)
   await ctx.message.add_reaction(uti.icons.tick)
@@ -1712,7 +1714,7 @@ async def nip(ctx, message: discord.Message, *reactions):
 
 # welcome
 @ sup.command()
-async def welcome(ctx, route: discord.TextChannel, user: discord.Member, *, welcome = None):
+async def welcome(ctx, route: disc.TextChannel, user: disc.Member, *, welcome = None):
   try:
     await route.send(welcome if welcome else
       f"Hey there {user.mention}, welcome to Antarctica! I'm PENGUIN, your playful & energetic new general utility & information network bot. If you need any help, just ask!")
@@ -1723,7 +1725,7 @@ async def welcome(ctx, route: discord.TextChannel, user: discord.Member, *, welc
 
 # official
 @ sup.command()
-async def articyze(ctx, channel: discord.TextChannel, content):
+async def articyze(ctx, channel: disc.TextChannel, content):
   content = uti.embed(getattr(articept, content), colour = 0x4090f1, struct = True)
   decate = uti.antect()
   content.set_footer(text = f"Updated as of {decate[0]} {decate[1]}")
@@ -1739,7 +1741,7 @@ async def articyze(ctx, channel: discord.TextChannel, content):
 
 # reward
 @ sup.command()
-async def avyze(ctx, user: discord.Member, points, *, reason = None):
+async def avyze(ctx, user: disc.Member, points, *, reason = None):
   user = user.id
   init = arti.asseverate(user, "points")
   if init == None:
@@ -1873,6 +1875,8 @@ async def on_command_error(ctx, error):
   raise error
 
 
+
+## NOTE: Execution
 
 reset()
 huddle()
