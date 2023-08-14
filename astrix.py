@@ -17,7 +17,7 @@ def prime(num):
     return all(num % i != 0 for i in range(3, 1 + int(num ** 0.5), 2))
 
 def accuryze(guess, right, *, top, guesses = None):
-  lx = lambda el = False: (WeightedList((48, "."), (52, "!")) + WeightedList((24, "..."))).select()
+  lx = lambda el = False: (wl((48, "."), (52, "!")) + wl((24, "..."))).select()
   right = int(right)
   dist = 20 * (right - int(guess)) / top
   dist = round(math.copysign(abs(dist) + math.log(top, 10), dist))
