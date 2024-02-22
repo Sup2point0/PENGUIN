@@ -1,3 +1,11 @@
 # PENGUIN-bot
 
-I mean, if I plan on making on this code public, then I should probably add a readme, right?
+A fully-fledged multi-purpose Discord bot made in Python, initially using [`discord.py`](https://discordpy.readthedocs.io/en/stable/), then migrated to [`nextcord.py`](https://docs.nextcord.dev/en/stable/).
+
+
+<br>
+
+
+## Features
+
+
